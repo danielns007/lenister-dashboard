@@ -955,14 +955,15 @@
     // ──────────────────────────────────────────────────────
     // RENDER KPI CARD
     // ──────────────────────────────────────────────────────
-    function renderKPICard(title, value, change, isCurrency = true) {
+    function renderKPICard(title, value, change, isCurrency = true, tooltip = '') {
       const changeClass = change >= 0 ? 'positive' : 'negative';
       const changeSign = change >= 0 ? '+' : '';
       const formatted = isCurrency ? formatCurrency(value) : formatPercent(value);
+      const tooltipAttr = tooltip ? `data-tooltip="${tooltip}"` : '';
 
       return `
-        <div class="kpi-card">
-          <h4>${title}</h4>
+        <div class="kpi-card ${tooltip ? 'tooltip-header' : ''}">
+          <h4 ${tooltipAttr}>${title}</h4>
           <div class="value">${formatted}</div>
           <div class="change ${changeClass}">
             ${changeSign}${change.toFixed(2)}%
@@ -1482,9 +1483,9 @@
           ${datasPeriodo}
         </div>
         <div class="kpi-grid">
-          ${renderKPICard('Vendas Organicas', total_vendas_org, 0, false)}
-          ${renderKPICard('Vendas ADS', total_vendas_ads, 0, false)}
-          ${renderKPICard('Vendas s/ ADS', total_vendas_sem_ads, 0, false)}
+          ${renderKPICard('Vendas Organicas', total_vendas_org, 0, false, 'Vendas que vieram de buscas organicas (nao aparecem no Dashboard ADS)')}
+          ${renderKPICard('Vendas ADS', total_vendas_ads, 0, false, 'Vendas geradas exclusivamente por Product Ads')}
+          ${renderKPICard('Vendas s/ ADS', total_vendas_sem_ads, 0, false, 'Vendas dentro de campanhas ADS, mas sem Product Ads')}
         </div>
         <div class="table-container">
           ${tableHtml}
