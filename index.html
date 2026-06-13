@@ -958,7 +958,12 @@
     function renderKPICard(title, value, change, isCurrency = true, tooltip = '') {
       const changeClass = change >= 0 ? 'positive' : 'negative';
       const changeSign = change >= 0 ? '+' : '';
-      const formatted = isCurrency ? formatCurrency(value) : formatPercent(value);
+      let formatted;
+      if (isCurrency) {
+        formatted = formatCurrency(value);
+      } else {
+        formatted = Math.round(value).toLocaleString('pt-BR');
+      }
       const tooltipAttr = tooltip ? `data-tooltip="${tooltip}"` : '';
 
       return `
