@@ -1455,9 +1455,31 @@
         </table>
       `;
 
+      // Formatar datas do período
+      let datasPeriodo = '';
+      let startDate = state.startDate;
+      let endDate = state.endDate;
+
+      // Se não houver datas customizadas, calcular a partir do período selecionado
+      if (!startDate || !endDate) {
+        endDate = new Date();
+        startDate = new Date();
+        if (state.selectedPeriod && state.selectedPeriod !== 'custom') {
+          startDate.setDate(startDate.getDate() - state.selectedPeriod);
+        }
+      }
+
+      if (startDate && endDate) {
+        const opcoes = { year: 'numeric', month: '2-digit', day: '2-digit' };
+        const dataInicial = startDate.toLocaleDateString('pt-BR', opcoes);
+        const dataFinal = endDate.toLocaleDateString('pt-BR', opcoes);
+        datasPeriodo = ` <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 400;">de ${dataInicial} a ${dataFinal}</span>`;
+      }
+
       const html = `
         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
           <h2 style="margin: 0;">Analise de Vendas por Canal</h2>
+          ${datasPeriodo}
         </div>
         <div class="kpi-grid">
           ${renderKPICard('Vendas Organicas', total_vendas_org, 0)}
