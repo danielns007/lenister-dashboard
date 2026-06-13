@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- RECEITA-ORGANICA-v2-2026-06-13-cache-busting -->
+<!-- VENDAS-ORGANICAS-v1-2026-06-13-cache-busting -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -678,6 +678,7 @@
     <button class="tab-btn" data-tab="lucratividade">Lucratividade</button>
     <button class="tab-btn" data-tab="produtos">Produtos</button>
     <button class="tab-btn" data-tab="ads">ADS</button>
+    <button class="tab-btn" data-tab="vendas-organicas">Vendas Organicas</button>
     <button class="tab-btn" data-tab="afiliados">Afiliados</button>
   </nav>
 
@@ -720,6 +721,16 @@
         <div class="loading">
           <div class="spinner"></div>
           <p>Carregando campancas ADS...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: VENDAS ORGANICAS -->
+    <div id="vendas-organicas" class="tab-content">
+      <div id="vendas-organicas-content">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Carregando analise de vendas organicas...</p>
         </div>
       </div>
     </div>
@@ -1306,6 +1317,161 @@
     }
 
     // ──────────────────────────────────────────────────────
+    // RENDER VENDAS ORGANICAS TAB
+    // ──────────────────────────────────────────────────────
+    function renderVendasOrganicas() {
+      const dashboard = state.filteredData.dashboard_ads || [];
+      const pedidos = state.filteredData.pedidos_completos || [];
+
+      if (!dashboard.length || !pedidos.length) {
+        document.getElementById('vendas-organicas-content').innerHTML = `
+          <div class="empty-state">
+            <p>Nenhum dado de vendas organicas disponivel.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Mapear produtos
+      const MAPEAMENTO = {
+        "Central 12V 230526": ["central", "12v"],
+        "Central de Laço 220V": ["central", "laco"],
+        "Extensor POE 10/100": ["extensor", "poe"],
+        "Fechadura Sobrepor": ["fechadura", "sobrepor"],
+        "Fechadura p/ vidro - 190526": ["fechadura", "vidro"],
+        "Fonte MDR 12V": ["fonte", "12v"],
+        "Protetor de Cabo": ["protetor", "cabo"],
+        "Sirene Estrobo": ["sirene"],
+        "Sonda Hidroestatica 4m": ["sonda"],
+      };
+
+      // Agregacao Dashboard por campanha
+      const vendas_ads = {};
+      dashboard.forEach(row => {
+        const campanha = row['Campanha'] || 'N/A';
+        if (!vendas_ads[campanha]) {
+          vendas_ads[campanha] = {
+            vendas_com_ads: 0,
+            vendas_sem_ads: 0,
+            receita_ads: 0,
+            receita_sem_ads: 0,
+            investimento: 0
+          };
+        }
+        vendas_ads[campanha].vendas_com_ads += parseLocalNumber(row['Vendas por Product Ads']);
+        vendas_ads[campanha].vendas_sem_ads += parseLocalNumber(row['Vendas sem Product Ads']);
+        vendas_ads[campanha].receita_ads += parseLocalNumber(row['Receita ADS (R$)']);
+        vendas_ads[campanha].investimento += parseLocalNumber(row['Investimento ADS (R$)']);
+      });
+
+      // Agregacao Pedidos por produto
+      const vendas_pedidos = {};
+      pedidos.forEach(row => {
+        const produto = row['Produto'] || 'N/A';
+        const produto_lower = produto.toLowerCase();
+
+        // Encontrar categoria correspondente
+        let campanha_match = null;
+        for (const [campanha, palavras] of Object.entries(MAPEAMENTO)) {
+          if (palavras.every(p => produto_lower.includes(p))) {
+            campanha_match = campanha;
+            break;
+          }
+        }
+
+        if (!campanha_match) return;
+
+        if (!vendas_pedidos[campanha_match]) {
+          vendas_pedidos[campanha_match] = {
+            qtd_total: 0,
+            receita_total: 0
+          };
+        }
+
+        vendas_pedidos[campanha_match].qtd_total += parseLocalNumber(row['Qtd']);
+        vendas_pedidos[campanha_match].receita_total += parseLocalNumber(row['Receita Bruta']);
+      });
+
+      // Construir tabela
+      let tableHtml = `
+        <table style="width: 100%;">
+          <thead>
+            <tr>
+              <th>Campanha/Produto</th>
+              <th class="tooltip-header" data-tooltip="Vendas que vieram de buscas organicas (nao aparecem no Dashboard)">Vendas<br>Organicas</th>
+              <th class="tooltip-header" data-tooltip="Receita estimada das vendas organicas">Valor Vendas<br>Organicas</th>
+              <th class="tooltip-header" data-tooltip="Vendas geradas exclusivamente por Product Ads">Vendas<br>ADS</th>
+              <th class="tooltip-header" data-tooltip="Receita das vendas de Product Ads">Valor Vendas<br>ADS</th>
+              <th class="tooltip-header" data-tooltip="Vendas dentro de campanhas ADS, mas sem Product Ads">Vendas<br>s/ ADS</th>
+              <th class="tooltip-header" data-tooltip="Receita estimada das vendas sem Product Ads">Valor Vendas<br>s/ ADS</th>
+              <th class="tooltip-header" data-tooltip="Total de vendas deste produto">Total<br>Vendas</th>
+              <th class="tooltip-header" data-tooltip="Receita total estimada deste produto">Valor Total<br>Vendas</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      let total_vendas_org = 0, total_receita_org = 0;
+      let total_vendas_ads = 0, total_receita_ads = 0;
+      let total_vendas_sem_ads = 0, total_receita_sem_ads = 0;
+      let total_vendas = 0, total_receita = 0;
+
+      Object.keys(MAPEAMENTO).forEach(campanha => {
+        const ads = vendas_ads[campanha] || { vendas_com_ads: 0, vendas_sem_ads: 0, receita_ads: 0 };
+        const pedido = vendas_pedidos[campanha] || { qtd_total: 0, receita_total: 0 };
+
+        const vendas_dashboard = ads.vendas_com_ads + ads.vendas_sem_ads;
+        const vendas_org = pedido.qtd_total - vendas_dashboard;
+        const receita_org = vendas_org > 0 ? (vendas_org / pedido.qtd_total * pedido.receita_total) : 0;
+        const receita_sem_ads = ads.vendas_sem_ads > 0 ? (ads.vendas_sem_ads / vendas_dashboard * ads.receita_ads) : 0;
+
+        total_vendas_org += vendas_org;
+        total_receita_org += receita_org;
+        total_vendas_ads += ads.vendas_com_ads;
+        total_receita_ads += ads.receita_ads;
+        total_vendas_sem_ads += ads.vendas_sem_ads;
+        total_receita_sem_ads += receita_sem_ads;
+        total_vendas += pedido.qtd_total;
+        total_receita += pedido.receita_total;
+
+        tableHtml += `
+          <tr>
+            <td class="text-left">${campanha}</td>
+            <td>${vendas_org > 0 ? vendas_org.toFixed(0) : '-'}</td>
+            <td>${formatCurrency(receita_org)}</td>
+            <td>${ads.vendas_com_ads.toFixed(0)}</td>
+            <td>${formatCurrency(ads.receita_ads)}</td>
+            <td>${ads.vendas_sem_ads.toFixed(0)}</td>
+            <td>${formatCurrency(receita_sem_ads)}</td>
+            <td>${pedido.qtd_total.toFixed(0)}</td>
+            <td>${formatCurrency(pedido.receita_total)}</td>
+          </tr>
+        `;
+      });
+
+      tableHtml += `
+          </tbody>
+        </table>
+      `;
+
+      const html = `
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+          <h2 style="margin: 0;">Analise de Vendas por Canal</h2>
+        </div>
+        <div class="kpi-grid">
+          ${renderKPICard('Vendas Organicas', total_vendas_org, 0)}
+          ${renderKPICard('Vendas ADS', total_vendas_ads, 0)}
+          ${renderKPICard('Vendas s/ ADS', total_vendas_sem_ads, 0)}
+        </div>
+        <div class="table-container">
+          ${tableHtml}
+        </div>
+      `;
+
+      document.getElementById('vendas-organicas-content').innerHTML = html;
+    }
+
+    // ──────────────────────────────────────────────────────
     // RENDER AFILIADOS TAB
     // ──────────────────────────────────────────────────────
     function renderAfiliados() {
@@ -1341,6 +1507,7 @@
       renderLucratividade();
       renderProdutos();
       renderAds();
+      renderVendasOrganicas();
       renderAfiliados();
 
       console.log('Render completo!');
