@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teste Receita Organica</title>
+</head>
+<body>
+  <h1>Teste da Coluna Receita Orgânica</h1>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Campanha</th>
+        <th>Vendas ADS</th>
+        <th>Vendas Org</th>
+        <th>Receita Organica (CALCULADA)</th>
+        <th>Receita ADS</th>
+      </tr>
+    </thead>
+    <tbody id="dados">
+    </tbody>
+  </table>
+
+  <script>
+    // Dados de teste
+    const campanhas = [
+      { campanha: "Campanha 1", vendasAds: 10, vendasOrg: 5, receitaAds: 1000 },
+      { campanha: "Campanha 2", vendasAds: 20, vendasOrg: 15, receitaAds: 2000 },
+      { campanha: "Campanha 3", vendasAds: 0, vendasOrg: 5, receitaAds: 500 }
+    ];
+
+    // Calcular e renderizar
+    const tbody = document.getElementById("dados");
+    campanhas.forEach(c => {
+      const receitaOrg = c.vendasAds > 0 ? (c.vendasOrg / c.vendasAds) * c.receitaAds : 0;
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${c.campanha}</td>
+        <td>${c.vendasAds}</td>
+        <td>${c.vendasOrg}</td>
+        <td style="background-color: yellow; font-weight: bold;">R$ ${receitaOrg.toFixed(2)}</td>
+        <td>R$ ${c.receitaAds.toFixed(2)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Teste Coluna Receita Organica</title>
+  <style>
+    body { background: #0a0e27; color: #e0e0ff; font-family: Arial; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #2a3050; padding: 10px; text-align: left; }
+    th { background: #1f2649; }
+    td { background: #151a35; }
+  </style>
+</head>
+<body>
+  <h1>Teste: Coluna RECEITA ORGÂNICA</h1>
+  <p>Se a fórmula está funcionando, vai aparecer uma coluna com valores calculados.</p>
+
+  <table id="tabela">
+    <thead>
+      <tr>
+        <th>Campanha</th>
+        <th>Vendas ADS</th>
+        <th>Vendas Org</th>
+        <th style="background: yellow; color: black;"><strong>RECEITA ORGÂNICA</strong></th>
+        <th>Receita ADS</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+  </table>
+
+  <script>
+    // Dados de teste (simplificado do CSV real)
+    const campanhas = [
+      { campanha: "Central de Laço 220V", vendasAds: 11, vendasOrg: 0, receita: 4330.48 },
+      { campanha: "Extensor POE 10/100", vendasAds: 24, vendasOrg: 2, receita: 4959.61 },
+      { campanha: "Central 12V 230526", vendasAds: 2, vendasOrg: 0, receita: 500.50 },
+    ];
+
+    const tbody = document.getElementById("tbody");
+
+    campanhas.forEach(c => {
+      // FÓRMULA EXATA DO HTML
+      const receitaOrganica = c.vendasAds > 0 ? (c.vendasOrg / c.vendasAds) * c.receita : 0;
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${c.campanha}</td>
+        <td>${c.vendasAds}</td>
+        <td>${c.vendasOrg}</td>
+        <td style="background: yellow; color: black; font-weight: bold;">R$ ${receitaOrganica.toFixed(2)}</td>
+        <td>R$ ${c.receita.toFixed(2)}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  </script>
+</body>
+</html>
