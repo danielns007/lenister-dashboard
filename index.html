@@ -955,7 +955,7 @@
     // ──────────────────────────────────────────────────────
     // RENDER KPI CARD
     // ──────────────────────────────────────────────────────
-    function renderKPICard(title, value, change, isCurrency = true, tooltip = '') {
+    function renderKPICard(title, value, change, isCurrency = true, tooltip = '', pctQtd = 0, pctValor = 0) {
       const changeClass = change >= 0 ? 'positive' : 'negative';
       const changeSign = change >= 0 ? '+' : '';
       let formatted;
@@ -973,6 +973,12 @@
           <div class="change ${changeClass}">
             ${changeSign}${change.toFixed(2)}%
           </div>
+          ${pctQtd > 0 || pctValor > 0 ? `
+          <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.3;">
+            ${pctQtd > 0 ? `<div>${pctQtd.toFixed(1)}% do total (qtd)</div>` : ''}
+            ${pctValor > 0 ? `<div>${pctValor.toFixed(1)}% do total (valor)</div>` : ''}
+          </div>
+          ` : ''}
         </div>
       `;
     }
@@ -1491,9 +1497,12 @@
           ${datasPeriodo}
         </div>
         <div class="kpi-grid">
-          ${renderKPICard('Vendas Organicas', total_vendas_org, 0, false, 'Vendas que vieram de buscas organicas (nao aparecem no Dashboard ADS)')}
-          ${renderKPICard('Vendas ADS', total_vendas_ads, 0, false, 'Vendas geradas exclusivamente por Product Ads')}
-          ${renderKPICard('Vendas s/ ADS', total_vendas_sem_ads, 0, false, 'Vendas dentro de campanhas ADS, mas sem Product Ads')}
+          ${renderKPICard('Vendas Organicas', total_vendas_org, 0, false, 'Vendas que vieram de buscas organicas (nao aparecem no Dashboard ADS)',
+            (total_vendas_org / total_vendas * 100), (total_receita_org / total_receita * 100))}
+          ${renderKPICard('Vendas ADS', total_vendas_ads, 0, false, 'Vendas geradas exclusivamente por Product Ads',
+            (total_vendas_ads / total_vendas * 100), (total_receita_ads / total_receita * 100))}
+          ${renderKPICard('Vendas s/ ADS', total_vendas_sem_ads, 0, false, 'Vendas dentro de campanhas ADS, mas sem Product Ads',
+            (total_vendas_sem_ads / total_vendas * 100), (total_receita_sem_ads / total_receita * 100))}
         </div>
         <div class="table-container">
           ${tableHtml}
