@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lenister Dashboard - Gestão Mercado Livre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+  <style>
+    /* ──────────────────────────────────────────────────────── */
+    /* RESET & VARIABLES                                        */
+    /* ──────────────────────────────────────────────────────── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0a0e27;
+      --bg-secondary: #151a35;
+      --bg-tertiary: #1f2649;
+      --accent-blue: #0f8eff;
+      --accent-red: #ff3860;
+      --accent-green: #00d084;
+      --accent-yellow: #ffc107;
+      --text-primary: #e0e0ff;
+      --text-secondary: #a0a0c0;
+      --border: #2a3050;
+      --success: #00d084;
+      --warning: #ffc107;
+      --danger: #ff3860;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.5;
+      font-size: 12px;
+    }
+
+    /* ──────────────────────────────────────────────────────── */
+    /* HEADER                                                   */
+    /* ──────────────────────────────────────────────────────── */
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      flex-shrink: 0;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.25rem;
+    }
+
+    .logo p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .period-selector {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .period-btn {
+      padding: 0.6rem 1.2rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .period-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--accent-blue);
+    }
+
+    .period-btn.active {
+      background: var(--accent-blue);
+      color: white;
+      border-color: var(--accent-blue);
+    }
+
+    #custom-range {
+      display: none;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    #custom-range.show {
+      display: flex;
+    }
+
+    #custom-range input {
+      padding: 0.5rem 0.8rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    #custom-range button {
+      padding: 0.5rem 1rem;
+      background: var(--accent-blue);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .header-right {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .settings-btn, #refresh-data {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .settings-btn:hover, #refresh-data:hover {
+      color: var(--accent-blue);
+    }
+
+    .last-update {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    /* ──────────────────────────────────────────────────────── */
+    /* SETTINGS PANEL (SIDEBAR)                                 */
+    /* ──────────────────────────────────────────────────────── */
+    .settings-panel {
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      width: 360px;
+      background: var(--bg-secondary);
+      border-left: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      overflow-y: auto;
+      z-index: 200;
+      transform: translateX(100%);
+      transition: transform 0.3s;
+    }
+
+    .settings-panel.show {
+      transform: translateX(0);
+    }
+
+    .settings-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .settings-panel h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      margin-top: 1rem;
+    }
+
+    .settings-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .settings-group label {
+      display: flex;
+      gap: 0.75rem;
+      cursor: pointer;
+      align-items: flex-start;
+    }
+
+    .settings-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      cursor: pointer;
+      accent-color: var(--accent-blue);
+      flex-shrink: 0;
+    }
+
+    .settings-group span {
+      flex: 1;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .settings-group small {
+      display: block;
+      margin-top: 0.35rem;
+      margin-left: 2.2rem;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+    }
+
+    .settings-panel hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    .btn-export, .btn-refresh {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 0.75rem;
+      background: var(--accent-blue);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+
+    .btn-export:hover, .btn-refresh:hover {
+      background: #0068cc;
+    }
+
+    /* ──────────────────────────────────────────────────────── */
+    /* TABS NAVIGATION                                          */
+    /* ──────────────────────────────────────────────────────── */
+    .tabs-nav {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      background: var(--bg-secondary);
+      overflow-x: auto;
+      position: sticky;
+      top: 86px;
+      z-index: 99;
+    }
+
+    .tab-btn {
+      padding: 1rem 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-weight: 600;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      white-space: nowrap;
+      font-size: 0.95rem;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .tab-btn.active {
+      color: var(--accent-blue);
+      border-bottom-color: var(--accent-blue);
+    }
+
+    /* ──────────────────────────────────────────────────────── */
+    /* MAIN CONTENT                                             */
+    /* ──────────────────────────────────────────────────────── */
+    main {
+      padding: 2rem;
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ──────────────────────────────────────────────────────── */
+    /* CARDS & GRIDS                                            */
+    /* ──────────────────────────────────────────────────────── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .kpi-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all 0.2s;
+    }
+
+    .kpi-card:hover {
+      border-color: var(--accent-blue);
+      background: var(--bg-tertiary);
+    }
+
+    .kpi-card h4 {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .kpi-card .change {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      color: var(--text-secondary);
+    }
+
+    .kpi-card .change.positive {
+      color: var(--accent-green);
+    }
+
+    .kpi-card .change.negative {
+      color: var(--accent-red);
+    }
+
+    /* ──────────────────────────────────────────────────────── */
+    /* LOADING & EMPTY STATES                                   */
+    /* ──────────────────────────────────────────────────────── */
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent-blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    /* ──────────────────────────────────────────────────────── */
+    /* TABELAS                                                  */
+    /* ──────────────────────────────────────────────────────── */
+    .table-container {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th {
+      background: var(--bg-tertiary);
+      padding: 0.6rem 0.5rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.5rem 0.5rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    td.text-left {
+      text-align: left;
+    }
+
+    td.roas-positive {
+      color: var(--accent-green);
+      font-weight: 600;
+    }
+
+    td.roas-negative {
+      color: var(--accent-red);
+      font-weight: 600;
+    }
+
+    th.tooltip-header {
+      position: relative;
+      cursor: help;
+      border-bottom: 1px dotted var(--text-secondary);
+    }
+
+    th.tooltip-header:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      font-size: 0.8rem;
+      font-weight: 400;
+      white-space: normal;
+      width: 220px;
+      text-transform: none;
+      letter-spacing: normal;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      margin-top: 0.5rem;
+    }
+
+    th.tooltip-header:hover::before {
+      content: '';
+      position: absolute;
+      top: 95%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 6px solid transparent;
+      border-bottom-color: var(--bg-tertiary);
+      z-index: 1000;
+    }
+
+    tbody tr:hover {
+      background: var(--bg-tertiary);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+    }
+
+    /* ──────────────────────────────────────────────────────── */
+    /* RESPONSIVO                                               */
+    /* ──────────────────────────────────────────────────────── */
+    @media (max-width: 1200px) {
+      .app-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .period-selector {
+        width: 100%;
+      }
+
+      main {
+        padding: 1.5rem;
+      }
+
+      .kpi-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .app-header {
+        padding: 1rem;
+        gap: 1rem;
+      }
+
+      .settings-panel {
+        width: 100%;
+      }
+
+      .tab-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      .kpi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .period-selector {
+        gap: 0.5rem;
+      }
+
+      .period-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="logo">
+      <h1>LENISTER</h1>
+      <p>Gestao Mercado Livre</p>
+    </div>
+
+    <div class="period-selector">
+      <button class="period-btn active" data-days="7">Ultimos 7 dias</button>
+      <button class="period-btn" data-days="30">Ultimos 30 dias</button>
+      <button class="period-btn" data-days="90">Ultimos 90 dias</button>
+      <button class="period-btn" data-days="custom">Customizado</button>
+
+      <div id="custom-range">
+        <input type="date" id="startDate">
+        <input type="date" id="endDate">
+        <button id="apply-custom">Aplicar</button>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="settings-btn" id="toggle-settings" title="Opcoes">⚙️</button>
+      <button id="refresh-data" title="Atualizar dados">🔄</button>
+      <span class="last-update" id="last-update">Carregando...</span>
+    </div>
+  </header>
+
+  <!-- SETTINGS PANEL -->
+  <aside class="settings-panel" id="settings-panel">
+    <button class="settings-close" id="close-settings">✕</button>
+
+    <h3>Analises</h3>
+
+    <div class="settings-group">
+      <label>
+        <input type="checkbox" id="opt-comparativo" checked>
+        <span>Comparativo periodo vs periodo</span>
+        <small>Semana atual vs semana anterior</small>
+      </label>
+    </div>
+
+    <div class="settings-group">
+      <label>
+        <input type="checkbox" id="opt-curva-abc" checked>
+        <span>Curva ABC de lucratividade</span>
+        <small>Produtos que geram 80% do lucro</small>
+      </label>
+    </div>
+
+    <div class="settings-group">
+      <label>
+        <input type="checkbox" id="opt-simulador">
+        <span>Simulador de preco</span>
+        <small>Teste cenarios de aumento de preco</small>
+      </label>
+    </div>
+
+    <div class="settings-group">
+      <label>
+        <input type="checkbox" id="opt-sazonalidade" checked>
+        <span>Analise de sazonalidade</span>
+        <small>Quais dias/semanas vendem mais?</small>
+      </label>
+    </div>
+
+    <div class="settings-group">
+      <label>
+        <input type="checkbox" id="opt-rotatividade">
+        <span>Rotatividade de estoque</span>
+        <small>Taxa de giro do capital investido</small>
+      </label>
+    </div>
+
+    <div class="settings-group">
+      <label>
+        <input type="checkbox" id="opt-alertas" checked>
+        <span>Alertas automaticos</span>
+        <small>Produtos com margem caindo, custos altos</small>
+      </label>
+    </div>
+
+    <div class="settings-group">
+      <label>
+        <input type="checkbox" id="opt-afiliados">
+        <span>Analise por afiliado</span>
+        <small>Performance de cada afiliado</small>
+      </label>
+    </div>
+
+    <hr>
+
+    <button id="export-csv" class="btn-export">Baixar CSV</button>
+  </aside>
+
+  <!-- TABS NAVIGATION -->
+  <nav class="tabs-nav" id="tabs-nav">
+    <button class="tab-btn active" data-tab="dashboard">Dashboard</button>
+    <button class="tab-btn" data-tab="lucratividade">Lucratividade</button>
+    <button class="tab-btn" data-tab="produtos">Produtos</button>
+    <button class="tab-btn" data-tab="ads">ADS</button>
+    <button class="tab-btn" data-tab="afiliados">Afiliados</button>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- TAB: DASHBOARD -->
+    <div id="dashboard" class="tab-content active">
+      <div id="dashboard-content">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Carregando dashboard...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: LUCRATIVIDADE -->
+    <div id="lucratividade" class="tab-content">
+      <div id="lucratividade-content">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Carregando analise de lucratividade...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: PRODUTOS -->
+    <div id="produtos" class="tab-content">
+      <div id="produtos-content">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Carregando desempenho de produtos...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: ADS -->
+    <div id="ads" class="tab-content">
+      <div id="ads-content">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Carregando campancas ADS...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: AFILIADOS -->
+    <div id="afiliados" class="tab-content">
+      <div id="afiliados-content">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Carregando dados de afiliados...</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SCRIPTS -->
+  <script>
+    // ──────────────────────────────────────────────────────
+    // CONFIGURACAO & URLS
+    // ──────────────────────────────────────────────────────
+    const SHEET_BASE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQNZmiV55IHIreB_WQjOAbpsJa1iQ0rQ9u3JfMO7GjPUqdTg0LC4OAO26SKV9Un3qamNNtj_uT9gROd/pub";
+
+    const URLS = {
+      desempenho_anuncios: SHEET_BASE + "?gid=947077861&single=true&output=csv&t=" + Date.now(),
+      dashboard_ads: SHEET_BASE + "?gid=528398442&single=true&output=csv&t=" + Date.now(),
+      vendas_produto: SHEET_BASE + "?gid=464064595&single=true&output=csv&t=" + Date.now(),
+      pedidos_completos: SHEET_BASE + "?gid=1462727171&single=true&output=csv&t=" + Date.now(),
+      afiliados_metricas: SHEET_BASE + "?gid=1057743350&single=true&output=csv&t=" + Date.now(),
+      afiliados_vendas: SHEET_BASE + "?gid=545361911&single=true&output=csv&t=" + Date.now(),
+    };
+
+    // ──────────────────────────────────────────────────────
+    // ESTADO GLOBAL
+    // ──────────────────────────────────────────────────────
+    const state = {
+      startDate: null,
+      endDate: null,
+      selectedPeriod: 7,
+      rawData: {},
+      filteredData: {},
+      options: {
+        comparativo: true,
+        curvaAbc: true,
+        simulador: false,
+        sazonalidade: true,
+        rotatividade: false,
+        alertas: true,
+        afiliados: false,
+      }
+    };
+
+    // ──────────────────────────────────────────────────────
+    // UTILS
+    // ──────────────────────────────────────────────────────
+    function parseDate(dateStr) {
+      if (!dateStr) return null;
+      // Aceita "DD/MM/YYYY" ou "YYYY-MM-DD"
+      const parts = dateStr.split(/[/-]/);
+      if (parts.length === 3) {
+        if (dateStr.includes('/')) {
+          return new Date(parts[2], parts[1] - 1, parts[0]);
+        } else {
+          return new Date(dateStr);
+        }
+      }
+      return null;
+    }
+
+    function formatCurrency(value) {
+      return new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      }).format(value || 0);
+    }
+
+    function formatPercent(value) {
+      return (value || 0).toFixed(2) + '%';
+    }
+
+    function formatNumber(value) {
+      return (value || 0).toLocaleString('pt-BR');
+    }
+
+    // ──────────────────────────────────────────────────────
+    // FETCH & PARSE DATA
+    // ──────────────────────────────────────────────────────
+    async function fetchAllData() {
+      const results = {};
+
+      for (const [key, url] of Object.entries(URLS)) {
+        try {
+          console.log(`📥 Carregando ${key}...`);
+          const response = await fetch(url);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+          const csv = await response.text();
+          console.log(`  ✓ CSV recebido (${csv.length} bytes)`);
+
+          const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true });
+          results[key] = parsed.data || [];
+          console.log(`  ✓ Parseado: ${results[key].length} linhas`);
+        } catch (error) {
+          console.error(`❌ Erro ao carregar ${key}:`, error);
+          results[key] = [];
+        }
+      }
+
+      state.rawData = results;
+      updateLastUpdate();
+      filterDataByPeriod();
+      renderDashboard();
+    }
+
+    function updateLastUpdate() {
+      const now = new Date();
+      const timeStr = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+      document.getElementById('last-update').textContent = `Atualizado ha poucos minutos`;
+    }
+
+    function filterDataByPeriod() {
+      // Filtrar dados brutos pelo periodo selecionado
+      state.filteredData = { ...state.rawData };
+
+      // Se nao temos periodo selecionado, renderiza todos
+      if (!state.selectedPeriod) {
+        renderAllTabs();
+        return;
+      }
+
+      if (state.selectedPeriod && state.selectedPeriod !== 'custom') {
+        const days = state.selectedPeriod;
+        const cutoffDate = new Date();
+        cutoffDate.setDate(cutoffDate.getDate() - days);
+        cutoffDate.setHours(0, 0, 0, 0);  // Zero out time for fair date comparison
+
+        // Armazenar datas no estado para uso em renderização
+        state.startDate = new Date(cutoffDate);
+        state.endDate = new Date();
+        state.endDate.setHours(23, 59, 59, 999);
+
+        console.log(`Filtrando por ${days} dias. Cutoff:`, cutoffDate);
+
+        // Filtrar cada dataset por data
+        for (const key in state.filteredData) {
+          const data = state.filteredData[key];
+          const beforeCount = data.length;
+
+          // Debug ADS
+          if (key === 'dashboard_ads') {
+            console.log(`📊 ADS RAW DATA - primeiros 3 registros:`);
+            data.slice(0, 3).forEach((row, idx) => {
+              const dateStr = row['Data Venda'] || row['Data Coleta'] || row['Data'] || row['date_created'];
+              console.log(`  [${idx}] ${row['Campanha']}: Data="${dateStr}"`);
+            });
+          }
+
+          state.filteredData[key] = data.filter(row => {
+            const dateStr = row['Data Venda'] || row['Data Coleta'] || row['Data'] || row['date_created'];
+            const rowDate = parseDate(dateStr);
+            const passes = rowDate && rowDate >= cutoffDate;
+
+            // Debug: mostrar primeiros 3 registros e últimos 3
+            if (key === 'dashboard_ads' && (beforeCount < 3 || beforeCount > 294)) {
+              console.log(`  [${beforeCount}] ${row['Campanha']}: dateStr="${dateStr}" → rowDate=${rowDate} (passes: ${passes})`);
+            }
+
+            return passes;
+          });
+
+          console.log(`${key}: ${beforeCount} → ${state.filteredData[key].length}`);
+        }
+      } else if (state.selectedPeriod === 'custom' && state.startDate && state.endDate) {
+        for (const key in state.filteredData) {
+          const data = state.filteredData[key];
+          state.filteredData[key] = data.filter(row => {
+            const dateStr = row['Data Venda'] || row['Data'] || row['Data Coleta'] || row['date_created'];
+            const rowDate = parseDate(dateStr);
+            return rowDate && rowDate >= state.startDate && rowDate <= state.endDate;
+          });
+        }
+      }
+
+      renderAllTabs();
+    }
+
+    // ──────────────────────────────────────────────────────
+    // CALC & AGGREGATION
+    // ──────────────────────────────────────────────────────
+    // Convert Brazilian number format (1.234,56) to English (1234.56)
+    function parseLocalNumber(str) {
+      if (!str) return 0;
+      str = String(str).trim();
+      return parseFloat(str.replace(/\./g, '').replace(',', '.')) || 0;
+    }
+
+    function aggregateByDate(data, dateCol, valueCol) {
+      const agg = {};
+      data.forEach(row => {
+        const date = row[dateCol];
+        const value = parseLocalNumber(row[valueCol]);
+        if (!agg[date]) agg[date] = 0;
+        agg[date] += value;
+      });
+      return agg;
+    }
+
+    function sumColumn(data, col) {
+      return data.reduce((sum, row) => sum + parseLocalNumber(row[col]), 0);
+    }
+
+    function avgColumn(data, col) {
+      if (!data.length) return 0;
+      return sumColumn(data, col) / data.length;
+    }
+
+    // ──────────────────────────────────────────────────────
+    // RENDER KPI CARD
+    // ──────────────────────────────────────────────────────
+    function renderKPICard(title, value, change, isCurrency = true) {
+      const changeClass = change >= 0 ? 'positive' : 'negative';
+      const changeSign = change >= 0 ? '+' : '';
+      const formatted = isCurrency ? formatCurrency(value) : formatPercent(value);
+
+      return `
+        <div class="kpi-card">
+          <h4>${title}</h4>
+          <div class="value">${formatted}</div>
+          <div class="change ${changeClass}">
+            ${changeSign}${change.toFixed(2)}%
+          </div>
+        </div>
+      `;
+    }
+
+    // ──────────────────────────────────────────────────────
+    // RENDER DASHBOARD TAB
+    // ──────────────────────────────────────────────────────
+    function renderDashboard() {
+      const pedidos = state.filteredData.pedidos_completos || [];
+      const vendas = state.filteredData.vendas_produto || [];
+      const ads = state.filteredData.dashboard_ads || [];
+
+      if (!pedidos.length) {
+        document.getElementById('dashboard-content').innerHTML = `
+          <div class="empty-state">
+            <p>Nenhum dado disponivel para este periodo.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // KPIs
+      const receita = sumColumn(pedidos, 'Receita Bruta');
+      const custos = sumColumn(pedidos, 'Custo Total (R$)');
+      const lucro = receita - custos;
+      const margem = receita > 0 ? (lucro / receita) * 100 : 0;
+
+      const investimentoAds = sumColumn(ads, 'Investimento ADS (R$)');
+      const receitaAds = sumColumn(ads, 'Receita ADS (R$)');
+
+      const html = `
+        <h2>Dashboard Geral</h2>
+        <div class="kpi-grid">
+          ${renderKPICard('Receita Bruta', receita, 0)}
+          ${renderKPICard('Custos', custos, 0)}
+          ${renderKPICard('Lucro Bruto', lucro, 0)}
+          ${renderKPICard('Margem %', margem, 0, false)}
+          ${renderKPICard('Investimento ADS', investimentoAds, 0)}
+          ${renderKPICard('ROAS Medio', receitaAds > 0 ? (receitaAds / investimentoAds) : 0, 0, false)}
+        </div>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Resumo do Periodo</h3>
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem;">
+          <p>Periodo selecionado: <strong>${state.selectedPeriod}d</strong></p>
+          <p>Pedidos: <strong>${pedidos.length}</strong></p>
+          <p>Receita: <strong>${formatCurrency(receita)}</strong></p>
+          <p>Custos: <strong>${formatCurrency(custos)}</strong></p>
+          <p>Lucro: <strong>${formatCurrency(lucro)}</strong></p>
+          <p>Margem: <strong>${formatPercent(margem)}</strong></p>
+        </div>
+      `;
+
+      document.getElementById('dashboard-content').innerHTML = html;
+    }
+
+    // ──────────────────────────────────────────────────────
+    // RENDER LUCRATIVIDADE TAB
+    // ──────────────────────────────────────────────────────
+    function renderLucratividade() {
+      const pedidos = state.filteredData.pedidos_completos || [];
+
+      if (!pedidos.length) {
+        document.getElementById('lucratividade-content').innerHTML = `
+          <div class="empty-state">
+            <p>Nenhum dado disponivel.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Agrupar por produto
+      const byProduct = {};
+      pedidos.forEach(row => {
+        const prod = row['Produto'] || 'Sem nome';
+        if (!byProduct[prod]) {
+          byProduct[prod] = {
+            qtd: 0,
+            receita: 0,
+            custos: 0
+          };
+        }
+        byProduct[prod].qtd += parseInt(row['Qtd']) || 0;
+        byProduct[prod].receita += parseFloat(row['Receita Bruta']) || 0;
+        byProduct[prod].custos += parseFloat(row['Custo Total (R$)']) || 0;
+      });
+
+      // Criar linhas da tabela
+      let tableHtml = `
+        <table style="width: 100%;">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Qtd</th>
+              <th>Receita Bruta</th>
+              <th>Custos</th>
+              <th>Lucro</th>
+              <th>Margem %</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      Object.entries(byProduct)
+        .sort((a, b) => b[1].receita - a[1].receita)
+        .forEach(([produto, data]) => {
+          const lucro = data.receita - data.custos;
+          const margem = data.receita > 0 ? (lucro / data.receita) * 100 : 0;
+          const marginClass = margem > 80 ? 'positive' : margem > 60 ? 'warning' : 'negative';
+
+          tableHtml += `
+            <tr>
+              <td>${produto.substring(0, 50)}</td>
+              <td>${data.qtd}</td>
+              <td>${formatCurrency(data.receita)}</td>
+              <td>${formatCurrency(data.custos)}</td>
+              <td>${formatCurrency(lucro)}</td>
+              <td style="color: ${margem > 80 ? 'var(--accent-green)' : margem > 60 ? 'var(--accent-yellow)' : 'var(--accent-red)'};">
+                ${formatPercent(margem)}
+              </td>
+            </tr>
+          `;
+        });
+
+      tableHtml += `
+          </tbody>
+        </table>
+      `;
+
+      const html = `
+        <h2>Analise de Lucratividade</h2>
+        <div class="table-container">
+          ${tableHtml}
+        </div>
+      `;
+
+      document.getElementById('lucratividade-content').innerHTML = html;
+    }
+
+    // ──────────────────────────────────────────────────────
+    // RENDER PRODUTOS TAB
+    // ──────────────────────────────────────────────────────
+    function renderProdutos() {
+      const desempenho = state.filteredData.desempenho_anuncios || [];
+
+      if (!desempenho.length) {
+        document.getElementById('produtos-content').innerHTML = `
+          <div class="empty-state">
+            <p>Nenhum dado de desempenho disponivel.</p>
+          </div>
+        `;
+        return;
+      }
+
+      let tableHtml = `
+        <table style="width: 100%;">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Unidades</th>
+              <th>Vendas Brutas</th>
+              <th>Conversao %</th>
+              <th>Visitas</th>
+              <th>Preco Medio</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      desempenho.forEach(row => {
+        tableHtml += `
+          <tr>
+            <td>${row['Produto'] || 'N/A'}</td>
+            <td>${row['Unidades Vendidas'] || 0}</td>
+            <td>${formatCurrency(row['Vendas Brutas (R$)'] || 0)}</td>
+            <td>${row['Conversao (%)'] || '0'}%</td>
+            <td>${row['Visitas Unicas'] || 0}</td>
+            <td>${formatCurrency(row['Preco Medio (R$)'] || 0)}</td>
+          </tr>
+        `;
+      });
+
+      tableHtml += `
+          </tbody>
+        </table>
+      `;
+
+      const html = `
+        <h2>Desempenho de Produtos</h2>
+        <div class="table-container">
+          ${tableHtml}
+        </div>
+      `;
+
+      document.getElementById('produtos-content').innerHTML = html;
+    }
+
+    // ──────────────────────────────────────────────────────
+    // RENDER ADS TAB
+    // ──────────────────────────────────────────────────────
+    function renderAds() {
+      const ads = state.filteredData.dashboard_ads || [];
+
+      if (!ads.length) {
+        document.getElementById('ads-content').innerHTML = `
+          <div class="empty-state">
+            <p>Nenhuma campanha ADS disponivel.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Agregar dados por campanha (uma linha por campanha)
+      const campanhasAgg = {};
+      ads.forEach(row => {
+        const nome = row['Campanha'] || 'N/A';
+        if (!campanhasAgg[nome]) {
+          campanhasAgg[nome] = {
+            campanha: nome,
+            dataInicio: row['Data de Início da Campanha'] || row['Data Inicio'] || 'N/A',
+            vendasProdAds: 0,
+            vendasSemProdAds: 0,
+            investimento: 0,
+            receita: 0,
+            cliques: 0,
+            impressoes: 0,
+            roasObj: parseLocalNumber(row['ROAS Objetivo']),
+            tacos: parseLocalNumber(row['TACOS']) || 0,
+            status: row['Status'] || 'N/A',
+            orcamentoDiario: 0
+          };
+        }
+        campanhasAgg[nome].vendasProdAds += parseLocalNumber(row['Vendas por Product Ads']);
+        campanhasAgg[nome].vendasSemProdAds += parseLocalNumber(row['Vendas sem Product Ads']);
+        campanhasAgg[nome].investimento += parseLocalNumber(row['Investimento ADS (R$)']);
+        campanhasAgg[nome].receita += parseLocalNumber(row['Receita ADS (R$)']);
+        campanhasAgg[nome].cliques += parseLocalNumber(row['Cliques']);
+        campanhasAgg[nome].impressoes += parseLocalNumber(row['Impressões']);
+        campanhasAgg[nome].orcamentoDiario += parseLocalNumber(row['Orçamento Diário (R$)']);
+      });
+
+      // Calcular KPIs totais
+      const campanhasArray = Object.values(campanhasAgg);
+      const totalInvestimento = campanhasArray.reduce((sum, c) => sum + c.investimento, 0);
+      const totalReceita = campanhasArray.reduce((sum, c) => sum + c.receita, 0);
+      const roasMediaAds = totalInvestimento > 0 ? totalReceita / totalInvestimento : 0;
+
+      // Construir tabela com 14 colunas - uma por campanha
+      let tableHtml = `
+        <table style="width: 100%;">
+          <thead>
+            <tr>
+              <th>Campanha</th>
+              <th class="tooltip-header" data-tooltip="Data de início da campanha">Data<br>Início</th>
+              <th class="tooltip-header" data-tooltip="Número de vendas geradas exclusivamente através de Product Ads">Vendas<br>(Prod Ads)</th>
+              <th class="tooltip-header" data-tooltip="Vendas que vieram de busca orgânica do ML (sem pagamento de publicidade)">Vendas<br>(s/ Prod Ads)</th>
+              <th class="tooltip-header" data-tooltip="Estimativa de receita proveniente de buscas orgânicas calculada como: (Vendas sem ADS / Vendas com ADS) × Receita ADS">Receita<br>Organica</th>
+              <th class="tooltip-header" data-tooltip="Valor total em reais gerado pelas vendas de Product Ads">Receita<br>ADS</th>
+              <th class="tooltip-header" data-tooltip="Valor total gasto em publicidade (ADS) no período selecionado">Investimento</th>
+              <th class="tooltip-header" data-tooltip="Número de cliques que usuários fizeram no seu anúncio">Cliques</th>
+              <th class="tooltip-header" data-tooltip="Número de vezes que seu anúncio foi mostrado para usuários">Impressões</th>
+              <th class="tooltip-header" data-tooltip="Meta de retorno configurada. Controla quanto o ML exibe seu anúncio (5x a 15x típico)">ROAS<br>Obj.</th>
+              <th class="tooltip-header" data-tooltip="Receita gerada dividida pelo Investimento em ADS. Compara o retorno real com a meta (ROAS Obj.)">ROAS<br>Real</th>
+              <th class="tooltip-header" data-tooltip="Investimento em ADS dividido pela Receita. Quanto menor, melhor (% da receita gasto em publicidade)">ACOS<br>%</th>
+              <th class="tooltip-header" data-tooltip="Similar ao ACOS, mas considera TODAS as vendas (não apenas as de ADS)">TACOS<br>%</th>
+              <th class="tooltip-header" data-tooltip="Situação atual: Ativa / Pausada / Em Aprendizado / etc">Status</th>
+              <th class="tooltip-header" data-tooltip="Valor previsto de ser alocado para gastar em publicidade no período selecionado">Orçamento<br>Planejado</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      campanhasArray.forEach(c => {
+        const roasReal = c.investimento > 0 ? c.receita / c.investimento : 0;
+        const acos = c.receita > 0 ? (c.investimento / c.receita) * 100 : 0;
+        const receitaOrganica = c.vendasProdAds > 0 ? (c.vendasSemProdAds / c.vendasProdAds) * c.receita : 0;
+        const alerta = c.roasObj > 0 && roasReal < (c.roasObj * 0.5) && c.investimento > 0 ? '🔴' : '🟢';
+
+        // Formatação condicional para ROAS Real
+        let roasRealClass = '';
+        if (roasReal > c.roasObj) {
+          roasRealClass = 'roas-positive';
+        } else if (roasReal < c.roasObj) {
+          roasRealClass = 'roas-negative';
+        }
+
+        tableHtml += `
+          <tr>
+            <td class="text-left">${alerta} ${c.campanha}</td>
+            <td>${c.dataInicio}</td>
+            <td>${c.vendasProdAds}</td>
+            <td>${c.vendasSemProdAds}</td>
+            <td>${formatCurrency(receitaOrganica)}</td>
+            <td>${formatCurrency(c.receita)}</td>
+            <td>${formatCurrency(c.investimento)}</td>
+            <td>${formatNumber(c.cliques)}</td>
+            <td>${formatNumber(c.impressoes)}</td>
+            <td>${c.roasObj.toFixed(2)}x</td>
+            <td class="${roasRealClass}">${roasReal.toFixed(2)}x</td>
+            <td>${formatPercent(acos)}</td>
+            <td>${formatPercent(c.tacos)}</td>
+            <td>${c.status}</td>
+            <td>${formatCurrency(c.orcamentoDiario)}</td>
+          </tr>
+        `;
+      });
+
+      tableHtml += `
+          </tbody>
+        </table>
+      `;
+
+      // Formatar datas do período
+      let datasPeriodo = '';
+      let startDate = state.startDate;
+      let endDate = state.endDate;
+
+      // Se não houver datas customizadas, calcular a partir do período selecionado
+      if (!startDate || !endDate) {
+        endDate = new Date();
+        startDate = new Date();
+        if (state.selectedPeriod && state.selectedPeriod !== 'custom') {
+          startDate.setDate(startDate.getDate() - state.selectedPeriod);
+        }
+      }
+
+      if (startDate && endDate) {
+        const opcoes = { year: 'numeric', month: '2-digit', day: '2-digit' };
+        const dataInicial = startDate.toLocaleDateString('pt-BR', opcoes);
+        const dataFinal = endDate.toLocaleDateString('pt-BR', opcoes);
+        datasPeriodo = ` <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 400;">de ${dataInicial} a ${dataFinal}</span>`;
+      }
+
+      const html = `
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+          <h2 style="margin: 0;">Campanhas ADS</h2>
+          ${datasPeriodo}
+        </div>
+        <div class="kpi-grid">
+          ${renderKPICard('Investimento Total', totalInvestimento, 0)}
+          ${renderKPICard('Receita Total', totalReceita, 0)}
+          ${renderKPICard('ROAS Medio', roasMediaAds, 0, false)}
+        </div>
+        <div class="table-container">
+          ${tableHtml}
+        </div>
+      `;
+
+      document.getElementById('ads-content').innerHTML = html;
+    }
+
+    // ──────────────────────────────────────────────────────
+    // RENDER AFILIADOS TAB
+    // ──────────────────────────────────────────────────────
+    function renderAfiliados() {
+      const metricas = state.filteredData.afiliados_metricas || [];
+
+      if (!metricas.length) {
+        document.getElementById('afiliados-content').innerHTML = `
+          <div class="empty-state">
+            <p>Aguardando dados de afiliados do ML...</p>
+          </div>
+        `;
+        return;
+      }
+
+      const html = `
+        <h2>Performance Afiliados</h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-top: 2rem;">
+          Dados de afiliados em construcao...
+        </p>
+      `;
+
+      document.getElementById('afiliados-content').innerHTML = html;
+    }
+
+    // ──────────────────────────────────────────────────────
+    // RENDER ALL TABS
+    // ──────────────────────────────────────────────────────
+    function renderAllTabs() {
+      console.log('Renderizando todas as abas...');
+      console.log('Dados filtrados:', state.filteredData);
+
+      renderDashboard();
+      renderLucratividade();
+      renderProdutos();
+      renderAds();
+      renderAfiliados();
+
+      console.log('Render completo!');
+    }
+
+    // ──────────────────────────────────────────────────────
+    // EVENT LISTENERS
+    // ──────────────────────────────────────────────────────
+
+    function attachEventListeners() {
+      console.log('Attachando event listeners...');
+
+      // Period selector
+      document.querySelectorAll('.period-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const days = e.target.dataset.days;
+
+        // UI update
+        document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+
+        // Custom range
+        const customRange = document.getElementById('custom-range');
+        if (days === 'custom') {
+          customRange.classList.add('show');
+          state.selectedPeriod = 'custom';
+        } else {
+          customRange.classList.remove('show');
+          state.selectedPeriod = parseInt(days);
+          filterDataByPeriod();
+        }
+      });
+    });
+
+    // Apply custom date
+    document.getElementById('apply-custom').addEventListener('click', () => {
+      const start = document.getElementById('startDate').value;
+      const end = document.getElementById('endDate').value;
+      if (start && end) {
+        state.startDate = new Date(start);
+        state.endDate = new Date(end);
+        filterDataByPeriod();
+        renderDashboard();
+      }
+    });
+
+    // Settings panel
+    document.getElementById('toggle-settings').addEventListener('click', () => {
+      document.getElementById('settings-panel').classList.add('show');
+    });
+
+    document.getElementById('close-settings').addEventListener('click', () => {
+      document.getElementById('settings-panel').classList.remove('show');
+    });
+
+    // Settings checkboxes
+    document.querySelectorAll('.settings-group input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', (e) => {
+        const optionName = e.target.id.replace('opt-', '');
+        state.options[optionName] = e.target.checked;
+        renderDashboard();
+      });
+    });
+
+    // Refresh data
+    document.getElementById('refresh-data').addEventListener('click', () => {
+      fetchAllData();
+    });
+
+      // Tab navigation
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const tabName = e.target.dataset.tab;
+
+          // UI update
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+          e.target.classList.add('active');
+          document.getElementById(tabName).classList.add('active');
+        });
+      });
+    }
+
+    // ──────────────────────────────────────────────────────
+    // INIT
+    // ──────────────────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOM Loaded!');
+      attachEventListeners();
+      fetchAllData();
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Credenciais e Tokens
+ml_token.json
+credenciais.json
+
+# Scripts Python (não versionados)
+*.py
+chrome_profile/
+
+# IDE
+.claude/
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
