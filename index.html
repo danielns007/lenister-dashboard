@@ -1408,6 +1408,7 @@
               <th class="tooltip-header" data-tooltip="Receita estimada das vendas sem Product Ads">Valor Vendas<br>s/ ADS</th>
               <th class="tooltip-header" data-tooltip="Total de vendas deste produto">Total<br>Vendas</th>
               <th class="tooltip-header" data-tooltip="Receita total estimada deste produto">Valor Total<br>Vendas</th>
+              <th class="tooltip-header" data-tooltip="Valor total gasto em publicidade (ADS) neste periodo">Investimento<br>ADS</th>
             </tr>
           </thead>
           <tbody>
@@ -1416,10 +1417,10 @@
       let total_vendas_org = 0, total_receita_org = 0;
       let total_vendas_ads = 0, total_receita_ads = 0;
       let total_vendas_sem_ads = 0, total_receita_sem_ads = 0;
-      let total_vendas = 0, total_receita = 0;
+      let total_vendas = 0, total_receita = 0, total_investimento = 0;
 
       Object.keys(MAPEAMENTO).forEach(campanha => {
-        const ads = vendas_ads[campanha] || { vendas_com_ads: 0, vendas_sem_ads: 0, receita_ads: 0 };
+        const ads = vendas_ads[campanha] || { vendas_com_ads: 0, vendas_sem_ads: 0, receita_ads: 0, investimento: 0 };
         const pedido = vendas_pedidos[campanha] || { qtd_total: 0, receita_total: 0 };
 
         const vendas_dashboard = ads.vendas_com_ads + ads.vendas_sem_ads;
@@ -1435,6 +1436,7 @@
         total_receita_sem_ads += receita_sem_ads;
         total_vendas += pedido.qtd_total;
         total_receita += pedido.receita_total;
+        total_investimento += ads.investimento;
 
         tableHtml += `
           <tr>
@@ -1447,6 +1449,7 @@
             <td>${formatCurrency(receita_sem_ads)}</td>
             <td>${pedido.qtd_total.toFixed(0)}</td>
             <td>${formatCurrency(pedido.receita_total)}</td>
+            <td>${formatCurrency(ads.investimento)}</td>
           </tr>
         `;
       });
