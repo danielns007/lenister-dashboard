@@ -329,16 +329,16 @@
     /* ──────────────────────────────────────────────────────── */
     .kpi-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
     }
 
     .kpi-card {
       background: var(--bg-secondary);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 1.5rem;
+      padding: 1rem 0.8rem;
       transition: all 0.2s;
     }
 
@@ -348,23 +348,23 @@
     }
 
     .kpi-card h4 {
-      font-size: 0.8rem;
+      font-size: 0.65rem;
       color: var(--text-secondary);
       font-weight: 600;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.4rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
     .kpi-card .value {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--text-primary);
     }
 
     .kpi-card .change {
-      font-size: 0.85rem;
-      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      margin-top: 0.3rem;
       color: var(--text-secondary);
     }
 
@@ -1503,8 +1503,6 @@
             (total_vendas_ads / total_vendas * 100), (total_receita_ads / total_receita * 100))}
           ${renderKPICard('Vendas s/ ADS', total_vendas_sem_ads, 0, false, 'Vendas dentro de campanhas ADS, mas sem Product Ads',
             (total_vendas_sem_ads / total_vendas * 100), (total_receita_sem_ads / total_receita * 100))}
-        </div>
-        <div class="kpi-grid" style="margin-top: 1.5rem;">
           ${renderKPICard('Quantidade de Produtos', total_vendas, 0, false, 'Total de produtos vendidos neste periodo')}
           ${renderKPICard('Faturamento Bruto', total_receita, 0, true, 'Valor total bruto faturado neste periodo')}
         </div>
