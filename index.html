@@ -1334,184 +1334,172 @@
     // ──────────────────────────────────────────────────────
     function renderVendasOrganicas() {
       const dashboard = state.filteredData.dashboard_ads || [];
-      const pedidos = state.filteredData.pedidos_completos || [];
+      const pedidos   = state.filteredData.pedidos_completos || [];
 
-      if (!dashboard.length || !pedidos.length) {
+      if (!pedidos.length) {
         document.getElementById('vendas-organicas-content').innerHTML = `
-          <div class="empty-state">
-            <p>Nenhum dado de vendas organicas disponivel.</p>
-          </div>
+          <div class="empty-state"><p>Nenhum dado de vendas disponivel para este periodo.</p></div>
         `;
         return;
       }
 
-      // Mapear produtos
+      // MAPEAMENTO: keywords normalizados (sem acentos) para casar com nomes de produtos
+      // 'laco' casa com 'laco' apos remocao de acentos NFD
+      // 'mdr' e mais especifico que '12v' para Fonte MDR (evita Fonte Chaveada 12v)
+      // '220' em Central Laco evita conflito com Central 12V
       const MAPEAMENTO = {
-        "Central 12V 230526": ["central", "12v"],
-        "Central de Laço 220V": ["central", "laco"],
-        "Extensor POE 10/100": ["extensor", "poe"],
-        "Fechadura Sobrepor": ["fechadura", "sobrepor"],
-        "Fechadura p/ vidro - 190526": ["fechadura", "vidro"],
-        "Fonte MDR 12V": ["fonte", "12v"],
-        "Protetor de Cabo": ["protetor", "cabo"],
-        "Sirene Estrobo": ["sirene"],
-        "Sonda Hidroestatica 4m": ["sonda"],
+        "Central 12V 230526":        ["central", "12v"],
+        "Central de Laco 220V":      ["central", "laco", "220"],
+        "Extensor POE 10/100":       ["extensor", "poe"],
+        "Fechadura Sobrepor":        ["fechadura", "sobrepor"],
+        "Fechadura p/ vidro":        ["fechadura", "vidro"],
+        "Fonte MDR 12V":             ["fonte", "mdr"],
+        "Protetor de Cabo":          ["protetor", "cabo"],
+        "Sirene Estrobo":            ["sirene"],
+        "Sonda Hidroestatica 4m":    ["sonda"],
       };
 
-      // Agregacao Dashboard por campanha
-      const vendas_ads = {};
-      dashboard.forEach(row => {
-        const campanha = row['Campanha'] || 'N/A';
-        if (!vendas_ads[campanha]) {
-          vendas_ads[campanha] = {
-            vendas_com_ads: 0,
-            vendas_sem_ads: 0,
-            receita_ads: 0,
-            receita_sem_ads: 0,
-            investimento: 0
-          };
-        }
-        vendas_ads[campanha].vendas_com_ads += parseLocalNumber(row['Vendas por Product Ads']);
-        vendas_ads[campanha].vendas_sem_ads += parseLocalNumber(row['Vendas sem Product Ads']);
-        vendas_ads[campanha].receita_ads += parseLocalNumber(row['Receita ADS (R$)']);
-        vendas_ads[campanha].investimento += parseLocalNumber(row['Investimento ADS (R$)']);
-      });
+      // Remove acentos e converte para minuscula para comparacao
+      function normalizar(str) {
+        return str.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      }
 
-      // Agregacao Pedidos por produto
-      const vendas_pedidos = {};
-      pedidos.forEach(row => {
-        const produto = row['Produto'] || 'N/A';
-        const produto_lower = produto.toLowerCase();
-
-        // Encontrar categoria correspondente
-        let campanha_match = null;
+      function matchCampanha(produto) {
+        const norm = normalizar(produto);
         for (const [campanha, palavras] of Object.entries(MAPEAMENTO)) {
-          if (palavras.every(p => produto_lower.includes(p))) {
-            campanha_match = campanha;
-            break;
-          }
+          if (palavras.every(p => norm.includes(p))) return campanha;
         }
+        return null;
+      }
 
-        if (!campanha_match) return;
-
-        if (!vendas_pedidos[campanha_match]) {
-          vendas_pedidos[campanha_match] = {
-            qtd_total: 0,
-            receita_total: 0
-          };
+      // Agregar dashboard_ads por nome de campanha
+      const ads_por_campanha = {};
+      dashboard.forEach(row => {
+        const campanha = (row['Campanha'] || '').trim();
+        if (!campanha) return;
+        if (!ads_por_campanha[campanha]) {
+          ads_por_campanha[campanha] = { v_ads: 0, v_sem: 0, receita_ads: 0, invest: 0 };
         }
-
-        vendas_pedidos[campanha_match].qtd_total += parseLocalNumber(row['Qtd']);
-        vendas_pedidos[campanha_match].receita_total += parseLocalNumber(row['Receita Bruta']);
+        ads_por_campanha[campanha].v_ads       += parseLocalNumber(row['Vendas por Product Ads']);
+        ads_por_campanha[campanha].v_sem       += parseLocalNumber(row['Vendas sem Product Ads']);
+        ads_por_campanha[campanha].receita_ads += parseLocalNumber(row['Receita ADS (R$)']);
+        ads_por_campanha[campanha].invest      += parseLocalNumber(row['Investimento ADS (R$)']);
       });
 
-      // Construir tabela
-      let tableHtml = `
-        <table style="width: 100%;">
-          <thead>
-            <tr>
-              <th>Campanha/Produto</th>
-              <th class="tooltip-header" data-tooltip="Vendas que vieram de buscas organicas (nao aparecem no Dashboard)">Vendas<br>Organicas</th>
-              <th class="tooltip-header" data-tooltip="Receita estimada das vendas organicas">Valor Vendas<br>Organicas</th>
-              <th class="tooltip-header" data-tooltip="Vendas geradas exclusivamente por Product Ads">Vendas<br>ADS</th>
-              <th class="tooltip-header" data-tooltip="Receita das vendas de Product Ads">Valor Vendas<br>ADS</th>
-              <th class="tooltip-header" data-tooltip="Vendas dentro de campanhas ADS, mas sem Product Ads">Vendas<br>s/ ADS</th>
-              <th class="tooltip-header" data-tooltip="Receita estimada das vendas sem Product Ads">Valor Vendas<br>s/ ADS</th>
-              <th class="tooltip-header" data-tooltip="Total de vendas deste produto">Total<br>Vendas</th>
-              <th class="tooltip-header" data-tooltip="Receita total estimada deste produto">Valor Total<br>Vendas</th>
-              <th class="tooltip-header" data-tooltip="Valor total gasto em publicidade (ADS) neste periodo">Investimento<br>ADS</th>
-            </tr>
-          </thead>
-          <tbody>
-      `;
+      // Agregar pedidos_completos — TODOS os produtos
+      // Produtos com campanha ADS: agrupados pelo nome da campanha
+      // Produtos sem campanha ADS: agrupados pelo nome exato do produto
+      const por_chave = {};
+      pedidos.forEach(row => {
+        const produto  = (row['Produto'] || 'Desconhecido').trim();
+        const campanha = matchCampanha(produto);
+        const chave    = campanha || produto;
 
-      let total_vendas_org = 0, total_receita_org = 0;
-      let total_vendas_ads = 0, total_receita_ads = 0;
-      let total_vendas_sem_ads = 0, total_receita_sem_ads = 0;
-      let total_vendas = 0, total_receita = 0, total_investimento = 0;
-
-      Object.keys(MAPEAMENTO).forEach(campanha => {
-        const ads = vendas_ads[campanha] || { vendas_com_ads: 0, vendas_sem_ads: 0, receita_ads: 0, investimento: 0 };
-        const pedido = vendas_pedidos[campanha] || { qtd_total: 0, receita_total: 0 };
-
-        const vendas_dashboard = ads.vendas_com_ads + ads.vendas_sem_ads;
-        const vendas_org = pedido.qtd_total - vendas_dashboard;
-        const receita_org = vendas_org > 0 ? (vendas_org / pedido.qtd_total * pedido.receita_total) : 0;
-        const receita_sem_ads = ads.vendas_sem_ads > 0 ? (ads.vendas_sem_ads / vendas_dashboard * ads.receita_ads) : 0;
-
-        total_vendas_org += vendas_org;
-        total_receita_org += receita_org;
-        total_vendas_ads += ads.vendas_com_ads;
-        total_receita_ads += ads.receita_ads;
-        total_vendas_sem_ads += ads.vendas_sem_ads;
-        total_receita_sem_ads += receita_sem_ads;
-        total_vendas += pedido.qtd_total;
-        total_receita += pedido.receita_total;
-        total_investimento += ads.investimento;
-
-        tableHtml += `
-          <tr>
-            <td class="text-left">${campanha}</td>
-            <td>${vendas_org > 0 ? vendas_org.toFixed(0) : '-'}</td>
-            <td>${formatCurrency(receita_org)}</td>
-            <td>${ads.vendas_com_ads.toFixed(0)}</td>
-            <td>${formatCurrency(ads.receita_ads)}</td>
-            <td>${ads.vendas_sem_ads.toFixed(0)}</td>
-            <td>${formatCurrency(receita_sem_ads)}</td>
-            <td>${pedido.qtd_total.toFixed(0)}</td>
-            <td>${formatCurrency(pedido.receita_total)}</td>
-            <td>${formatCurrency(ads.investimento)}</td>
-          </tr>
-        `;
+        if (!por_chave[chave]) {
+          por_chave[chave] = { label: chave, campanha, tem_ads: campanha !== null, qtd: 0, receita: 0 };
+        }
+        por_chave[chave].qtd     += parseLocalNumber(row['Qtd']);
+        por_chave[chave].receita += parseLocalNumber(row['Receita Bruta']);
       });
 
-      tableHtml += `
-          </tbody>
-        </table>
-      `;
+      // Ordenar: campanhas ADS primeiro, depois sem ADS; dentro de cada grupo por qtd desc
+      const itens = Object.values(por_chave).sort((a, b) => {
+        if (a.tem_ads !== b.tem_ads) return a.tem_ads ? -1 : 1;
+        return b.qtd - a.qtd;
+      });
 
-      // Formatar datas do período
+      // Construir linhas da tabela
+      let total_qtd = 0, total_receita = 0, total_invest = 0;
+      let total_v_ads = 0, total_v_sem = 0, total_v_org = 0;
+      let rows = '';
+
+      itens.forEach(item => {
+        const ads = item.campanha
+          ? (ads_por_campanha[item.campanha] || { v_ads: 0, v_sem: 0, receita_ads: 0, invest: 0 })
+          : { v_ads: 0, v_sem: 0, receita_ads: 0, invest: 0 };
+
+        const v_total_ads = ads.v_ads + ads.v_sem;
+        const v_org = Math.max(0, item.qtd - v_total_ads);
+        const roas  = ads.invest > 0 ? (ads.receita_ads / ads.invest).toFixed(2) : '-';
+
+        total_qtd     += item.qtd;
+        total_receita += item.receita;
+        total_invest  += ads.invest;
+        total_v_ads   += ads.v_ads;
+        total_v_sem   += ads.v_sem;
+        total_v_org   += v_org;
+
+        const badge = item.tem_ads
+          ? '<span style="background:var(--accent);color:#fff;padding:1px 5px;border-radius:3px;font-size:0.65rem;margin-left:6px;vertical-align:middle;">ADS</span>'
+          : '';
+
+        rows += `<tr>
+          <td class="text-left">${item.label}${badge}</td>
+          <td>${item.qtd}</td>
+          <td>${formatCurrency(item.receita)}</td>
+          <td>${ads.v_ads > 0 ? ads.v_ads : '-'}</td>
+          <td>${ads.v_sem > 0 ? ads.v_sem : '-'}</td>
+          <td>${v_org > 0 ? v_org : '-'}</td>
+          <td>${ads.invest > 0 ? formatCurrency(ads.invest) : '-'}</td>
+          <td>${roas}</td>
+        </tr>`;
+      });
+
+      // Linha de total
+      rows += `<tr style="font-weight:bold;border-top:2px solid var(--accent);">
+        <td class="text-left">TOTAL</td>
+        <td>${total_qtd}</td>
+        <td>${formatCurrency(total_receita)}</td>
+        <td>${total_v_ads || '-'}</td>
+        <td>${total_v_sem || '-'}</td>
+        <td>${total_v_org || '-'}</td>
+        <td>${formatCurrency(total_invest)}</td>
+        <td>-</td>
+      </tr>`;
+
+      const tableHtml = `
+        <table style="width:100%">
+          <thead><tr>
+            <th class="text-left">Produto / Campanha</th>
+            <th>Total<br>Unidades</th>
+            <th>Receita<br>Bruta</th>
+            <th class="tooltip-header" data-tooltip="Vendas geradas por clique em Product Ads">Vendas<br>c/ ADS</th>
+            <th class="tooltip-header" data-tooltip="Vendas em sessao ADS mas sem clique no anuncio">Vendas<br>s/ ADS</th>
+            <th class="tooltip-header" data-tooltip="Vendas fora de qualquer sessao ADS (organicas puras)">Vendas<br>Organicas</th>
+            <th class="tooltip-header" data-tooltip="Valor total investido em Product Ads">Invest.<br>ADS</th>
+            <th class="tooltip-header" data-tooltip="Retorno sobre investimento: Receita ADS / Investimento">ROAS</th>
+          </tr></thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+
+      // Datas do periodo
       let datasPeriodo = '';
-      let startDate = state.startDate;
-      let endDate = state.endDate;
-
-      // Se não houver datas customizadas, calcular a partir do período selecionado
-      if (!startDate || !endDate) {
-        endDate = new Date();
-        startDate = new Date();
-        if (state.selectedPeriod && state.selectedPeriod !== 'custom') {
-          startDate.setDate(startDate.getDate() - state.selectedPeriod);
-        }
+      let sd = state.startDate, ed = state.endDate;
+      if (!sd || !ed) {
+        ed = new Date(); sd = new Date();
+        if (state.selectedPeriod && state.selectedPeriod !== 'custom')
+          sd.setDate(sd.getDate() - state.selectedPeriod);
+      }
+      if (sd && ed) {
+        const fmt = { year: 'numeric', month: '2-digit', day: '2-digit' };
+        datasPeriodo = ` <span style="font-size:0.85rem;color:var(--text-secondary);font-weight:400;">de ${sd.toLocaleDateString('pt-BR', fmt)} a ${ed.toLocaleDateString('pt-BR', fmt)}</span>`;
       }
 
-      if (startDate && endDate) {
-        const opcoes = { year: 'numeric', month: '2-digit', day: '2-digit' };
-        const dataInicial = startDate.toLocaleDateString('pt-BR', opcoes);
-        const dataFinal = endDate.toLocaleDateString('pt-BR', opcoes);
-        datasPeriodo = ` <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 400;">de ${dataInicial} a ${dataFinal}</span>`;
-      }
+      const pct_ads = total_qtd > 0 ? (total_v_ads / total_qtd * 100).toFixed(1) : 0;
+      const pct_org = total_qtd > 0 ? (total_v_org / total_qtd * 100).toFixed(1) : 0;
 
-      const html = `
-        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
-          <h2 style="margin: 0;">Analise de Vendas por Canal</h2>
-          ${datasPeriodo}
+      document.getElementById('vendas-organicas-content').innerHTML = `
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;">
+          <h2 style="margin:0;">Vendas — Todos os Produtos</h2>${datasPeriodo}
         </div>
         <div class="kpi-grid">
-          ${renderKPICard('Vendas Organicas', total_vendas_org, 0, false, 'Vendas que vieram de buscas organicas (nao aparecem no Dashboard ADS)',
-            (total_vendas_org / total_vendas * 100), (total_receita_org / total_receita * 100))}
-          ${renderKPICard('Vendas ADS', total_vendas_ads, 0, false, 'Vendas geradas exclusivamente por Product Ads',
-            (total_vendas_ads / total_vendas * 100), (total_receita_ads / total_receita * 100))}
-          ${renderKPICard('Vendas s/ ADS', total_vendas_sem_ads, 0, false, 'Vendas dentro de campanhas ADS, mas sem Product Ads',
-            (total_vendas_sem_ads / total_vendas * 100), (total_receita_sem_ads / total_receita * 100))}
-          ${renderKPICard('Quantidade de Produtos', total_vendas, 0, false, 'Total de produtos vendidos neste periodo')}
-          ${renderKPICard('Faturamento Bruto', total_receita, 0, true, 'Valor total bruto faturado neste periodo')}
+          ${renderKPICard('Total de Vendas', total_qtd, 0, false, 'Total de unidades vendidas no periodo (todos os produtos)')}
+          ${renderKPICard('Faturamento Bruto', total_receita, 0, true, 'Receita bruta total de todos os produtos')}
+          ${renderKPICard('Vendas c/ ADS', total_v_ads, 0, false, 'Unidades geradas por Product Ads (' + pct_ads + '% do total)')}
+          ${renderKPICard('Vendas Organicas', total_v_org, 0, false, 'Vendas fora de campanhas ADS (' + pct_org + '% do total)')}
+          ${renderKPICard('Investimento ADS', total_invest, 0, true, 'Total investido em Product Ads no periodo')}
         </div>
-        <div class="table-container">
-          ${tableHtml}
-        </div>
-      `;
-
-      document.getElementById('vendas-organicas-content').innerHTML = html;
+        <div class="table-container">${tableHtml}</div>`;
     }
 
     // ──────────────────────────────────────────────────────
