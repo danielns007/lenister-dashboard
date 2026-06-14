@@ -1389,6 +1389,12 @@
       // Agregar pedidos_completos — TODOS os produtos
       // Produtos com campanha ADS: agrupados pelo nome da campanha
       // Produtos sem campanha ADS: agrupados pelo nome exato do produto
+
+      // Descobrir chave real da coluna N° Pedido (o caractere ° varia por encoding)
+      const col_pedido = pedidos.length > 0
+        ? (Object.keys(pedidos[0]).find(k => k.toLowerCase().includes('pedido')) || '')
+        : '';
+
       const por_chave = {};
       const pedidos_set = new Set(); // N° Pedido distintos → Número de Vendas
       pedidos.forEach(row => {
@@ -1402,7 +1408,7 @@
         por_chave[chave].qtd     += parseLocalNumber(row['Qtd']);
         por_chave[chave].receita += parseLocalNumber(row['Receita Bruta']);
 
-        const num_pedido = (row['N° Pedido'] || '').trim();
+        const num_pedido = col_pedido ? (row[col_pedido] || '').trim() : '';
         if (num_pedido) pedidos_set.add(num_pedido);
       });
       const num_vendas = pedidos_set.size;
