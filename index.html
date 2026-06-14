@@ -1503,7 +1503,10 @@
             (total_vendas_ads / total_vendas * 100), (total_receita_ads / total_receita * 100))}
           ${renderKPICard('Vendas s/ ADS', total_vendas_sem_ads, 0, false, 'Vendas dentro de campanhas ADS, mas sem Product Ads',
             (total_vendas_sem_ads / total_vendas * 100), (total_receita_sem_ads / total_receita * 100))}
-          ${renderKPICard('Total de Vendas', total_vendas, 0, false, 'Quantidade total de vendas neste periodo')}
+        </div>
+        <div class="kpi-grid" style="margin-top: 1.5rem;">
+          ${renderKPICard('Quantidade de Produtos', total_vendas, 0, false, 'Total de produtos vendidos neste periodo')}
+          ${renderKPICard('Faturamento Bruto', total_receita, 0, true, 'Valor total bruto faturado neste periodo')}
         </div>
         <div class="table-container">
           ${tableHtml}
