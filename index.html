@@ -1590,8 +1590,15 @@
       const start = document.getElementById('startDate').value;
       const end = document.getElementById('endDate').value;
       if (start && end) {
-        state.startDate = new Date(start);
-        state.endDate = new Date(end);
+        // Usar construtor com partes para evitar problema de fuso UTC vs local.
+        // new Date("2026-06-10") cria meia-noite UTC = 21h do dia ANTERIOR no Brasil (UTC-3).
+        // new Date(2026, 5, 10, 0,0,0,0) cria meia-noite no horario LOCAL, igual ao parseDate().
+        const [sy, sm, sd] = start.split('-').map(Number);
+        state.startDate = new Date(sy, sm - 1, sd, 0, 0, 0, 0);
+
+        const [ey, em, ed] = end.split('-').map(Number);
+        state.endDate = new Date(ey, em - 1, ed, 23, 59, 59, 999);
+
         filterDataByPeriod();
         renderDashboard();
       }
