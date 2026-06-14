@@ -1390,6 +1390,7 @@
       // Produtos com campanha ADS: agrupados pelo nome da campanha
       // Produtos sem campanha ADS: agrupados pelo nome exato do produto
       const por_chave = {};
+      const pedidos_set = new Set(); // N° Pedido distintos → Número de Vendas
       pedidos.forEach(row => {
         const produto  = (row['Produto'] || 'Desconhecido').trim();
         const campanha = matchCampanha(produto);
@@ -1400,7 +1401,11 @@
         }
         por_chave[chave].qtd     += parseLocalNumber(row['Qtd']);
         por_chave[chave].receita += parseLocalNumber(row['Receita Bruta']);
+
+        const num_pedido = (row['N° Pedido'] || '').trim();
+        if (num_pedido) pedidos_set.add(num_pedido);
       });
+      const num_vendas = pedidos_set.size;
 
       // Ordenar: campanhas ADS primeiro, depois sem ADS; dentro de cada grupo por qtd desc
       const itens = Object.values(por_chave).sort((a, b) => {
@@ -1493,10 +1498,10 @@
           <h2 style="margin:0;">Vendas — Todos os Produtos</h2>${datasPeriodo}
         </div>
         <div class="kpi-grid">
-          ${renderKPICard('Total de Vendas', total_qtd, 0, false, 'Total de unidades vendidas no periodo (todos os produtos)')}
+          ${renderKPICard('Numero de Vendas', num_vendas, 0, false, 'Quantidade de pedidos distintos no periodo (N° Pedido unico)')}
+          ${renderKPICard('Unidades Vendidas', total_qtd, 0, false, 'Total de itens vendidos no periodo — um pedido pode ter multiplas unidades')}
           ${renderKPICard('Faturamento Bruto', total_receita, 0, true, 'Receita bruta total de todos os produtos')}
           ${renderKPICard('Vendas c/ ADS', total_v_ads, 0, false, 'Unidades geradas por Product Ads (' + pct_ads + '% do total)')}
-          ${renderKPICard('Vendas Organicas', total_v_org, 0, false, 'Vendas fora de campanhas ADS (' + pct_org + '% do total)')}
           ${renderKPICard('Investimento ADS', total_invest, 0, true, 'Total investido em Product Ads no periodo')}
         </div>
         <div class="table-container">${tableHtml}</div>`;
