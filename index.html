@@ -1229,6 +1229,20 @@
       const totalCliques = campanhasArray.reduce((sum, c) => sum + c.cliques, 0);
       const roasMediaAds = totalInvestimento > 0 ? totalReceita / totalInvestimento : 0;
 
+      // Detectar se o período inclui dados dos últimos 7 dias (attribution window aberto)
+      const hoje7 = new Date(); hoje7.setHours(0,0,0,0);
+      const limiteAttr = new Date(hoje7); limiteAttr.setDate(limiteAttr.getDate() - 7);
+      let maxDataAds = null;
+      ads.forEach(row => {
+        const d = row['Data'] || '';
+        if (d) {
+          const [dia, mes, ano] = d.split('/');
+          const dt = new Date(+ano, +mes - 1, +dia);
+          if (!maxDataAds || dt > maxDataAds) maxDataAds = dt;
+        }
+      });
+      const emConsolidacao = maxDataAds && maxDataAds >= limiteAttr;
+
       // Construir tabela com 14 colunas - uma por campanha
       let tableHtml = `
         <table style="width: 100%;">
@@ -1335,6 +1349,26 @@
           ${renderKPICard('Impressoes', totalImpressions, 0, false, 'Total de vezes que seus anuncios foram exibidos')}
           ${renderKPICard('Cliques', totalCliques, 0, false, 'Total de cliques nos seus anuncios')}
         </div>
+        ${emConsolidacao ? `
+        <div style="
+          background: rgba(255,193,7,0.12);
+          border: 1px solid rgba(255,193,7,0.5);
+          border-radius: 8px;
+          padding: 0.6rem 1rem;
+          margin-bottom: 1rem;
+          display: flex;
+          align-items: flex-start;
+          gap: 0.6rem;
+          font-size: 0.85rem;
+          color: var(--text-primary);
+        ">
+          <span style="font-size: 1.1rem; flex-shrink: 0;">⚠</span>
+          <div>
+            <strong>Dados em consolidação</strong> — O Mercado Livre atribui vendas retroativamente por até 7 dias após um clique em anúncio.
+            Os valores de <em>Vendas por ADS</em>, <em>Vendas sem ADS</em> e <em>TACOS</em> dos últimos 7 dias podem aumentar conforme as atribuições são finalizadas.
+            Para dados completos, execute <code>ressincronizar_ads_recentes.py</code> regularmente.
+          </div>
+        </div>` : ''}
         <div class="table-container">
           ${tableHtml}
         </div>
