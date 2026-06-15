@@ -1,0 +1,6998 @@
+{
+  "gerado_em": "2026-06-15",
+  "progresso": "35/35",
+  "total_erros_crit": 6,
+  "resultados": [
+    {
+      "cenario": "Últimos 7 dias",
+      "d_ini": "2026-06-07",
+      "d_fim": "2026-06-13",
+      "em_consol": true,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 479.18,
+            "invest": 60.47,
+            "roas": 7.92,
+            "acos": 12.62,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 479,18",
+            "invest": "R$ 60,47",
+            "roas": "7,92x",
+            "acos": "12.6%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 1115.15,
+            "invest": 116.46,
+            "roas": 9.58,
+            "acos": 10.44,
+            "v_ads": 5,
+            "v_sem": 1
+          },
+          "ml_raw": {
+            "receita": "R$ 1.115,15",
+            "invest": "R$ 116,46",
+            "roas": "9,58x",
+            "acos": "10.4%",
+            "vendas_pa": "8"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "5",
+              "ml": "8",
+              "diff": "3",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 6.46,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 6,46",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 123.94,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 123,94",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 93.5,
+            "invest": 23.83,
+            "roas": 3.92,
+            "acos": 25.49,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 93,5",
+            "invest": "R$ 23,83",
+            "roas": "3,92x",
+            "acos": "25.5%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 100.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 100",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 107.86,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 107,86",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 49.75,
+            "invest": 22.92,
+            "roas": 2.17,
+            "acos": 46.07,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 49,75",
+            "invest": "R$ 22,92",
+            "roas": "2,17x",
+            "acos": "46.1%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "5",
+          "ml": "8",
+          "diff": "3",
+          "nivel": "AVISO"
+        }
+      ],
+      "status": "OK(aviso:1)"
+    },
+    {
+      "cenario": "Últimos 30 dias",
+      "d_ini": "2026-05-15",
+      "d_fim": "2026-06-13",
+      "em_consol": true,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 3795.09,
+            "invest": 292.16,
+            "roas": 12.99,
+            "acos": 7.7,
+            "v_ads": 9,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 3.795,09",
+            "invest": "R$ 292,16",
+            "roas": "12,99x",
+            "acos": "7.7%",
+            "vendas_pa": "16"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "9",
+              "ml": "16",
+              "diff": "7",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 4970.5,
+            "invest": 510.03,
+            "roas": 9.75,
+            "acos": 10.26,
+            "v_ads": 24,
+            "v_sem": 2
+          },
+          "ml_raw": {
+            "receita": "R$ 4.970,5",
+            "invest": "R$ 510,03",
+            "roas": "9,75x",
+            "acos": "10.3%",
+            "vendas_pa": "36"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "24",
+              "ml": "36",
+              "diff": "12",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 500.5,
+            "invest": 91.37,
+            "roas": 5.48,
+            "acos": 18.26,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 500,5",
+            "invest": "R$ 91,37",
+            "roas": "5,48x",
+            "acos": "18.3%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 332.0,
+            "invest": 237.06,
+            "roas": 1.4,
+            "acos": 71.4,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 332",
+            "invest": "R$ 237,06",
+            "roas": "1,4x",
+            "acos": "71.4%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 141.35,
+            "invest": 130.22,
+            "roas": 1.09,
+            "acos": 92.13,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 141,35",
+            "invest": "R$ 130,22",
+            "roas": "1,09x",
+            "acos": "92.1%",
+            "vendas_pa": "3"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 2264.66,
+            "invest": 357.25,
+            "roas": 6.34,
+            "acos": 15.77,
+            "v_ads": 6,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 2.264,66",
+            "invest": "R$ 357,25",
+            "roas": "6,34x",
+            "acos": "15.8%",
+            "vendas_pa": "6"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 2870.76,
+            "invest": 316.87,
+            "roas": 9.06,
+            "acos": 11.04,
+            "v_ads": 5,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 2.870,76",
+            "invest": "R$ 316,87",
+            "roas": "9,06x",
+            "acos": "11.0%",
+            "vendas_pa": "6"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 244.95,
+            "invest": 41.73,
+            "roas": 5.87,
+            "acos": 17.04,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 244,95",
+            "invest": "R$ 41,73",
+            "roas": "5,87x",
+            "acos": "17.0%",
+            "vendas_pa": "5"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "2",
+              "ml": "5",
+              "diff": "3",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 142.2,
+            "invest": 2.21,
+            "roas": 64.34,
+            "acos": 1.55,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 142,2",
+            "invest": "R$ 2,21",
+            "roas": "64,34x",
+            "acos": "1.6%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "9",
+          "ml": "16",
+          "diff": "7",
+          "nivel": "AVISO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "24",
+          "ml": "36",
+          "diff": "12",
+          "nivel": "AVISO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "2",
+          "ml": "5",
+          "diff": "3",
+          "nivel": "AVISO"
+        }
+      ],
+      "status": "OK(aviso:3)"
+    },
+    {
+      "cenario": "13/06/2026",
+      "d_ini": "2026-06-13",
+      "d_fim": "2026-06-13",
+      "em_consol": true,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 8.7,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 8,7",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 270.3,
+            "invest": 19.88,
+            "roas": 13.6,
+            "acos": 7.35,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 270,3",
+            "invest": "R$ 19,88",
+            "roas": "13,6x",
+            "acos": "7.3%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.35,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,35",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 13.75,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 13,75",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.57,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,57",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 15.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 15",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 6.22,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 6,22",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.68,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,68",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "Últimos 15 dias",
+      "d_ini": "2026-05-30",
+      "d_fim": "2026-06-13",
+      "em_consol": true,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 1428.69,
+            "invest": 121.31,
+            "roas": 11.78,
+            "acos": 8.49,
+            "v_ads": 5,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 1.428,69",
+            "invest": "R$ 121,31",
+            "roas": "11,78x",
+            "acos": "8.5%",
+            "vendas_pa": "6"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 2280.73,
+            "invest": 248.67,
+            "roas": 9.17,
+            "acos": 10.9,
+            "v_ads": 10,
+            "v_sem": 2
+          },
+          "ml_raw": {
+            "receita": "R$ 2.280,73",
+            "invest": "R$ 248,67",
+            "roas": "9,17x",
+            "acos": "10.9%",
+            "vendas_pa": "16"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "10",
+              "ml": "16",
+              "diff": "6",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 62.96,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 62,96",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 332.0,
+            "invest": 199.36,
+            "roas": 1.67,
+            "acos": 60.05,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 332",
+            "invest": "R$ 199,36",
+            "roas": "1,67x",
+            "acos": "60.0%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 93.5,
+            "invest": 51.83,
+            "roas": 1.8,
+            "acos": 55.43,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 93,5",
+            "invest": "R$ 51,83",
+            "roas": "1,8x",
+            "acos": "55.4%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 797.42,
+            "invest": 241.0,
+            "roas": 3.31,
+            "acos": 30.22,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 797,42",
+            "invest": "R$ 241",
+            "roas": "3,31x",
+            "acos": "30.2%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 478.46,
+            "invest": 251.14,
+            "roas": 1.91,
+            "acos": 52.49,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 478,46",
+            "invest": "R$ 251,14",
+            "roas": "1,91x",
+            "acos": "52.5%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 49.75,
+            "invest": 38.15,
+            "roas": 1.3,
+            "acos": 76.68,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 49,75",
+            "invest": "R$ 38,15",
+            "roas": "1,3x",
+            "acos": "76.7%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "10",
+          "ml": "16",
+          "diff": "6",
+          "nivel": "AVISO"
+        }
+      ],
+      "status": "OK(aviso:1)"
+    },
+    {
+      "cenario": "Últimos 45 dias",
+      "d_ini": "2026-04-30",
+      "d_fim": "2026-06-13",
+      "em_consol": true,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 5993.23,
+            "invest": 518.81,
+            "roas": 11.55,
+            "acos": 8.66,
+            "v_ads": 13,
+            "v_sem": 2
+          },
+          "ml_raw": {
+            "receita": "R$ 5.993,23",
+            "invest": "R$ 518,81",
+            "roas": "11,55x",
+            "acos": "8.7%",
+            "vendas_pa": "26"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "13",
+              "ml": "26",
+              "diff": "13",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 7483.68,
+            "invest": 680.82,
+            "roas": 10.99,
+            "acos": 9.1,
+            "v_ads": 34,
+            "v_sem": 3
+          },
+          "ml_raw": {
+            "receita": "R$ 7.483,68",
+            "invest": "R$ 680,82",
+            "roas": "10,99x",
+            "acos": "9.1%",
+            "vendas_pa": "54"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "34",
+              "ml": "54",
+              "diff": "20",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 500.5,
+            "invest": 91.37,
+            "roas": 5.48,
+            "acos": 18.26,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 500,5",
+            "invest": "R$ 91,37",
+            "roas": "5,48x",
+            "acos": "18.3%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 332.0,
+            "invest": 237.06,
+            "roas": 1.4,
+            "acos": 71.4,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 332",
+            "invest": "R$ 237,06",
+            "roas": "1,4x",
+            "acos": "71.4%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 412.19,
+            "invest": 146.63,
+            "roas": 2.81,
+            "acos": 35.57,
+            "v_ads": 6,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 412,19",
+            "invest": "R$ 146,63",
+            "roas": "2,81x",
+            "acos": "35.6%",
+            "vendas_pa": "9"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "6",
+              "ml": "9",
+              "diff": "3",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 2264.66,
+            "invest": 360.62,
+            "roas": 6.28,
+            "acos": 15.92,
+            "v_ads": 6,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 2.264,66",
+            "invest": "R$ 360,62",
+            "roas": "6,28x",
+            "acos": "15.9%",
+            "vendas_pa": "6"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 4306.14,
+            "invest": 372.1,
+            "roas": 11.57,
+            "acos": 8.64,
+            "v_ads": 7,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 4.306,14",
+            "invest": "R$ 372,1",
+            "roas": "11,57x",
+            "acos": "8.6%",
+            "vendas_pa": "9"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "7",
+              "ml": "9",
+              "diff": "2",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 244.95,
+            "invest": 41.98,
+            "roas": 5.83,
+            "acos": 17.14,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 244,95",
+            "invest": "R$ 41,98",
+            "roas": "5,83x",
+            "acos": "17.1%",
+            "vendas_pa": "5"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "2",
+              "ml": "5",
+              "diff": "3",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 142.2,
+            "invest": 3.81,
+            "roas": 37.32,
+            "acos": 2.68,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 142,2",
+            "invest": "R$ 3,81",
+            "roas": "37,32x",
+            "acos": "2.7%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "13",
+          "ml": "26",
+          "diff": "13",
+          "nivel": "AVISO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "34",
+          "ml": "54",
+          "diff": "20",
+          "nivel": "AVISO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "6",
+          "ml": "9",
+          "diff": "3",
+          "nivel": "AVISO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "7",
+          "ml": "9",
+          "diff": "2",
+          "nivel": "AVISO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "2",
+          "ml": "5",
+          "diff": "3",
+          "nivel": "AVISO"
+        }
+      ],
+      "status": "OK(aviso:5)"
+    },
+    {
+      "cenario": "Últimos 60 dias",
+      "d_ini": "2026-04-15",
+      "d_fim": "2026-06-13",
+      "em_consol": true,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 11368.0,
+            "invest": 680.88,
+            "roas": 16.7,
+            "acos": 5.99,
+            "v_ads": 22,
+            "v_sem": 3
+          },
+          "ml_raw": {
+            "receita": "R$ 11.368",
+            "invest": "R$ 680,88",
+            "roas": "16,7x",
+            "acos": "6.0%",
+            "vendas_pa": "49"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "22",
+              "ml": "49",
+              "diff": "27",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 10149.7,
+            "invest": 831.51,
+            "roas": 12.21,
+            "acos": 8.19,
+            "v_ads": 43,
+            "v_sem": 4
+          },
+          "ml_raw": {
+            "receita": "R$ 10.149,7",
+            "invest": "R$ 831,51",
+            "roas": "12,21x",
+            "acos": "8.2%",
+            "vendas_pa": "73"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "43",
+              "ml": "73",
+              "diff": "30",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 500.5,
+            "invest": 91.37,
+            "roas": 5.48,
+            "acos": 18.26,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 500,5",
+            "invest": "R$ 91,37",
+            "roas": "5,48x",
+            "acos": "18.3%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 332.0,
+            "invest": 237.06,
+            "roas": 1.4,
+            "acos": 71.4,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 332",
+            "invest": "R$ 237,06",
+            "roas": "1,4x",
+            "acos": "71.4%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 467.19,
+            "invest": 148.59,
+            "roas": 3.14,
+            "acos": 31.81,
+            "v_ads": 7,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 467,19",
+            "invest": "R$ 148,59",
+            "roas": "3,14x",
+            "acos": "31.8%",
+            "vendas_pa": "10"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "7",
+              "ml": "10",
+              "diff": "3",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 2264.66,
+            "invest": 360.62,
+            "roas": 6.28,
+            "acos": 15.92,
+            "v_ads": 6,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 2.264,66",
+            "invest": "R$ 360,62",
+            "roas": "6,28x",
+            "acos": "15.9%",
+            "vendas_pa": "6"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 4985.29,
+            "invest": 431.49,
+            "roas": 11.55,
+            "acos": 8.66,
+            "v_ads": 7,
+            "v_sem": 1
+          },
+          "ml_raw": {
+            "receita": "R$ 4.985,29",
+            "invest": "R$ 431,49",
+            "roas": "11,55x",
+            "acos": "8.7%",
+            "vendas_pa": "10"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "7",
+              "ml": "10",
+              "diff": "3",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 244.95,
+            "invest": 41.98,
+            "roas": 5.83,
+            "acos": 17.14,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 244,95",
+            "invest": "R$ 41,98",
+            "roas": "5,83x",
+            "acos": "17.1%",
+            "vendas_pa": "5"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "2",
+              "ml": "5",
+              "diff": "3",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 142.2,
+            "invest": 3.81,
+            "roas": 37.32,
+            "acos": 2.68,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 142,2",
+            "invest": "R$ 3,81",
+            "roas": "37,32x",
+            "acos": "2.7%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "22",
+          "ml": "49",
+          "diff": "27",
+          "nivel": "AVISO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "43",
+          "ml": "73",
+          "diff": "30",
+          "nivel": "AVISO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "7",
+          "ml": "10",
+          "diff": "3",
+          "nivel": "AVISO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "7",
+          "ml": "10",
+          "diff": "3",
+          "nivel": "AVISO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "2",
+          "ml": "5",
+          "diff": "3",
+          "nivel": "AVISO"
+        }
+      ],
+      "status": "OK(aviso:5)"
+    },
+    {
+      "cenario": "12/06/2026",
+      "d_ini": "2026-06-12",
+      "d_fim": "2026-06-12",
+      "em_consol": true,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 8.26,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 8,26",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 12.27,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 12,27",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.65,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,65",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 15.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 15",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 10.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 10",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.08,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,08",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "11/06/2026",
+      "d_ini": "2026-06-11",
+      "d_fim": "2026-06-11",
+      "em_consol": true,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 6.23,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 6,23",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 135.15,
+            "invest": 17.02,
+            "roas": 7.94,
+            "acos": 12.59,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 135,15",
+            "invest": "R$ 17,02",
+            "roas": "7,94x",
+            "acos": "12.6%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.56,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,56",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 15.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 15",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 49.75,
+            "invest": 6.14,
+            "roas": 8.1,
+            "acos": 12.34,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 49,75",
+            "invest": "R$ 6,14",
+            "roas": "8,1x",
+            "acos": "12.3%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "10/06/2026",
+      "d_ini": "2026-06-10",
+      "d_fim": "2026-06-10",
+      "em_consol": true,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 239.59,
+            "invest": 4.31,
+            "roas": 55.59,
+            "acos": 1.8,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 239,59",
+            "invest": "R$ 4,31",
+            "roas": "55,59x",
+            "acos": "1.8%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 19.9,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 19,9",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.74,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,74",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 93.5,
+            "invest": 5.26,
+            "roas": 17.78,
+            "acos": 5.63,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 93,5",
+            "invest": "R$ 5,26",
+            "roas": "17,78x",
+            "acos": "5.6%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 15.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 15",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 14.67,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 14,67",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.29,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,29",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "09/06/2026",
+      "d_ini": "2026-06-09",
+      "d_fim": "2026-06-09",
+      "em_consol": true,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 9.26,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 9,26",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 439.4,
+            "invest": 13.26,
+            "roas": 33.14,
+            "acos": 3.02,
+            "v_ads": 1,
+            "v_sem": 1
+          },
+          "ml_raw": {
+            "receita": "R$ 439,4",
+            "invest": "R$ 13,26",
+            "roas": "33,14x",
+            "acos": "3.0%",
+            "vendas_pa": "3"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "1",
+              "ml": "3",
+              "diff": "2",
+              "nivel": "AVISO"
+            }
+          ]
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.37,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,37",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.75,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,75",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 15.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 15",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 18.61,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 18,61",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.06,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,06",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "1",
+          "ml": "3",
+          "diff": "2",
+          "nivel": "AVISO"
+        }
+      ],
+      "status": "OK(aviso:1)"
+    },
+    {
+      "cenario": "08/06/2026",
+      "d_ini": "2026-06-08",
+      "d_fim": "2026-06-08",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 239.59,
+            "invest": 18.96,
+            "roas": 12.64,
+            "acos": 7.91,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 239,59",
+            "invest": "R$ 18,96",
+            "roas": "12,64x",
+            "acos": "7.9%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 135.15,
+            "invest": 16.64,
+            "roas": 8.12,
+            "acos": 12.31,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 135,15",
+            "invest": "R$ 16,64",
+            "roas": "8,12x",
+            "acos": "12.3%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.25,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,25",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 15.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 15",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.8,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,8",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "07/06/2026",
+      "d_ini": "2026-06-07",
+      "d_fim": "2026-06-07",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.75,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,75",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 135.15,
+            "invest": 17.49,
+            "roas": 7.73,
+            "acos": 12.94,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 135,15",
+            "invest": "R$ 17,49",
+            "roas": "7,73x",
+            "acos": "12.9%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 10.19,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 10,19",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.79,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,79",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 10.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 10",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 18.36,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 18,36",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.87,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,87",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "06/06/2026",
+      "d_ini": "2026-06-06",
+      "d_fim": "2026-06-06",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 239.59,
+            "invest": 10.74,
+            "roas": 22.31,
+            "acos": 4.48,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 239,59",
+            "invest": "R$ 10,74",
+            "roas": "22,31x",
+            "acos": "4.5%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 574.55,
+            "invest": 22.87,
+            "roas": 25.12,
+            "acos": 3.98,
+            "v_ads": 2,
+            "v_sem": 1
+          },
+          "ml_raw": {
+            "receita": "R$ 574,55",
+            "invest": "R$ 22,87",
+            "roas": "25,12x",
+            "acos": "4.0%",
+            "vendas_pa": "4"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "2",
+              "ml": "4",
+              "diff": "2",
+              "nivel": "ERRO"
+            }
+          ]
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.2,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,2",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 14.09,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 14,09",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 6.25,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 6,25",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 10.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 10",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 18.49,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 18,49",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.23,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,23",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "2",
+          "ml": "4",
+          "diff": "2",
+          "nivel": "ERRO"
+        }
+      ],
+      "status": "ERRO(1)"
+    },
+    {
+      "cenario": "05/06/2026",
+      "d_ini": "2026-06-05",
+      "d_fim": "2026-06-05",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.54,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,54",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 318.0,
+            "invest": 17.74,
+            "roas": 17.93,
+            "acos": 5.58,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 318",
+            "invest": "R$ 17,74",
+            "roas": "17,93x",
+            "acos": "5.6%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 13.94,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 13,94",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 10.45,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 10,45",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.77,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,77",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 398.71,
+            "invest": 11.0,
+            "roas": 36.25,
+            "acos": 2.76,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 398,71",
+            "invest": "R$ 11",
+            "roas": "36,25x",
+            "acos": "2.8%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.6,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,6",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "04/06/2026",
+      "d_ini": "2026-06-04",
+      "d_fim": "2026-06-04",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.06,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,06",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 27.65,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 27,65",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.44,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,44",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 14.14,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 14,14",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.44,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,44",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 7.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 7",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "03/06/2026",
+      "d_ini": "2026-06-03",
+      "d_fim": "2026-06-03",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.92,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,92",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 141.51,
+            "invest": 7.54,
+            "roas": 18.77,
+            "acos": 5.33,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 141,51",
+            "invest": "R$ 7,54",
+            "roas": "18,77x",
+            "acos": "5.3%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.61,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,61",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 11.28,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 11,28",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 9.05,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 9,05",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.79,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,79",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "02/06/2026",
+      "d_ini": "2026-06-02",
+      "d_fim": "2026-06-02",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 473.28,
+            "invest": 3.26,
+            "roas": 145.18,
+            "acos": 0.69,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 473,28",
+            "invest": "R$ 3,26",
+            "roas": "145,18x",
+            "acos": "0.7%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 9.27,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 9,27",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 6.4,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 6,4",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 332.0,
+            "invest": 7.9,
+            "roas": 42.03,
+            "acos": 2.38,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 332",
+            "invest": "R$ 7,9",
+            "roas": "42,03x",
+            "acos": "2.4%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.76,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,76",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 398.71,
+            "invest": 20.0,
+            "roas": 19.94,
+            "acos": 5.02,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 398,71",
+            "invest": "R$ 20",
+            "roas": "19,94x",
+            "acos": "5.0%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.35,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,35",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "01/06/2026",
+      "d_ini": "2026-06-01",
+      "d_fim": "2026-06-01",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 236.64,
+            "invest": 28.7,
+            "roas": 8.25,
+            "acos": 12.13,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 236,64",
+            "invest": "R$ 28,7",
+            "roas": "8,25x",
+            "acos": "12.1%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 9.18,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 9,18",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 15.29,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 15,29",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 10.97,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 10,97",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.58,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,58",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 478.46,
+            "invest": 20.0,
+            "roas": 23.92,
+            "acos": 4.18,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 478,46",
+            "invest": "R$ 20",
+            "roas": "23,92x",
+            "acos": "4.2%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.79,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,79",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "31/05/2026",
+      "d_ini": "2026-05-31",
+      "d_fim": "2026-05-31",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 5.13,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 5,13",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 21.39,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 21,39",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.97,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,97",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.68,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,68",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.66,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,66",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.06,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,06",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "30/05/2026",
+      "d_ini": "2026-05-30",
+      "d_fim": "2026-05-30",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.49,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,49",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 131.52,
+            "invest": 16.57,
+            "roas": 7.94,
+            "acos": 12.6,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 131,52",
+            "invest": "R$ 16,57",
+            "roas": "7,94x",
+            "acos": "12.6%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 9.65,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 9,65",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.91,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,91",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.49,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,49",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.2,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,2",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "29/05/2026",
+      "d_ini": "2026-05-29",
+      "d_fim": "2026-05-29",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 6.74,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 6,74",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 131.52,
+            "invest": 22.0,
+            "roas": 5.98,
+            "acos": 16.73,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 131,52",
+            "invest": "R$ 22",
+            "roas": "5,98x",
+            "acos": "16.7%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 11.99,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 11,99",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 6.83,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 6,83",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.28,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,28",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 366.81,
+            "invest": 20.0,
+            "roas": 18.34,
+            "acos": 5.45,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 366,81",
+            "invest": "R$ 20",
+            "roas": "18,34x",
+            "acos": "5.5%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.52,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,52",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "28/05/2026",
+      "d_ini": "2026-05-28",
+      "d_fim": "2026-05-28",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 8.69,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 8,69",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 22.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 22",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 250.25,
+            "invest": 12.35,
+            "roas": 20.26,
+            "acos": 4.94,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 250,25",
+            "invest": "R$ 12,35",
+            "roas": "20,26x",
+            "acos": "4.9%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 14.16,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 14,16",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.26,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,26",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 20.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 20",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "27/05/2026",
+      "d_ini": "2026-05-27",
+      "d_fim": "2026-05-27",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 946.56,
+            "invest": 22.79,
+            "roas": 41.53,
+            "acos": 2.41,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 946,56",
+            "invest": "R$ 22,79",
+            "roas": "41,53x",
+            "acos": "2.4%",
+            "vendas_pa": "4"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "1",
+              "ml": "4",
+              "diff": "3",
+              "nivel": "ERRO"
+            }
+          ]
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 22.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 22",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.3,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,3",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 5.19,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 5,19",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.86,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,86",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 366.81,
+            "invest": 15.74,
+            "roas": 23.3,
+            "acos": 4.29,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 366,81",
+            "invest": "R$ 15,74",
+            "roas": "23,3x",
+            "acos": "4.3%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.59,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,59",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "1",
+          "ml": "4",
+          "diff": "3",
+          "nivel": "ERRO"
+        }
+      ],
+      "status": "ERRO(1)"
+    },
+    {
+      "cenario": "26/05/2026",
+      "d_ini": "2026-05-26",
+      "d_fim": "2026-05-26",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 23.79,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 23,79",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 263.04,
+            "invest": 22.0,
+            "roas": 11.96,
+            "acos": 8.36,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 263,04",
+            "invest": "R$ 22",
+            "roas": "11,96x",
+            "acos": "8.4%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 250.25,
+            "invest": 2.53,
+            "roas": 98.91,
+            "acos": 1.01,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 250,25",
+            "invest": "R$ 2,53",
+            "roas": "98,91x",
+            "acos": "1.0%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.16,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,16",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 47.85,
+            "invest": 17.89,
+            "roas": 2.67,
+            "acos": 37.39,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 47,85",
+            "invest": "R$ 17,89",
+            "roas": "2,67x",
+            "acos": "37.4%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 366.81,
+            "invest": 2.11,
+            "roas": 173.84,
+            "acos": 0.58,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 366,81",
+            "invest": "R$ 2,11",
+            "roas": "173,84x",
+            "acos": "0.6%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 1435.38,
+            "invest": 2.42,
+            "roas": 593.13,
+            "acos": 0.17,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 1.435,38",
+            "invest": "R$ 2,42",
+            "roas": "593,13x",
+            "acos": "0.2%",
+            "vendas_pa": "3"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "25/05/2026",
+      "d_ini": "2026-05-25",
+      "d_fim": "2026-05-25",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 709.92,
+            "invest": 15.17,
+            "roas": 46.8,
+            "acos": 2.14,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 709,92",
+            "invest": "R$ 15,17",
+            "roas": "46,8x",
+            "acos": "2.1%",
+            "vendas_pa": "3"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "1",
+              "ml": "3",
+              "diff": "2",
+              "nivel": "ERRO"
+            }
+          ]
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 581.04,
+            "invest": 22.0,
+            "roas": 26.41,
+            "acos": 3.79,
+            "v_ads": 3,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 581,04",
+            "invest": "R$ 22",
+            "roas": "26,41x",
+            "acos": "3.8%",
+            "vendas_pa": "4"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.24,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,24",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.35,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,35",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 16.13,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 16,13",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.88,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,88",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.17,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,17",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "1",
+          "ml": "3",
+          "diff": "2",
+          "nivel": "ERRO"
+        }
+      ],
+      "status": "ERRO(1)"
+    },
+    {
+      "cenario": "24/05/2026",
+      "d_ini": "2026-05-24",
+      "d_fim": "2026-05-24",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 6.49,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 6,49",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 29.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 29",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.22,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,22",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 8.71,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 8,71",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.53,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,53",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.09,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,09",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "23/05/2026",
+      "d_ini": "2026-05-23",
+      "d_fim": "2026-05-23",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 19.49,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 19,49",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 7.23,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 7,23",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 5.71,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 5,71",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.05,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,05",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.49,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,49",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "22/05/2026",
+      "d_ini": "2026-05-22",
+      "d_fim": "2026-05-22",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 473.28,
+            "invest": 17.18,
+            "roas": 27.55,
+            "acos": 3.63,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 473,28",
+            "invest": "R$ 17,18",
+            "roas": "27,55x",
+            "acos": "3.6%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 7.68,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 7,68",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 10.67,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 10,67",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 12.55,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 12,55",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.22,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,22",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.42,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,42",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "21/05/2026",
+      "d_ini": "2026-05-21",
+      "d_fim": "2026-05-21",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 16.91,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 16,91",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 526.08,
+            "invest": 15.0,
+            "roas": 35.07,
+            "acos": 2.85,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 526,08",
+            "invest": "R$ 15",
+            "roas": "35,07x",
+            "acos": "2.9%",
+            "vendas_pa": "4"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "2",
+              "ml": "4",
+              "diff": "2",
+              "nivel": "ERRO"
+            }
+          ]
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.12,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,12",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 5.03,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 5,03",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 9.83,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 9,83",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.61,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,61",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.15,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,15",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "2",
+          "ml": "4",
+          "diff": "2",
+          "nivel": "ERRO"
+        }
+      ],
+      "status": "ERRO(1)"
+    },
+    {
+      "cenario": "20/05/2026",
+      "d_ini": "2026-05-20",
+      "d_fim": "2026-05-20",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 236.64,
+            "invest": 6.27,
+            "roas": 37.74,
+            "acos": 2.65,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 236,64",
+            "invest": "R$ 6,27",
+            "roas": "37,74x",
+            "acos": "2.6%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 135.93,
+            "invest": 15.0,
+            "roas": 9.06,
+            "acos": 11.04,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 135,93",
+            "invest": "R$ 15",
+            "roas": "9,06x",
+            "acos": "11.0%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.72,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,72",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 366.81,
+            "invest": 9.47,
+            "roas": 38.73,
+            "acos": 2.58,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 366,81",
+            "invest": "R$ 9,47",
+            "roas": "38,73x",
+            "acos": "2.6%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.2,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,2",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 142.2,
+            "invest": 0.0,
+            "roas": null,
+            "acos": 0.0,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 142,2",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "19/05/2026",
+      "d_ini": "2026-05-19",
+      "d_fim": "2026-05-19",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 11.94,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 11,94",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 15.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 15",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.24,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,24",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 8.27,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 8,27",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 3.62,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 3,62",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.06,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,06",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "18/05/2026",
+      "d_ini": "2026-05-18",
+      "d_fim": "2026-05-18",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 10.03,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 10,03",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 789.12,
+            "invest": 17.0,
+            "roas": 46.42,
+            "acos": 2.15,
+            "v_ads": 4,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 789,12",
+            "invest": "R$ 17",
+            "roas": "46,42x",
+            "acos": "2.1%",
+            "vendas_pa": "6"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "4",
+              "ml": "6",
+              "diff": "2",
+              "nivel": "ERRO"
+            }
+          ]
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.83,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,83",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 4.36,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 4,36",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 5.33,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 5,33",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 195.2,
+            "invest": 0.06,
+            "roas": 3253.33,
+            "acos": 0.03,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 195,2",
+            "invest": "R$ 0,06",
+            "roas": "3.253,33x",
+            "acos": "0.0%",
+            "vendas_pa": "4"
+          },
+          "divergencias": [
+            {
+              "campo": "Vendas_PA",
+              "dash": "1",
+              "ml": "4",
+              "diff": "3",
+              "nivel": "ERRO"
+            }
+          ]
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [
+        {
+          "campo": "Vendas_PA",
+          "dash": "4",
+          "ml": "6",
+          "diff": "2",
+          "nivel": "ERRO"
+        },
+        {
+          "campo": "Vendas_PA",
+          "dash": "1",
+          "ml": "4",
+          "diff": "3",
+          "nivel": "ERRO"
+        }
+      ],
+      "status": "ERRO(2)"
+    },
+    {
+      "cenario": "17/05/2026",
+      "d_ini": "2026-05-17",
+      "d_fim": "2026-05-17",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.51,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,51",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 0.0,
+            "invest": 16.14,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 16,14",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.38,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,38",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 9.45,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 9,45",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.06,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,06",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "16/05/2026",
+      "d_ini": "2026-05-16",
+      "d_fim": "2026-05-16",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.85,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,85",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 131.52,
+            "invest": 12.31,
+            "roas": 10.68,
+            "acos": 9.36,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 131,52",
+            "invest": "R$ 12,31",
+            "roas": "10,68x",
+            "acos": "9.4%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.45,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,45",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 1.34,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 1,34",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.11,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0,11",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    },
+    {
+      "cenario": "15/05/2026",
+      "d_ini": "2026-05-15",
+      "d_fim": "2026-05-15",
+      "em_consol": false,
+      "campanhas": [
+        {
+          "campanha": "Central de Laço 220V",
+          "ml_nome": "Central de Laço 220V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Extensor POE 10/100",
+          "ml_nome": "Extensor POE 10/100",
+          "dash": {
+            "receita": 131.52,
+            "invest": 17.0,
+            "roas": 7.74,
+            "acos": 12.93,
+            "v_ads": 1,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 131,52",
+            "invest": "R$ 17",
+            "roas": "7,74x",
+            "acos": "12.9%",
+            "vendas_pa": "1"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Central 12V 230526",
+          "ml_nome": "Central 12V 230526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura p/ vidro - 190526",
+          "ml_nome": "Fechadura p/ vidro - 190526",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sirene Estrobo",
+          "ml_nome": "Sirene Estrobo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 2.35,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 2,35",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fechadura Sobrepor",
+          "ml_nome": "Fechadura Sobrepor",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Sonda Hidroestatica 4m",
+          "ml_nome": "Sonda Hidroestatica 4m",
+          "dash": {
+            "receita": 956.92,
+            "invest": 1.62,
+            "roas": 590.69,
+            "acos": 0.17,
+            "v_ads": 2,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 956,92",
+            "invest": "R$ 1,62",
+            "roas": "590,69x",
+            "acos": "0.2%",
+            "vendas_pa": "2"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Protetor de Cabo",
+          "ml_nome": "Protetor de Cabo",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        },
+        {
+          "campanha": "Fonte MDR 12V",
+          "ml_nome": "Fonte MDR 12V",
+          "dash": {
+            "receita": 0.0,
+            "invest": 0.0,
+            "roas": null,
+            "acos": null,
+            "v_ads": 0,
+            "v_sem": 0
+          },
+          "ml_raw": {
+            "receita": "R$ 0",
+            "invest": "R$ 0",
+            "roas": "-",
+            "acos": "-",
+            "vendas_pa": "0"
+          },
+          "divergencias": []
+        }
+      ],
+      "divergencias": [],
+      "status": "OK"
+    }
+  ]
+}
