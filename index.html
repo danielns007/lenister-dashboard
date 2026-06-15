@@ -1223,6 +1223,9 @@
       const campanhasArray = Object.values(campanhasAgg);
       const totalInvestimento = campanhasArray.reduce((sum, c) => sum + c.investimento, 0);
       const totalReceita = campanhasArray.reduce((sum, c) => sum + c.receita, 0);
+      const totalVendas = campanhasArray.reduce((sum, c) => sum + c.vendasProdAds, 0);
+      const totalImpressions = campanhasArray.reduce((sum, c) => sum + c.impressoes, 0);
+      const totalCliques = campanhasArray.reduce((sum, c) => sum + c.cliques, 0);
       const roasMediaAds = totalInvestimento > 0 ? totalReceita / totalInvestimento : 0;
 
       // Construir tabela com 14 colunas - uma por campanha
@@ -1320,6 +1323,9 @@
           ${renderKPICard('Investimento Total', totalInvestimento, 0)}
           ${renderKPICard('Receita Total', totalReceita, 0)}
           ${renderKPICard('ROAS Medio', roasMediaAds, 0, false)}
+          ${renderKPICard('Vendas (Prod Ads)', totalVendas, 0, false, 'Numero de vendas geradas por Product Ads no periodo')}
+          ${renderKPICard('Impressoes', totalImpressions, 0, false, 'Total de vezes que seus anuncios foram exibidos')}
+          ${renderKPICard('Cliques', totalCliques, 0, false, 'Total de cliques nos seus anuncios')}
         </div>
         <div class="table-container">
           ${tableHtml}
