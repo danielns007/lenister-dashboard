@@ -575,6 +575,20 @@
       }
     }
 
+    .version-badge {
+      position: fixed;
+      bottom: 8px;
+      right: 12px;
+      font-size: 0.6rem;
+      color: var(--text-secondary);
+      opacity: 0.45;
+      z-index: 9999;
+      pointer-events: none;
+      font-family: monospace;
+      letter-spacing: 0.03em;
+      user-select: none;
+    }
+
   </style>
 </head>
 <body>
@@ -750,6 +764,8 @@
 
   <!-- SCRIPTS -->
   <script>
+    const DASHBOARD_VERSION = 'v1.8 · 14/jun';
+
     // Force clear cache on page load
     window.location.hash = Math.random();
 
@@ -1696,6 +1712,13 @@
       console.log('DOM Loaded!');
       attachEventListeners();
       fetchAllData();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const badge = document.createElement('div');
+      badge.className = 'version-badge';
+      badge.textContent = 'LENISTER ' + DASHBOARD_VERSION;
+      document.body.appendChild(badge);
     });
 
   </script>
