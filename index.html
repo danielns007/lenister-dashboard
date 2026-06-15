@@ -969,6 +969,19 @@
     }
 
     // ──────────────────────────────────────────────────────
+    // RENDER KPI CARD ADS (valor já formatado, com tooltip)
+    // ──────────────────────────────────────────────────────
+    function renderKPICardAds(title, value, tooltip = '') {
+      const tooltipAttr = tooltip ? `title="${tooltip}"` : '';
+      return `
+        <div class="kpi-card" style="cursor:${tooltip ? 'help' : 'default'}">
+          <h4 ${tooltipAttr}>${title}</h4>
+          <div class="value">${value}</div>
+        </div>
+      `;
+    }
+
+    // ──────────────────────────────────────────────────────
     // RENDER KPI CARD
     // ──────────────────────────────────────────────────────
     function renderKPICard(title, value, change, isCurrency = true, tooltip = '', pctQtd = 0, pctValor = 0) {
@@ -1239,11 +1252,27 @@
       // Calcular KPIs totais
       const campanhasArray = Object.values(campanhasAgg);
       const totalInvestimento = campanhasArray.reduce((sum, c) => sum + c.investimento, 0);
-      const totalReceita = campanhasArray.reduce((sum, c) => sum + c.receita, 0);
-      const totalVendas = campanhasArray.reduce((sum, c) => sum + c.vendasProdAds, 0);
+      const totalReceita     = campanhasArray.reduce((sum, c) => sum + c.receita, 0);
+      const totalReceitaOrg  = campanhasArray.reduce((sum, c) => sum + c.receitaOrg, 0);
+      const totalVendas      = campanhasArray.reduce((sum, c) => sum + c.vendasProdAds, 0);
       const totalImpressions = campanhasArray.reduce((sum, c) => sum + c.impressoes, 0);
-      const totalCliques = campanhasArray.reduce((sum, c) => sum + c.cliques, 0);
-      const roasMediaAds = totalInvestimento > 0 ? totalReceita / totalInvestimento : 0;
+      const totalCliques     = campanhasArray.reduce((sum, c) => sum + c.cliques, 0);
+
+      // ROAS real = Receita ADS / Investimento (ratio total, não média de médias)
+      const roasReal = totalInvestimento > 0 && totalReceita > 0 ? totalReceita / totalInvestimento : 0;
+
+      // ROAS Médio = média simples dos ROAS reais por campanha (apenas campanhas com investimento)
+      const campanhasComInvest = campanhasArray.filter(c => c.investimento > 0 && c.receita > 0);
+      const roasMedio = campanhasComInvest.length > 0
+        ? campanhasComInvest.reduce((sum, c) => sum + (c.receita / c.investimento), 0) / campanhasComInvest.length
+        : 0;
+
+      // ACOS = Investimento / Receita ADS × 100
+      const acos = totalReceita > 0 ? (totalInvestimento / totalReceita) * 100 : 0;
+
+      // TACOS = Investimento / (Receita ADS + Receita Orgânica) × 100
+      const receitaTotal = totalReceita + totalReceitaOrg;
+      const tacos = receitaTotal > 0 ? (totalInvestimento / receitaTotal) * 100 : 0;
 
       // Detectar se o período inclui dados dos últimos 7 dias (attribution window aberto)
       const hoje7 = new Date(); hoje7.setHours(0,0,0,0);
@@ -1358,12 +1387,14 @@
           ${datasPeriodo}
         </div>
         <div class="kpi-grid">
-          ${renderKPICard('Investimento Total', totalInvestimento, 0)}
-          ${renderKPICard('Receita Total', totalReceita, 0)}
-          ${renderKPICard('ROAS Medio', roasMediaAds, 0, false)}
-          ${renderKPICard('Vendas (Prod Ads)', totalVendas, 0, false, 'Numero de vendas geradas por Product Ads no periodo')}
-          ${renderKPICard('Impressoes', totalImpressions, 0, false, 'Total de vezes que seus anuncios foram exibidos')}
-          ${renderKPICard('Cliques', totalCliques, 0, false, 'Total de cliques nos seus anuncios')}
+          ${renderKPICardAds('Receita', formatCurrency(totalReceita), 'Receita gerada pelas campanhas ADS no periodo (direct_amount + indirect_amount)')}
+          ${renderKPICardAds('Investimento', formatCurrency(totalInvestimento), 'Total investido em Product Ads no periodo')}
+          ${renderKPICardAds('ROAS Medio', roasMedio > 0 ? roasMedio.toFixed(2) + 'x' : '-', 'Media simples dos ROAS reais de cada campanha ativa (apenas campanhas com investimento e receita)')}
+          ${renderKPICardAds('ROAS', roasReal > 0 ? roasReal.toFixed(2) + 'x' : '-', 'Receita ADS total / Investimento total — retorno consolidado de todas as campanhas')}
+          ${renderKPICardAds('ACOS', acos > 0 ? acos.toFixed(2) + '%' : '-', 'Investimento / Receita ADS × 100 — quanto % da receita ADS foi gasto em publicidade')}
+          ${renderKPICardAds('TACOS', tacos > 0 ? tacos.toFixed(2) + '%' : '-', 'Investimento / (Receita ADS + Receita Organica) × 100 — % do investimento sobre receita total')}
+          ${renderKPICardAds('Cliques', formatNumber(totalCliques), 'Total de cliques nos anuncios no periodo')}
+          ${renderKPICardAds('Impressoes', formatNumber(totalImpressions), 'Total de vezes que os anuncios foram exibidos no periodo')}
         </div>
         ${emConsolidacao ? `
         <div style="
