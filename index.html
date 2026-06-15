@@ -1202,10 +1202,10 @@
             vendasSemProdAds: 0,
             investimento: 0,
             receita: 0,
+            receitaOrg: 0,
             cliques: 0,
             impressoes: 0,
             roasObj: parseLocalNumber(row['ROAS Objetivo']),
-            tacos: parseLocalNumber(row['TACOS']) || 0,
             status: row['Status'] || 'N/A',
             orcamentoDiario: 0
           };
@@ -1216,6 +1216,7 @@
         campanhasAgg[nome].receita += parseLocalNumber(row['Receita ADS (R$)']);
         campanhasAgg[nome].cliques += parseLocalNumber(row['Cliques']);
         campanhasAgg[nome].impressoes += parseLocalNumber(row['Impressões']);
+        campanhasAgg[nome].receitaOrg += parseLocalNumber(row['Receita Orgânica (R$)']);
         campanhasAgg[nome].orcamentoDiario += parseLocalNumber(row['Orçamento Diário (R$)']);
       });
 
@@ -1254,17 +1255,24 @@
       `;
 
       campanhasArray.forEach(c => {
-        const roasReal = c.investimento > 0 ? c.receita / c.investimento : 0;
-        const acos = c.receita > 0 ? (c.investimento / c.receita) * 100 : 0;
-        const receitaOrganica = c.vendasProdAds > 0 ? (c.vendasSemProdAds / c.vendasProdAds) * c.receita : 0;
-        const alerta = c.roasObj > 0 && roasReal < (c.roasObj * 0.5) && c.investimento > 0 ? '🔴' : '🟢';
+        const roasReal = (c.investimento > 0 && c.receita > 0) ? c.receita / c.investimento : null;
+        const acos = c.receita > 0 ? (c.investimento / c.receita) * 100 : null;
+        // Receita Orgânica: prefere coluna do sheet; se vazia, estima por (V_sem/V_ads) × Receita
+        const recOrg = c.receitaOrg > 0 ? c.receitaOrg :
+            (c.vendasProdAds > 0 && c.vendasSemProdAds > 0 ? (c.vendasSemProdAds / c.vendasProdAds) * c.receita : 0);
+        const receitaOrganica = recOrg;
+        const receitaTotal = c.receita + recOrg;
+        const tacos = (c.investimento > 0 && receitaTotal > 0) ? (c.investimento / receitaTotal) * 100 : null;
+        const alerta = c.roasObj > 0 && (roasReal === null || roasReal < (c.roasObj * 0.5)) && c.investimento > 0 ? '🔴' : '🟢';
 
         // Formatação condicional para ROAS Real
         let roasRealClass = '';
-        if (roasReal > c.roasObj) {
-          roasRealClass = 'roas-positive';
-        } else if (roasReal < c.roasObj) {
-          roasRealClass = 'roas-negative';
+        if (roasReal !== null) {
+          if (roasReal > c.roasObj) {
+            roasRealClass = 'roas-positive';
+          } else if (roasReal < c.roasObj) {
+            roasRealClass = 'roas-negative';
+          }
         }
 
         tableHtml += `
@@ -1279,9 +1287,9 @@
             <td>${formatNumber(c.cliques)}</td>
             <td>${formatNumber(c.impressoes)}</td>
             <td>${c.roasObj.toFixed(2)}x</td>
-            <td class="${roasRealClass}">${roasReal.toFixed(2)}x</td>
-            <td>${formatPercent(acos)}</td>
-            <td>${formatPercent(c.tacos)}</td>
+            <td class="${roasRealClass}">${roasReal !== null ? roasReal.toFixed(2) + 'x' : '-'}</td>
+            <td>${acos !== null ? formatPercent(acos) : '-'}</td>
+            <td>${tacos !== null ? formatPercent(tacos) : '-'}</td>
             <td>${c.status}</td>
             <td>${formatCurrency(c.orcamentoDiario)}</td>
           </tr>
