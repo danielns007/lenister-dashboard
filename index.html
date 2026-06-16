@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ABA-PRODUTOS-COMPLETA-v2.3.1-2026-06-16 -->
+<!-- FIX-COLUNAS-ADS-v2.3.2-2026-06-16 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="version" content="2.2.9-2026-06-16-aba-produtos-completa">
+  <meta name="version" content="2.3.2-2026-06-16-fix-colunas-ads">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.3.1 · 16/jun';
+    const DASHBOARD_VERSION = 'v2.3.2 · 16/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1413,10 +1413,10 @@
             <tr>
               <th style="min-width:160px">Campanha</th>
               <th class="tooltip-header" data-tooltip="Data de criação da campanha no ML Ads (field date_created da API)">Data<br>Criação</th>
-              <th class="tooltip-header" style="max-width:55px" data-tooltip="Vendas diretas: número de transações em que alguém clicou no anúncio e comprou exatamente esse produto (direct_items_quantity da API).">Vnd.<br>Dir.</th>
-              <th class="tooltip-header" style="max-width:55px" data-tooltip="Vendas indiretas: número de transações em que alguém clicou no anúncio e comprou outro produto seu (indirect_items_quantity da API).">Vnd.<br>Ind.</th>
-              <th class="tooltip-header" style="max-width:55px" data-tooltip="Unidades vendidas diretamente via ADS: soma das quantidades de itens nos pedidos diretos (direct_units_quantity da API). Equivale ao número que o ML Ads exibe como 'Vendas Diretas'.">Unid.<br>Dir.</th>
-              <th class="tooltip-header" style="max-width:55px" data-tooltip="Unidades vendidas indiretamente via ADS: soma das quantidades de itens nos pedidos indiretos (indirect_units_quantity da API).">Unid.<br>Ind.</th>
+              <th class="tooltip-header" style="max-width:55px" data-tooltip="Unidades diretas: total de itens físicos vendidos em que o comprador clicou diretamente no anúncio (direct_items_quantity da API). É o número que o ML Ads exibe como 'Vendas Diretas'.">Unid.<br>Dir.</th>
+              <th class="tooltip-header" style="max-width:55px" data-tooltip="Unidades indiretas: itens físicos vendidos em sessão ADS mas por outro produto seu (indirect_items_quantity da API).">Unid.<br>Ind.</th>
+              <th class="tooltip-header" style="max-width:55px" data-tooltip="Pedidos diretos: número de transações (ordens de compra) com atribuição direta ao anúncio (direct_units_quantity da API).">Ped.<br>Dir.</th>
+              <th class="tooltip-header" style="max-width:55px" data-tooltip="Pedidos indiretos: número de transações com atribuição indireta ao anúncio (indirect_units_quantity da API).">Ped.<br>Ind.</th>
               <th class="tooltip-header" data-tooltip="Receita das vendas indiretas ADS (indirect_amount): pessoa clicou no anúncio e comprou OUTRO produto seu. NÃO é receita orgânica real — é parte do total ADS. Usado como proxy no cálculo de TACOS por campanha.">Receita<br>Indireta ADS</th>
               <th class="tooltip-header" data-tooltip="Valor total em reais gerado pelas vendas de Product Ads">Receita<br>ADS</th>
               <th class="tooltip-header" data-tooltip="Valor total gasto em publicidade (ADS) no período selecionado">Investimento</th>
