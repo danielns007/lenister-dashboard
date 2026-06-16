@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ADS-FATURAMENTO-KPI-v2.1.5-2026-06-15 -->
+<!-- ADS-LAYOUT-COLUNAS-v2.1.6-2026-06-15 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="version" content="2.1.5-2026-06-15-faturamento-kpi">
+  <meta name="version" content="2.1.6-2026-06-15-layout-colunas">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.1.5 · 15/jun';
+    const DASHBOARD_VERSION = 'v2.1.6 · 15/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1305,10 +1305,10 @@
         <table style="width: 100%;">
           <thead>
             <tr>
-              <th style="max-width:130px">Campanha</th>
+              <th style="min-width:160px">Campanha</th>
               <th class="tooltip-header" data-tooltip="Data de criação da campanha no ML Ads (field date_created da API)">Data<br>Criação</th>
-              <th class="tooltip-header" data-tooltip="Total de vendas atribuídas ao anúncio: Diretas (clicou e comprou esse produto) + Indiretas (clicou e comprou outro produto seu). Mesmo número exibido pelo ML Ads.">Vendas<br>(ADS Total)</th>
-              <th class="tooltip-header" data-tooltip="Vendas indiretas: pessoa clicou no anúncio deste produto mas comprou outro produto seu. Subconjunto do total ADS — NÃO são vendas orgânicas.">Vendas<br>(Indiretas)</th>
+              <th class="tooltip-header" style="max-width:60px" data-tooltip="Total de vendas atribuídas ao anúncio: Diretas (clicou e comprou esse produto) + Indiretas (clicou e comprou outro produto seu). Mesmo número exibido pelo ML Ads.">Vnd.<br>ADS</th>
+              <th class="tooltip-header" style="max-width:60px" data-tooltip="Vendas indiretas: pessoa clicou no anúncio deste produto mas comprou outro produto seu. Subconjunto do total ADS — NÃO são vendas orgânicas.">Vnd.<br>Indir.</th>
               <th class="tooltip-header" data-tooltip="Receita das vendas indiretas ADS (indirect_amount): pessoa clicou no anúncio e comprou OUTRO produto seu. NÃO é receita orgânica real — é parte do total ADS. Usado como proxy no cálculo de TACOS por campanha.">Receita<br>Indireta ADS</th>
               <th class="tooltip-header" data-tooltip="Valor total em reais gerado pelas vendas de Product Ads">Receita<br>ADS</th>
               <th class="tooltip-header" data-tooltip="Valor total gasto em publicidade (ADS) no período selecionado">Investimento</th>
