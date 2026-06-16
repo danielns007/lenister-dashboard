@@ -146,10 +146,28 @@ def eh_numero_valido(texto):
     limpo = re.sub(r'[R$%\s\.,]', '', texto)
     return limpo.isdigit() and len(limpo) <= 10
 
-def extrair_kpis(driver):
+def aguardar_pagina_carregada(driver, timeout=20):
+    """Aguarda até que a página tenha pelo menos um label de KPI visível."""
+    labels_kpi = [
+        "Vendas brutas", "Vendas concluídas", "Visitas únicas", "Total de visitas",
+        "Conversão", "Unidades vendidas",
+    ]
+    fim = time.time() + timeout
+    while time.time() < fim:
+        try:
+            body = driver.find_element(By.TAG_NAME, "body").text
+            if any(label in body for label in labels_kpi):
+                return True
+        except Exception:
+            pass
+        time.sleep(2)
+    return False
+
+
+def extrair_kpis(driver, mlb_id=""):
     """
     Extrai os KPIs da página de desempenho do ML.
-    Estratégia: busca os blocos de KPI pelo padrão de estrutura HTML.
+    Aguarda ativamente o carregamento antes de parsear.
     """
     resultado = {
         "vendas_brutas": "",
@@ -165,12 +183,14 @@ def extrair_kpis(driver):
     }
 
     try:
-        # Aguarda os cards de KPI carregarem
-        time.sleep(3)
+        carregou = aguardar_pagina_carregada(driver, timeout=25)
+        if not carregou:
+            print(f"    ⚠️ Página não carregou KPIs esperados — aguardando mais 10s...")
+            time.sleep(10)
+
         body = driver.find_element(By.TAG_NAME, "body").text
         linhas = [l.strip() for l in body.split("\n") if l.strip()]
 
-        # Labels que queremos encontrar — mapeados para chave do resultado
         mapa = {
             "Vendas brutas": "vendas_brutas",
             "Vendas concluídas": "vendas_concluidas",
@@ -185,33 +205,32 @@ def extrair_kpis(driver):
         for i, linha in enumerate(linhas):
             for label, chave in mapa.items():
                 if linha.strip() == label:
-                    # Próximas linhas após o label — pega a primeira que seja número válido
-                    for j in range(i+1, min(i+6, len(linhas))):
+                    for j in range(i+1, min(i+8, len(linhas))):
                         candidato = linhas[j].strip()
                         # Aceita: R$ 1.234,56 | 10 | 2,5% | 0
                         if re.match(r'^(R\$\s*)?\d[\d\.,]*(%)?$', candidato):
-                            if resultado[chave] == "":  # só pega o primeiro match
+                            if resultado[chave] == "":
                                 resultado[chave] = candidato
                             break
 
-        # Funil — busca sequência "Visitas únicas > Intenção > Vendas brutas" no bloco funil
-        # Geralmente aparecem como números isolados no final da página
-        funil_bloco = False
-        funil_vals = []
-        for linha in linhas:
-            if "Visitas únicas" in linha and not funil_bloco:
-                funil_bloco = True
-                continue
-            if funil_bloco:
-                if re.match(r'^\d[\d\.]*$', linha):
-                    funil_vals.append(linha)
-                if len(funil_vals) >= 1:
+        # Se visitas_unicas vazia mas total_visitas preenchida, usa total como fallback
+        if resultado["visitas_unicas"] == "" and resultado["total_visitas"] != "":
+            resultado["visitas_unicas"] = resultado["total_visitas"]
+
+        # Funil visitas = visitas_unicas
+        resultado["funil_visitas"] = resultado["visitas_unicas"]
+
+        # Funil intenção — busca número após "Intenção de compra" se não encontrado no mapa
+        if resultado["funil_intencao"] == "":
+            for i, linha in enumerate(linhas):
+                if "Inten" in linha and "compra" in linha:
+                    for j in range(i+1, min(i+8, len(linhas))):
+                        c = linhas[j].strip()
+                        if re.match(r'^\d[\d\.]*$', c):
+                            resultado["funil_intencao"] = c
+                            break
                     break
 
-        if funil_vals:
-            resultado["funil_visitas"] = funil_vals[0] if len(funil_vals) > 0 else ""
-
-        # Funil vendas = mesmo que vendas brutas
         resultado["funil_vendas"] = resultado["vendas_brutas"]
 
     except Exception as e:
@@ -235,14 +254,13 @@ for produto in PRODUTOS:
 
     try:
         driver.get(url)
-        # Headless no CI precisa de mais tempo para SPA carregar
-        wait_secs = 10 if HEADLESS else 5
-        time.sleep(wait_secs)
+        # Aguarda SPA inicializar antes de buscar KPIs
+        time.sleep(5 if not HEADLESS else 8)
 
-        kpis = extrair_kpis(driver)
+        kpis = extrair_kpis(driver, mlb_id)
 
-        # Debug em headless: se todos KPIs vazios, imprimir trecho da página
-        if HEADLESS and all(v == "" for v in kpis.values()):
+        # Debug: se todos KPIs vazios, imprimir trecho da página
+        if all(v == "" for v in kpis.values()):
             try:
                 body_text = driver.find_element(By.TAG_NAME, "body").text[:300]
                 print(f"    [debug] página vazia — body[:300]: {repr(body_text)}")
@@ -275,10 +293,22 @@ for produto in PRODUTOS:
 
     time.sleep(2)
 
-# ─── SALVAR NO SHEETS ────────────────────────────────────────────
-print("\n💾 Salvando no Google Sheets...")
+# ─── SALVAR NO SHEETS (dedup: remove linhas do dia atual e reinserir) ────────
+print("\n💾 Salvando no Google Sheets (dedup)...")
 try:
-    aba.append_rows(resultados)
+    todas = aba.get_all_values()
+    cabecalho = todas[0] if todas else []
+    linhas_existentes = todas[1:] if len(todas) > 1 else []
+
+    # Remove linhas com a data de hoje para evitar duplicatas em re-execuções
+    linhas_manter = [r for r in linhas_existentes if r[0] != data_coleta]
+    removidas = len(linhas_existentes) - len(linhas_manter)
+    if removidas:
+        print(f"  🗑️  Removendo {removidas} linha(s) antigas de {data_coleta}...")
+
+    novos_dados = [cabecalho] + linhas_manter + resultados
+    aba.clear()
+    aba.update('A1', novos_dados, value_input_option='USER_ENTERED')
     print(f"✅ {len(resultados)} produtos salvos na aba Desempenho_Anuncios")
 except Exception as e:
     print(f"❌ Erro ao salvar: {e}")
