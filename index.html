@@ -1474,12 +1474,19 @@
       // Cada "grupo" é um array de palavras — TODAS devem estar presentes para casar.
       // A lista é verificada em ordem; primeiro match vence. Entradas mais específicas PRIMEIRO.
       const MAPEAMENTO = [
-        // Central Laço Indutivo — todos os anúncios são do mesmo produto físico
-        // (220V, 12V, 24V, Manual, Preto etc. são o mesmo SKU em listings diferentes)
-        // Agrega campanhas "Central de Laço 220V" + "Central 12V 230526"
-        ["Central Laço Indutivo",
+        // Central Laço 220V — campanha "Central de Laço 220V"
+        // verificar "220" ANTES de "12v" pois alguns títulos históricos têm ambos ("220v 24v 12v")
+        ["Central Laço 220V",
+          [["central","laco","220"]],
+          [["central","220"],["central","laco","220"]]],
+        // Central Laço 12V — campanha "Central 12V 230526"
+        ["Central Laço 12V",
+          [["central","laco","12v"],["central","laco","12 vdc"],["central","laco","12"]],
+          [["central","12v"],["central","12"]]],
+        // Central Laço sem tensão definida (títulos antigos sem voltage explícito)
+        ["Central Laço (outros)",
           [["central","laco"]],
-          [["central","laco"],["central","12v"],["central","12"],["central","220"]]],
+          []],
         // Extensor PoE Giga (MLB6508001372) — sem campanha ADS
         ["Extensor PoE Giga",
           [["extensor","poe","giga"],["divisor","poe","giga"],["poe","repetidor","giga"]],
