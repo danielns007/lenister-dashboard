@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- VENDAS-MAPEAMENTO-FIX-v2.2.5-2026-06-16 -->
+<!-- VENDAS-SHOW-ALL-v2.2.6-2026-06-16 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="version" content="2.2.5-2026-06-16-vendas-mapeamento-fix">
+  <meta name="version" content="2.2.6-2026-06-16-vendas-show-all">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.2.5 · 16/jun';
+    const DASHBOARD_VERSION = 'v2.2.6 · 16/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1457,7 +1457,7 @@
       const dashboard = state.filteredData.dashboard_ads || [];
       const vendas    = state.filteredData.vendas_produto || [];
 
-      if (!vendas.length) {
+      if (!vendas.length && !dashboard.length) {
         document.getElementById('vendas-organicas-content').innerHTML = `
           <div class="empty-state"><p>Nenhum dado de vendas disponivel para este periodo.</p></div>
         `;
@@ -1584,6 +1584,13 @@
         if (!vendPorChave[key]) vendPorChave[key] = { label: key, qtd: 0, rec: 0 };
         vendPorChave[key].qtd += parseLocalNumber(row['Qtd Vendida']);
         vendPorChave[key].rec += parseLocalNumber(row['Receita Bruta (R$)']);
+      });
+
+      // ── Adicionar produtos ADS sem vendas no período ──
+      Object.keys(adsPorChave).forEach(key => {
+        if (!vendPorChave[key]) {
+          vendPorChave[key] = { label: key, qtd: 0, rec: 0 };
+        }
       });
 
       // ── Montar itens com dados ADS ──
