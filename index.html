@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ADS-ROAS-OBJ-FIX-v2.1.7-2026-06-15 -->
+<!-- ADS-UNITS-COLUMNS-v2.1.8-2026-06-16 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.1.7 · 15/jun';
+    const DASHBOARD_VERSION = 'v2.1.8 · 16/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1233,6 +1233,8 @@
             dataCriacao: row['Data Criação'] || row['Data de Início da Campanha'] || row['Data Inicio'] || '-',
             vendasProdAds: 0,
             vendasSemProdAds: 0,
+            unidadesDiretas: 0,
+            unidadesIndiretas: 0,
             investimento: 0,
             receita: 0,
             receitaOrg: 0,
@@ -1245,6 +1247,8 @@
         }
         campanhasAgg[nome].vendasProdAds += parseLocalNumber(row['Vendas por Product Ads']);
         campanhasAgg[nome].vendasSemProdAds += parseLocalNumber(row['Vendas sem Product Ads']);
+        campanhasAgg[nome].unidadesDiretas += parseLocalNumber(row['Unidades Diretas ADS']);
+        campanhasAgg[nome].unidadesIndiretas += parseLocalNumber(row['Unidades Indiretas ADS']);
         campanhasAgg[nome].investimento += parseLocalNumber(row['Investimento ADS (R$)']);
         campanhasAgg[nome].receita += parseLocalNumber(row['Receita ADS (R$)']);
         campanhasAgg[nome].cliques += parseLocalNumber(row['Cliques']);
@@ -1310,8 +1314,10 @@
             <tr>
               <th style="min-width:160px">Campanha</th>
               <th class="tooltip-header" data-tooltip="Data de criação da campanha no ML Ads (field date_created da API)">Data<br>Criação</th>
-              <th class="tooltip-header" style="max-width:60px" data-tooltip="Total de vendas atribuídas ao anúncio: Diretas (clicou e comprou esse produto) + Indiretas (clicou e comprou outro produto seu). Mesmo número exibido pelo ML Ads.">Vnd.<br>ADS</th>
-              <th class="tooltip-header" style="max-width:60px" data-tooltip="Vendas indiretas: pessoa clicou no anúncio deste produto mas comprou outro produto seu. Subconjunto do total ADS — NÃO são vendas orgânicas.">Vnd.<br>Indir.</th>
+              <th class="tooltip-header" style="max-width:55px" data-tooltip="Pedidos diretos: número de transações em que alguém clicou no anúncio e comprou exatamente esse produto (direct_items_quantity da API).">Ped.<br>Dir.</th>
+              <th class="tooltip-header" style="max-width:55px" data-tooltip="Pedidos indiretos: número de transações em que alguém clicou no anúncio e comprou outro produto seu (indirect_items_quantity da API).">Ped.<br>Ind.</th>
+              <th class="tooltip-header" style="max-width:55px" data-tooltip="Unidades vendidas diretamente via ADS: soma das quantidades de itens nos pedidos diretos (direct_units_quantity da API). Equivale ao número que o ML Ads exibe como 'Vendas Diretas'.">Unid.<br>Dir.</th>
+              <th class="tooltip-header" style="max-width:55px" data-tooltip="Unidades vendidas indiretamente via ADS: soma das quantidades de itens nos pedidos indiretos (indirect_units_quantity da API).">Unid.<br>Ind.</th>
               <th class="tooltip-header" data-tooltip="Receita das vendas indiretas ADS (indirect_amount): pessoa clicou no anúncio e comprou OUTRO produto seu. NÃO é receita orgânica real — é parte do total ADS. Usado como proxy no cálculo de TACOS por campanha.">Receita<br>Indireta ADS</th>
               <th class="tooltip-header" data-tooltip="Valor total em reais gerado pelas vendas de Product Ads">Receita<br>ADS</th>
               <th class="tooltip-header" data-tooltip="Valor total gasto em publicidade (ADS) no período selecionado">Investimento</th>
@@ -1354,8 +1360,10 @@
           <tr>
             <td class="text-left" style="max-width:130px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${c.campanha}">${alerta} ${c.campanha}</td>
             <td>${c.dataCriacao}</td>
-            <td>${c.vendasProdAds + c.vendasSemProdAds}</td>
+            <td>${c.vendasProdAds}</td>
             <td>${c.vendasSemProdAds}</td>
+            <td>${c.unidadesDiretas}</td>
+            <td>${c.unidadesIndiretas}</td>
             <td>${formatCurrency(receitaOrganica)}</td>
             <td>${formatCurrency(c.receita)}</td>
             <td>${formatCurrency(c.investimento)}</td>
@@ -1430,7 +1438,7 @@
           <span style="font-size: 1.1rem; flex-shrink: 0;">⚠</span>
           <div>
             <strong>Dados em consolidação</strong> — O Mercado Livre atribui vendas retroativamente por até 7 dias após um clique em anúncio.
-            Os valores de <em>Vendas (ADS Total)</em>, <em>Vendas (Indiretas)</em>, <em>Receita</em>, <em>Investimento</em> e métricas derivadas (ROAS, ACOS, TACOS) dos últimos 7 dias podem mudar conforme as atribuições são finalizadas.
+            Os valores de <em>Ped. Dir.</em>, <em>Ped. Ind.</em>, <em>Unid. Dir.</em>, <em>Unid. Ind.</em>, <em>Receita</em>, <em>Investimento</em> e métricas derivadas (ROAS, ACOS, TACOS) dos últimos 7 dias podem mudar conforme as atribuições são finalizadas.
             Para dados atualizados, execute <code>ressincronizar_ads_recentes.py</code>.
           </div>
         </div>` : ''}
