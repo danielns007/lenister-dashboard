@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- FIX-COLUNAS-VENDAS-v2.3.3-2026-06-16 -->
+<!-- FIX-COLUNAS-ADS-SWAP-v2.3.4-2026-06-16 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="version" content="2.3.3-2026-06-16-fix-colunas-vendas">
+  <meta name="version" content="2.3.4-2026-06-16-fix-colunas-ads-swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.3.3 · 16/jun';
+    const DASHBOARD_VERSION = 'v2.3.4 · 16/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1459,10 +1459,10 @@
           <tr>
             <td class="text-left" style="max-width:130px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${c.campanha}">${alerta} ${c.campanha}</td>
             <td>${c.dataCriacao}</td>
-            <td>${c.vendasProdAds}</td>
-            <td>${c.vendasSemProdAds}</td>
             <td>${c.unidadesDiretas}</td>
             <td>${c.unidadesIndiretas}</td>
+            <td>${c.vendasProdAds}</td>
+            <td>${c.vendasSemProdAds}</td>
             <td>${formatCurrency(receitaOrganica)}</td>
             <td>${formatCurrency(c.receita)}</td>
             <td>${formatCurrency(c.investimento)}</td>
