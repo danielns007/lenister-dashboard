@@ -225,9 +225,19 @@ for produto in PRODUTOS:
 
     try:
         driver.get(url)
-        time.sleep(5)
+        # Headless no CI precisa de mais tempo para SPA carregar
+        wait_secs = 15 if HEADLESS else 5
+        time.sleep(wait_secs)
 
         kpis = extrair_kpis(driver)
+
+        # Debug em headless: se todos KPIs vazios, imprimir trecho da página
+        if HEADLESS and all(v == "" for v in kpis.values()):
+            try:
+                body_text = driver.find_element(By.TAG_NAME, "body").text[:300]
+                print(f"    [debug] página vazia — body[:300]: {repr(body_text)}")
+            except Exception:
+                pass
 
         linha = [
             data_coleta,
