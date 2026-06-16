@@ -166,10 +166,11 @@ def aguardar_pagina_carregada(driver, timeout=20):
     return False
 
 
-def selecionar_todas_opcoes(driver, timeout=12):
+def selecionar_todas_opcoes(driver, timeout=15):
     """
-    Se a página tiver dropdown 'Condição de venda', seleciona 'Todas as opções de venda'.
-    Necessário para produtos com variantes (ex: Extensor PoE Hi-AT13FL).
+    Se a pagina tiver dropdown 'Condicao de venda', seleciona 'Todas as opcoes de venda'.
+    Necessario para produtos com variantes (ex: Extensor PoE Hi-AT13FL).
+    Usa JS click para funcionar em headless.
     """
     try:
         fim = time.time() + timeout
@@ -180,47 +181,67 @@ def selecionar_todas_opcoes(driver, timeout=12):
                 time.sleep(1)
                 continue
 
-            # Já está em "Todas as opções" — nada a fazer
-            if "Todas as opções de venda" in body_text:
-                # Verifica se é a opção já selecionada (não só listada no dropdown aberto)
-                # Se o dropdown não está aberto e o texto aparece, já está selecionado
-                btns_abertos = driver.find_elements(By.XPATH, "//*[contains(text(),'Todas as opções de venda')]")
-                if len(btns_abertos) == 1:
-                    return  # Já selecionado
-                if len(btns_abertos) == 0:
-                    return  # Sem dropdown na página
-
-            # Página tem "Condição de venda" mas não "Todas as opções" selecionada
-            if "Condição de venda" in body_text or "Opção" in body_text:
-                # Tenta clicar no botão do dropdown (contém texto "Opção N | #...")
-                btns = driver.find_elements(By.XPATH, "//button[contains(., 'Opção')]")
-                if not btns:
-                    # Fallback: qualquer elemento clicável com "Opção"
-                    btns = driver.find_elements(By.XPATH, "//*[@role='button' and contains(., 'Opção')]")
-
-                if btns:
+            # Se "Todas as opcoes" ja esta no body como elemento unico = ja selecionado
+            if "Todas as op" in body_text:
+                els = driver.find_elements(By.XPATH, "//*[contains(text(),'Todas as op')]")
+                # Se apenas 1 elemento (o botao fechado), ja esta selecionado
+                if len(els) == 1:
+                    print("    [info] Todas as opcoes ja selecionado")
+                    return
+                # Se > 1, o dropdown esta aberto mostrando a opcao — clica nela
+                if len(els) > 1:
                     try:
-                        driver.execute_script("arguments[0].click();", btns[0])
-                    except Exception:
-                        btns[0].click()
-                    time.sleep(1.5)
-
-                    # Clica em "Todas as opções de venda" no dropdown aberto
-                    opcoes = driver.find_elements(By.XPATH, "//*[contains(text(),'Todas as opções de venda')]")
-                    if opcoes:
-                        try:
-                            driver.execute_script("arguments[0].click();", opcoes[0])
-                        except Exception:
-                            opcoes[0].click()
+                        driver.execute_script("arguments[0].click();", els[-1])
                         time.sleep(2)
-                        print("    ✅ Selecionado: Todas as opções de venda")
+                        print("    OK: Todas as opcoes de venda selecionado")
+                    except Exception:
+                        pass
                     return
 
-                # Dropdown ainda não apareceu — aguarda
+            # Pagina tem variantes mas "Todas as opcoes" nao esta visivel ainda
+            if "Condi" in body_text and "Op" in body_text:
+                # Abre dropdown via JS — busca qualquer botao com "Op" no texto
+                try:
+                    abriu = driver.execute_script("""
+                        var btns = document.querySelectorAll('button, [role="button"]');
+                        for (var b of btns) {
+                            if (b.innerText && b.innerText.includes('Op')) {
+                                b.click();
+                                return true;
+                            }
+                        }
+                        return false;
+                    """)
+                    if abriu:
+                        time.sleep(2)
+                        # Agora clica em "Todas as opcoes de venda"
+                        clicou = driver.execute_script("""
+                            var els = document.querySelectorAll('li, button, [role="option"], [role="menuitem"]');
+                            for (var el of els) {
+                                if (el.innerText && el.innerText.includes('Todas as op')) {
+                                    el.click();
+                                    return true;
+                                }
+                            }
+                            return false;
+                        """)
+                        if clicou:
+                            time.sleep(2)
+                            print("    OK: Todas as opcoes de venda selecionado")
+                            return
+                except Exception as e:
+                    print(f"    [warn] JS click falhou: {e}")
                 time.sleep(1)
                 continue
 
-            # Página sem dropdown de variantes — encerra
+            # Sem dropdown de variantes na pagina
+            break
+
+    except Exception as e:
+        print(f"    [warn] selecionar_todas_opcoes: {e}")
+
+
+def extrair_kpis(driver, mlb_id=""):
             break
 
     except Exception as e:
