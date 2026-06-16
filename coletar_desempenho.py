@@ -42,9 +42,11 @@ PRODUTOS = [
 ]
 
 hoje = datetime.now()
-data_fim = (hoje - timedelta(days=1)).strftime("%Y-%m-%d")
-data_inicio = (hoje - timedelta(days=7)).strftime("%Y-%m-%d")
-data_coleta = hoje.strftime("%d/%m/%Y")
+ontem = hoje - timedelta(days=1)
+data_inicio = ontem.strftime("%Y-%m-%d")   # coleta apenas ontem (1 dia)
+data_fim    = ontem.strftime("%Y-%m-%d")
+data_referencia = ontem.strftime("%d/%m/%Y")  # data do dado (ontem), usada na planilha
+data_coleta     = hoje.strftime("%d/%m/%Y")   # data em que o script rodou
 
 # ─── GOOGLE SHEETS ───────────────────────────────────────────────
 print("🔗 Conectando ao Google Sheets...")
@@ -172,8 +174,10 @@ def extrair_kpis(driver, mlb_id=""):
     resultado = {
         "vendas_brutas": "",
         "vendas_concluidas": "",
+        "qtd_vendas_brutas": "",
         "unidades": "",
         "preco_medio": "",
+        "compradores_unicos": "",
         "visitas_unicas": "",
         "total_visitas": "",
         "conversao": "",
@@ -194,8 +198,10 @@ def extrair_kpis(driver, mlb_id=""):
         mapa = {
             "Vendas brutas": "vendas_brutas",
             "Vendas concluídas": "vendas_concluidas",
+            "Quantidade de vendas brutas": "qtd_vendas_brutas",
             "Unidades vendidas": "unidades",
             "Preço médio por unidade": "preco_medio",
+            "Compradores únicos": "compradores_unicos",
             "Visitas únicas": "visitas_unicas",
             "Total de visitas": "total_visitas",
             "Conversão": "conversao",
@@ -268,28 +274,30 @@ for produto in PRODUTOS:
                 pass
 
         linha = [
-            data_coleta,
-            nome,
-            mlb_id,
-            limpar_numero(kpis["vendas_brutas"]),
-            limpar_numero(kpis["vendas_concluidas"]),
-            limpar_numero(kpis["unidades"]),
-            limpar_numero(kpis["preco_medio"]),
-            limpar_numero(kpis["visitas_unicas"]),
-            limpar_numero(kpis["total_visitas"]),
-            "",  # compradores únicos
-            limpar_numero(kpis["conversao"]),
-            limpar_numero(kpis["funil_visitas"]),
-            limpar_numero(kpis["funil_intencao"]),
-            limpar_numero(kpis["funil_vendas"]),
+            data_referencia,                          # Data (ontem — data do dado)
+            nome,                                     # Produto
+            mlb_id,                                   # MLB ID
+            limpar_numero(kpis["vendas_brutas"]),     # Vendas Brutas (R$)
+            limpar_numero(kpis["vendas_concluidas"]), # Vendas Concluídas (R$)
+            limpar_numero(kpis["unidades"]),          # Unidades Vendidas
+            limpar_numero(kpis["preco_medio"]),       # Preço Médio (R$)
+            limpar_numero(kpis["visitas_unicas"]),    # Visitas Únicas
+            limpar_numero(kpis["total_visitas"]),     # Total de Visitas
+            limpar_numero(kpis["compradores_unicos"]),# Compradores Únicos
+            limpar_numero(kpis["conversao"]),         # Conversão (%)
+            limpar_numero(kpis["funil_visitas"]),     # Funil: Visitas Únicas
+            limpar_numero(kpis["funil_intencao"]),    # Funil: Intenção de Compra (R$)
+            limpar_numero(kpis["funil_vendas"]),      # Funil: Vendas Brutas (R$)
+            limpar_numero(kpis["qtd_vendas_brutas"]), # Quantidade de Vendas Brutas
+            data_coleta,                              # Data Coleta (quando o script rodou)
         ]
 
         resultados.append(linha)
-        print(f"  ✅ Vendas: {kpis['vendas_brutas']} | Un: {kpis['unidades']} | Visitas: {kpis['visitas_unicas']} | Conv: {kpis['conversao']}")
+        print(f"  ✅ Vendas: {kpis['vendas_brutas']} | Un: {kpis['unidades']} | Visitas: {kpis['visitas_unicas']} | Conv: {kpis['conversao']} | Compradores: {kpis['compradores_unicos']}")
 
     except Exception as e:
         print(f"  ❌ Erro: {e}")
-        resultados.append([data_coleta, nome, mlb_id] + ["ERRO"] * 11)
+        resultados.append([data_referencia, nome, mlb_id] + ["ERRO"] * 13)
 
     time.sleep(2)
 
@@ -300,11 +308,11 @@ try:
     cabecalho = todas[0] if todas else []
     linhas_existentes = todas[1:] if len(todas) > 1 else []
 
-    # Remove linhas com a data de hoje para evitar duplicatas em re-execuções
-    linhas_manter = [r for r in linhas_existentes if r[0] != data_coleta]
+    # Remove linhas com a data de referência (ontem) para evitar duplicatas em re-execuções
+    linhas_manter = [r for r in linhas_existentes if r[0] != data_referencia]
     removidas = len(linhas_existentes) - len(linhas_manter)
     if removidas:
-        print(f"  🗑️  Removendo {removidas} linha(s) antigas de {data_coleta}...")
+        print(f"  🗑️  Removendo {removidas} linha(s) antigas de {data_referencia}...")
 
     novos_dados = [cabecalho] + linhas_manter + resultados
     aba.clear()
