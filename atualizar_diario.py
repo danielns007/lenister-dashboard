@@ -35,9 +35,27 @@ def setup_credentials():
             "access_token": "",
             "saved_at": "2000-01-01T00:00:00",  # força renovação imediata
         }
-        with open('ml_token.json', 'w') as f:
+        token_path = os.path.abspath('ml_token.json')
+        with open(token_path, 'w') as f:
             json.dump(token_data, f, indent=2)
-        log("✅ ml_token.json criado com ML_REFRESH_TOKEN")
+        # Garante que processos filhos encontrem o arquivo no diretório corrente
+        os.environ['ML_TOKEN_FILE'] = token_path
+        log(f"✅ ml_token.json criado com ML_REFRESH_TOKEN → {token_path}")
+
+    # Validar credenciais Google
+    if google_creds:
+        try:
+            parsed = json.loads(google_creds)
+            campos = parsed.keys() if isinstance(parsed, dict) else []
+            obrigatorios = {'client_email', 'token_uri', 'private_key'}
+            faltando = obrigatorios - set(campos)
+            if faltando:
+                log(f"⚠️  GOOGLE_CREDENTIALS_JSON está malformado — faltam campos: {faltando}")
+                log("   Certifique-se de colar o JSON bruto do credenciais.json SEM usar ConvertTo-Json")
+            else:
+                log(f"✅ GOOGLE_CREDENTIALS_JSON válido ({len(campos)} campos)")
+        except json.JSONDecodeError as e:
+            log(f"⚠️  GOOGLE_CREDENTIALS_JSON não é JSON válido: {e}")
 
     if not google_creds and not refresh_token:
         log("ℹ️  Nenhuma env var de credenciais — usando arquivos locais")
