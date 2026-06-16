@@ -1152,7 +1152,9 @@
     // RENDER PRODUTOS TAB
     // ──────────────────────────────────────────────────────
     function renderProdutos() {
-      const desempenho = state.filteredData.desempenho_anuncios || [];
+      // Usa rawData (não filteredData) porque cada linha já representa uma janela de 7 dias.
+      // Filtrar por período de datas causaria perda de dados em períodos sem nova coleta.
+      const desempenho = state.rawData.desempenho_anuncios || [];
 
       if (!desempenho.length) {
         document.getElementById('produtos-content').innerHTML = `
