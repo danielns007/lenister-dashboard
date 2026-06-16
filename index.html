@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- VENDAS-REMOVE-PRODUTOS-v2.2.8-2026-06-16 -->
+<!-- ABA-PRODUTOS-COMPLETA-v2.2.9-2026-06-16 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="version" content="2.2.8-2026-06-16-vendas-remove-produtos">
+  <meta name="version" content="2.2.9-2026-06-16-aba-produtos-completa">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.2.8 · 16/jun';
+    const DASHBOARD_VERSION = 'v2.2.9 · 16/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1157,47 +1157,143 @@
       if (!desempenho.length) {
         document.getElementById('produtos-content').innerHTML = `
           <div class="empty-state">
-            <p>Nenhum dado de desempenho disponivel.</p>
+            <p>Nenhum dado de desempenho disponivel. Execute coletar_desempenho.py para popular a aba Desempenho_Anuncios.</p>
           </div>
         `;
         return;
       }
 
+      // Helper para ler coluna com ou sem acentos
+      function col(row, ...keys) {
+        for (const k of keys) {
+          if (row[k] !== undefined && row[k] !== '') return row[k];
+        }
+        return '';
+      }
+
+      // Agrupa por produto — mantém apenas a linha mais recente por produto
+      // (cada coleta cobre os últimos 7 dias; usar a mais recente evita dupla contagem)
+      const prodMap = {};
+      desempenho.forEach(row => {
+        const produto = col(row, 'Produto') || 'N/A';
+        const dataStr = col(row, 'Data Coleta', 'Data');
+        let dt = new Date(0);
+        if (dataStr) {
+          const parts = dataStr.split('/');
+          if (parts.length === 3) dt = new Date(+parts[2], +parts[1] - 1, +parts[0]);
+        }
+        if (!prodMap[produto] || dt > prodMap[produto]._dt) {
+          prodMap[produto] = { ...row, _dt: dt };
+        }
+      });
+
+      const produtos = Object.values(prodMap);
+
+      // KPIs totais
+      const totalVendasBrutas   = produtos.reduce((s, r) => s + parseLocalNumber(col(r, 'Vendas Brutas (R$)')), 0);
+      const totalVendasConc     = produtos.reduce((s, r) => s + parseLocalNumber(col(r, 'Vendas Concluídas (R$)', 'Vendas Concluidas (R$)')), 0);
+      const totalUnidades       = produtos.reduce((s, r) => s + parseLocalNumber(col(r, 'Unidades Vendidas')), 0);
+      const totalVisitasUnicas  = produtos.reduce((s, r) => s + parseLocalNumber(col(r, 'Visitas Únicas', 'Visitas Unicas')), 0);
+      const totalVisitas        = produtos.reduce((s, r) => s + parseLocalNumber(col(r, 'Total Visitas')), 0);
+      const mediaConversao      = totalVisitasUnicas > 0 ? (totalUnidades / totalVisitasUnicas) * 100 : 0;
+
+      const melhorProduto = produtos.reduce((best, r) => {
+        return parseLocalNumber(col(r, 'Vendas Brutas (R$)')) > parseLocalNumber(col(best, 'Vendas Brutas (R$)')) ? r : best;
+      }, produtos[0]);
+
+      // Ordenar por Vendas Brutas desc
+      produtos.sort((a, b) =>
+        parseLocalNumber(col(b, 'Vendas Brutas (R$)')) - parseLocalNumber(col(a, 'Vendas Brutas (R$)'))
+      );
+
+      // Período de referência (data mais recente encontrada)
+      const dataRef = produtos.reduce((latest, r) => {
+        const d = col(r, 'Data Coleta', 'Data');
+        return d > latest ? d : latest;
+      }, '');
+
+      // Tabela com todas as colunas
       let tableHtml = `
         <table style="width: 100%;">
           <thead>
             <tr>
-              <th>Produto</th>
-              <th>Unidades</th>
-              <th>Vendas Brutas</th>
-              <th>Conversao %</th>
-              <th>Visitas</th>
-              <th>Preco Medio</th>
+              <th style="min-width:150px">Produto</th>
+              <th class="tooltip-header" data-tooltip="ID do anúncio no Mercado Livre (MLB...)">MLB ID</th>
+              <th class="tooltip-header" data-tooltip="Receita total gerada pelo anúncio nos últimos 7 dias (inclui vendas em processamento)">Vendas<br>Brutas</th>
+              <th class="tooltip-header" data-tooltip="Receita de pedidos já entregues e concluídos no período">Vendas<br>Concluídas</th>
+              <th class="tooltip-header" data-tooltip="Quantidade total de unidades vendidas no período">Unidades<br>Vendidas</th>
+              <th class="tooltip-header" data-tooltip="Ticket médio por unidade vendida (Vendas Brutas / Unidades)">Preço<br>Médio</th>
+              <th class="tooltip-header" data-tooltip="Número de visitantes únicos que acessaram o anúncio no período">Visitas<br>Únicas</th>
+              <th class="tooltip-header" data-tooltip="Total de visitas ao anúncio, incluindo retornos do mesmo visitante">Total<br>Visitas</th>
+              <th class="tooltip-header" data-tooltip="Percentual de visitantes únicos que realizaram uma compra">Conversão<br>%</th>
+              <th class="tooltip-header" data-tooltip="Número de visitantes únicos que chegaram à etapa de intenção de compra (carrinho/checkout)">Funil<br>Intenção</th>
+              <th class="tooltip-header" data-tooltip="Data de referência desta coleta (coleta cobre os 7 dias anteriores)">Data<br>Coleta</th>
             </tr>
           </thead>
           <tbody>
       `;
 
-      desempenho.forEach(row => {
+      produtos.forEach(r => {
+        const vendasBrutas  = parseLocalNumber(col(r, 'Vendas Brutas (R$)'));
+        const vendasConc    = parseLocalNumber(col(r, 'Vendas Concluídas (R$)', 'Vendas Concluidas (R$)'));
+        const unidades      = parseLocalNumber(col(r, 'Unidades Vendidas'));
+        const precoMedio    = parseLocalNumber(col(r, 'Preço Médio (R$)', 'Preco Medio (R$)'));
+        const visitasUnicas = parseLocalNumber(col(r, 'Visitas Únicas', 'Visitas Unicas'));
+        const totalVis      = parseLocalNumber(col(r, 'Total Visitas'));
+        const conversao     = parseLocalNumber(col(r, 'Conversão (%)', 'Conversao (%)'));
+        const funil         = parseLocalNumber(col(r, 'Funil Intenção', 'Funil Intencao'));
+        const dataColeta    = col(r, 'Data Coleta', 'Data');
+        const mlbId         = col(r, 'MLB ID');
+        const nome          = col(r, 'Produto') || 'N/A';
+
+        // Cor de conversão
+        let convClass = '';
+        if (conversao > 0) {
+          if (conversao >= 10)      convClass = 'style="color:var(--accent-green);font-weight:600"';
+          else if (conversao >= 5)  convClass = 'style="color:var(--accent-yellow);font-weight:600"';
+          else                      convClass = 'style="color:var(--accent-red)"';
+        }
+
+        const semVendas = vendasBrutas === 0 && unidades === 0;
+
         tableHtml += `
-          <tr>
-            <td>${row['Produto'] || 'N/A'}</td>
-            <td>${row['Unidades Vendidas'] || 0}</td>
-            <td>${formatCurrency(row['Vendas Brutas (R$)'] || 0)}</td>
-            <td>${row['Conversao (%)'] || '0'}%</td>
-            <td>${row['Visitas Unicas'] || 0}</td>
-            <td>${formatCurrency(row['Preco Medio (R$)'] || 0)}</td>
+          <tr${semVendas ? ' style="opacity:0.55"' : ''}>
+            <td class="text-left" style="max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${nome}">${nome}</td>
+            <td style="font-size:0.78rem;color:var(--text-secondary)">${mlbId}</td>
+            <td>${vendasBrutas > 0 ? formatCurrency(vendasBrutas) : '-'}</td>
+            <td>${vendasConc > 0 ? formatCurrency(vendasConc) : '-'}</td>
+            <td>${unidades > 0 ? formatNumber(unidades) : '-'}</td>
+            <td>${precoMedio > 0 ? formatCurrency(precoMedio) : '-'}</td>
+            <td>${visitasUnicas > 0 ? formatNumber(visitasUnicas) : '-'}</td>
+            <td>${totalVis > 0 ? formatNumber(totalVis) : '-'}</td>
+            <td ${convClass}>${conversao > 0 ? conversao.toFixed(1) + '%' : '-'}</td>
+            <td>${funil > 0 ? formatNumber(funil) : '-'}</td>
+            <td style="font-size:0.78rem;color:var(--text-secondary)">${dataColeta}</td>
           </tr>
         `;
       });
 
-      tableHtml += `
-          </tbody>
-        </table>
-      `;
+      tableHtml += `</tbody></table>`;
+
+      // Formatar datas do período
+      let datasPeriodo = '';
+      if (dataRef) {
+        datasPeriodo = ` <span style="font-size:0.85rem;color:var(--text-secondary);font-weight:400;">· referência ${dataRef} (cobre 7 dias anteriores)</span>`;
+      }
 
       const html = `
-        <h2>Desempenho de Produtos</h2>
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;">
+          <h2 style="margin:0;">Desempenho de Produtos</h2>
+          ${datasPeriodo}
+        </div>
+        <div class="kpi-grid">
+          ${renderKPICardAds('Vendas Brutas Total', formatCurrency(totalVendasBrutas), 'Soma das vendas brutas de todos os produtos no período de 7 dias')}
+          ${renderKPICardAds('Vendas Concluídas', formatCurrency(totalVendasConc), 'Soma das vendas concluídas (pedidos entregues) de todos os produtos')}
+          ${renderKPICardAds('Unidades Vendidas', formatNumber(totalUnidades), 'Total de unidades vendidas somando todos os produtos')}
+          ${renderKPICardAds('Visitas Únicas', formatNumber(totalVisitasUnicas), 'Soma dos visitantes únicos em todos os anúncios')}
+          ${renderKPICardAds('Conversão Média', mediaConversao > 0 ? mediaConversao.toFixed(1) + '%' : '-', 'Unidades vendidas / Visitas únicas totais × 100')}
+          ${renderKPICardAds('Melhor Produto', melhorProduto ? (col(melhorProduto, 'Produto') || '-') : '-', 'Produto com maior receita de vendas brutas no período')}
+        </div>
         <div class="table-container">
           ${tableHtml}
         </div>
