@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- VENDAS-SHOW-ALL-MAPEAMENTO-v2.2.7-2026-06-16 -->
+<!-- VENDAS-REMOVE-PRODUTOS-v2.2.8-2026-06-16 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="version" content="2.2.7-2026-06-16-vendas-show-all-mapeamento">
+  <meta name="version" content="2.2.8-2026-06-16-vendas-remove-produtos">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.2.7 · 16/jun';
+    const DASHBOARD_VERSION = 'v2.2.8 · 16/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1483,10 +1483,6 @@
         ["Central Laço 12V",
           [["central","laco","12v"],["central","laco","12 vdc"],["central","laco","12"]],
           [["central","12v"],["central","12"]]],
-        // Central Laço sem tensão definida (títulos antigos sem voltage explícito)
-        ["Central Laço (outros)",
-          [["central","laco"]],
-          []],
         // Extensor PoE Giga (MLB6508001372) — sem campanha ADS
         ["Extensor PoE Giga",
           [["extensor","poe","giga"],["divisor","poe","giga"],["poe","repetidor","giga"]],
@@ -1531,22 +1527,6 @@
         // Sensor de Pressão
         ["Sensor de Pressão",
           [["sensor","pressao"],["sensor","transmissor"]],
-          []],
-        // Controle Acesso Biometria
-        ["Controle Biometria",
-          [["biometria"],["controle","acesso","tuya"]],
-          []],
-        // Hub Gateway Tuya
-        ["Hub Gateway Tuya",
-          [["hub","gateway"]],
-          []],
-        // RFID
-        ["Leitor RFID",
-          [["rfid"]],
-          []],
-        // Produtos Garen (revendas)
-        ["Garen Central Laço",
-          [["garen","central"],["garen","sensor","magnetico","laco"]],
           []],
       ];
 
