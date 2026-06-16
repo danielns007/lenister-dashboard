@@ -1273,9 +1273,14 @@
       tableHtml += `</tbody></table>`;
 
       // Formatar datas do período
+      const datasDisponiveis = desempenho.map(r => r['Data']).filter(Boolean);
+      const dataMin = datasDisponiveis.length ? datasDisponiveis.reduce((a,b) => a < b ? a : b) : '';
+      const dataMax = datasDisponiveis.length ? datasDisponiveis.reduce((a,b) => a > b ? a : b) : '';
       let datasPeriodo = '';
-      if (dataRef) {
-        datasPeriodo = ` <span style="font-size:0.85rem;color:var(--text-secondary);font-weight:400;">· referência ${dataRef} (cobre 7 dias anteriores)</span>`;
+      if (dataMin && dataMax && dataMin !== dataMax) {
+        datasPeriodo = `<span style="font-size:0.85rem;color:var(--text-secondary);font-weight:400;">· ${dataMin} a ${dataMax}</span>`;
+      } else if (dataMax) {
+        datasPeriodo = `<span style="font-size:0.85rem;color:var(--text-secondary);font-weight:400;">· ${dataMax}</span>`;
       }
 
       const html = `
