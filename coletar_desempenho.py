@@ -236,7 +236,7 @@ for produto in PRODUTOS:
     try:
         driver.get(url)
         # Headless no CI precisa de mais tempo para SPA carregar
-        wait_secs = 15 if HEADLESS else 5
+        wait_secs = 10 if HEADLESS else 5
         time.sleep(wait_secs)
 
         kpis = extrair_kpis(driver)
