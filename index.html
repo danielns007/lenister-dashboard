@@ -1245,10 +1245,10 @@
             orcamentoDiario: 0
           };
         }
-        campanhasAgg[nome].vendasProdAds += parseLocalNumber(row['Vendas por Product Ads']);
-        campanhasAgg[nome].vendasSemProdAds += parseLocalNumber(row['Vendas sem Product Ads']);
-        campanhasAgg[nome].unidadesDiretas += parseLocalNumber(row['Unidades Diretas ADS']);
-        campanhasAgg[nome].unidadesIndiretas += parseLocalNumber(row['Unidades Indiretas ADS']);
+        campanhasAgg[nome].vendasProdAds    += parseLocalNumber(row['Pedidos Diretos ADS']    || row['Vendas por Product Ads']);
+        campanhasAgg[nome].vendasSemProdAds += parseLocalNumber(row['Pedidos Indiretos ADS']  || row['Vendas sem Product Ads']);
+        campanhasAgg[nome].unidadesDiretas  += parseLocalNumber(row['Unidades Diretas ADS']);
+        campanhasAgg[nome].unidadesIndiretas+= parseLocalNumber(row['Unidades Indiretas ADS']);
         campanhasAgg[nome].investimento += parseLocalNumber(row['Investimento ADS (R$)']);
         campanhasAgg[nome].receita += parseLocalNumber(row['Receita ADS (R$)']);
         campanhasAgg[nome].cliques += parseLocalNumber(row['Cliques']);
@@ -1501,8 +1501,8 @@
         if (!ads_por_campanha[campanha]) {
           ads_por_campanha[campanha] = { v_ads: 0, v_sem: 0, receita_ads: 0, invest: 0 };
         }
-        ads_por_campanha[campanha].v_ads       += parseLocalNumber(row['Vendas por Product Ads']);
-        ads_por_campanha[campanha].v_sem       += parseLocalNumber(row['Vendas sem Product Ads']);
+        ads_por_campanha[campanha].v_ads       += parseLocalNumber(row['Pedidos Diretos ADS']   || row['Vendas por Product Ads']);
+        ads_por_campanha[campanha].v_sem       += parseLocalNumber(row['Pedidos Indiretos ADS'] || row['Vendas sem Product Ads']);
         ads_por_campanha[campanha].receita_ads += parseLocalNumber(row['Receita ADS (R$)']);
         ads_por_campanha[campanha].invest      += parseLocalNumber(row['Investimento ADS (R$)']);
       });
