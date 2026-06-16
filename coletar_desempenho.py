@@ -166,6 +166,67 @@ def aguardar_pagina_carregada(driver, timeout=20):
     return False
 
 
+def selecionar_todas_opcoes(driver, timeout=12):
+    """
+    Se a página tiver dropdown 'Condição de venda', seleciona 'Todas as opções de venda'.
+    Necessário para produtos com variantes (ex: Extensor PoE Hi-AT13FL).
+    """
+    try:
+        fim = time.time() + timeout
+        while time.time() < fim:
+            try:
+                body_text = driver.find_element(By.TAG_NAME, "body").text
+            except Exception:
+                time.sleep(1)
+                continue
+
+            # Já está em "Todas as opções" — nada a fazer
+            if "Todas as opções de venda" in body_text:
+                # Verifica se é a opção já selecionada (não só listada no dropdown aberto)
+                # Se o dropdown não está aberto e o texto aparece, já está selecionado
+                btns_abertos = driver.find_elements(By.XPATH, "//*[contains(text(),'Todas as opções de venda')]")
+                if len(btns_abertos) == 1:
+                    return  # Já selecionado
+                if len(btns_abertos) == 0:
+                    return  # Sem dropdown na página
+
+            # Página tem "Condição de venda" mas não "Todas as opções" selecionada
+            if "Condição de venda" in body_text or "Opção" in body_text:
+                # Tenta clicar no botão do dropdown (contém texto "Opção N | #...")
+                btns = driver.find_elements(By.XPATH, "//button[contains(., 'Opção')]")
+                if not btns:
+                    # Fallback: qualquer elemento clicável com "Opção"
+                    btns = driver.find_elements(By.XPATH, "//*[@role='button' and contains(., 'Opção')]")
+
+                if btns:
+                    try:
+                        driver.execute_script("arguments[0].click();", btns[0])
+                    except Exception:
+                        btns[0].click()
+                    time.sleep(1.5)
+
+                    # Clica em "Todas as opções de venda" no dropdown aberto
+                    opcoes = driver.find_elements(By.XPATH, "//*[contains(text(),'Todas as opções de venda')]")
+                    if opcoes:
+                        try:
+                            driver.execute_script("arguments[0].click();", opcoes[0])
+                        except Exception:
+                            opcoes[0].click()
+                        time.sleep(2)
+                        print("    ✅ Selecionado: Todas as opções de venda")
+                    return
+
+                # Dropdown ainda não apareceu — aguarda
+                time.sleep(1)
+                continue
+
+            # Página sem dropdown de variantes — encerra
+            break
+
+    except Exception as e:
+        print(f"    ⚠️ selecionar_todas_opcoes: {e}")
+
+
 def extrair_kpis(driver, mlb_id=""):
     """
     Extrai os KPIs da página de desempenho do ML.
@@ -262,6 +323,9 @@ for produto in PRODUTOS:
         driver.get(url)
         # Aguarda SPA inicializar antes de buscar KPIs
         time.sleep(5 if not HEADLESS else 8)
+
+        # Se produto tiver variantes, seleciona "Todas as opções de venda"
+        selecionar_todas_opcoes(driver)
 
         kpis = extrair_kpis(driver, mlb_id)
 
