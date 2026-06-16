@@ -136,9 +136,9 @@ else:
 def limpar_numero(texto):
     if not texto:
         return ""
-    # Remove R$, %, espaços, pontos de milhar, troca vírgula por ponto
+    # Remove R$, %, espaços e pontos de milhar. Mantém vírgula decimal (parseLocalNumber no JS espera formato BR)
     texto = re.sub(r'[R$%\s]', '', texto)
-    texto = texto.replace('.', '').replace(',', '.')
+    texto = texto.replace('.', '')
     return texto.strip()
 
 def eh_numero_valido(texto):
