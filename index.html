@@ -1644,18 +1644,18 @@
       </tr>`;
 
       const tableHtml = `
-        <table style="width:100%">
+        <table style="width:100%;text-align:center">
           <thead><tr>
-            <th class="text-left">Produto / Campanha</th>
-            <th class="tooltip-header" data-tooltip="Total de unidades vendidas (de todas as fontes)">Unid.<br>Total</th>
+            <th class="text-left" style="text-align:left">Produto / Campanha</th>
+            <th class="tooltip-header" data-tooltip="Total de unidades vendidas no período (soma de todas as fontes: ADS diretas + ADS indiretas + orgânicas)">Unidades<br>Totais</th>
             <th>Receita<br>Bruta</th>
-            <th class="tooltip-header" data-tooltip="Pedidos Diretos ADS: transações em que o comprador clicou no anúncio e comprou esse produto (direct_items_quantity)">Ped.<br>Dir.</th>
-            <th class="tooltip-header" data-tooltip="Pedidos Indiretos ADS: transações em que o comprador clicou num anúncio e comprou outro produto (indirect_items_quantity)">Ped.<br>Ind.</th>
-            <th class="tooltip-header" data-tooltip="Unidades Diretas ADS: unidades físicas vendidas via clique direto no anúncio (direct_units_quantity — igual ao que o ML Ads exibe)">Unid.<br>Dir.</th>
-            <th class="tooltip-header" data-tooltip="Unidades Indiretas ADS: unidades físicas vendidas em sessão ADS mas sem clique direto no produto (indirect_units_quantity)">Unid.<br>Ind.</th>
-            <th class="tooltip-header" data-tooltip="Unidades Orgânicas: Total Unid. − Unid.Dir. − Unid.Ind. (vendas sem nenhuma atribuição ADS)">Unid.<br>Org.</th>
-            <th class="tooltip-header" data-tooltip="Total investido em Product Ads no período">Invest.<br>ADS</th>
-            <th class="tooltip-header" data-tooltip="Receita ADS / Investimento ADS">ROAS</th>
+            <th class="tooltip-header" data-tooltip="Pedidos Diretos ADS: nº de transações em que o comprador clicou no anúncio e comprou esse produto (direct_items_quantity)">Pedidos<br>Diretos</th>
+            <th class="tooltip-header" data-tooltip="Pedidos Indiretos ADS: nº de transações em que o comprador clicou num anúncio e comprou outro produto seu (indirect_items_quantity)">Pedidos<br>Indiretos</th>
+            <th class="tooltip-header" data-tooltip="Unidades Diretas ADS: unidades físicas vendidas via clique direto no anúncio (direct_units_quantity — é o número que o ML Ads exibe como Vendas)">Unid.<br>Diretas</th>
+            <th class="tooltip-header" data-tooltip="Unidades Indiretas ADS: unidades físicas vendidas em sessão ADS mas sem clique direto no produto (indirect_units_quantity)">Unid.<br>Indiretas</th>
+            <th class="tooltip-header" data-tooltip="Unidades Orgânicas: Totais − Diretas − Indiretas (vendas sem nenhuma atribuição ADS)">Unid.<br>Orgânicas</th>
+            <th class="tooltip-header" data-tooltip="Total investido em Product Ads no período">Investimento<br>ADS</th>
+            <th class="tooltip-header" data-tooltip="Retorno sobre Investimento: Receita ADS / Investimento ADS">ROAS</th>
           </tr></thead>
           <tbody>${rows}</tbody>
         </table>`;
