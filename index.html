@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ADS-ORCAMENTO-DUPLO-DATACRIACAO-v2.1.4-2026-06-15 -->
+<!-- ADS-FATURAMENTO-KPI-v2.1.5-2026-06-15 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="version" content="2.1.4-2026-06-15-orcamento-duplo-datacriacao">
+  <meta name="version" content="2.1.5-2026-06-15-faturamento-kpi">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -579,7 +579,7 @@
       position: fixed;
       bottom: 8px;
       right: 12px;
-      font-size: 0.6rem;
+      font-size: 0.75rem;
       color: var(--text-secondary);
       opacity: 0.45;
       z-index: 9999;
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.1.4 · 15/jun';
+    const DASHBOARD_VERSION = 'v2.1.5 · 15/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1211,6 +1211,8 @@
     // ──────────────────────────────────────────────────────
     function renderAds() {
       const ads = state.filteredData.dashboard_ads || [];
+      const pedidos = state.filteredData.pedidos_completos || [];
+      const faturamentoTotal = pedidos.reduce((sum, r) => sum + parseLocalNumber(r['Receita Bruta']), 0);
 
       if (!ads.length) {
         document.getElementById('ads-content').innerHTML = `
@@ -1399,8 +1401,9 @@
           ${datasPeriodo}
         </div>
         <div class="kpi-grid">
-          ${renderKPICardAds('Receita', formatCurrency(totalReceita), 'Receita gerada pelas campanhas ADS no periodo (direct_amount + indirect_amount)')}
-          ${renderKPICardAds('Investimento', formatCurrency(totalInvestimento), 'Total investido em Product Ads no periodo')}
+          ${renderKPICardAds('Faturamento no Período', faturamentoTotal > 0 ? formatCurrency(faturamentoTotal) : '-', 'Receita bruta total de todos os pedidos no período (orgânicos + ADS)')}
+          ${renderKPICardAds('Receita por ADS', formatCurrency(totalReceita), 'Receita gerada pelas campanhas ADS no periodo (direct_amount + indirect_amount)')}
+          ${renderKPICardAds('Investimento em ADS', formatCurrency(totalInvestimento), 'Total investido em Product Ads no periodo')}
           ${renderKPICardAds('ROAS Medio', roasMedio > 0 ? roasMedio.toFixed(2) + 'x' : '-', 'Media simples dos ROAS reais de cada campanha ativa (apenas campanhas com investimento e receita)')}
           ${renderKPICardAds('ROAS', roasReal > 0 ? roasReal.toFixed(2) + 'x' : '-', 'Receita ADS total / Investimento total — retorno consolidado de todas as campanhas')}
           ${renderKPICardAds('ACOS', acos > 0 ? acos.toFixed(2) + '%' : '-', 'Investimento / Receita ADS × 100 — quanto % da receita ADS foi gasto em publicidade')}
