@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ADS-UNITS-COLUMNS-v2.1.8-2026-06-16 -->
+<!-- VENDAS-TAB-REWRITE-v2.2.0-2026-06-16 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="version" content="2.1.7-2026-06-15-roas-obj-fix">
+  <meta name="version" content="2.2.0-2026-06-16-vendas-tab-rewrite">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.1.8 · 16/jun';
+    const DASHBOARD_VERSION = 'v2.2.0 · 16/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1455,156 +1455,212 @@
     // ──────────────────────────────────────────────────────
     function renderVendasOrganicas() {
       const dashboard = state.filteredData.dashboard_ads || [];
-      const pedidos   = state.filteredData.pedidos_completos || [];
+      const vendas    = state.filteredData.vendas_produto || [];
 
-      if (!pedidos.length) {
+      if (!vendas.length) {
         document.getElementById('vendas-organicas-content').innerHTML = `
           <div class="empty-state"><p>Nenhum dado de vendas disponivel para este periodo.</p></div>
         `;
         return;
       }
 
-      // MAPEAMENTO: keywords normalizados (sem acentos) para casar com nomes de produtos
-      // 'laco' casa com 'laco' apos remocao de acentos NFD
-      // 'mdr' e mais especifico que '12v' para Fonte MDR (evita Fonte Chaveada 12v)
-      // '220' em Central Laco evita conflito com Central 12V
-      const MAPEAMENTO = {
-        "Central 12V 230526":        ["central", "12v"],
-        "Central de Laco 220V":      ["central", "laco", "220"],
-        "Extensor POE 10/100":       ["extensor", "poe"],
-        "Fechadura Sobrepor":        ["fechadura", "sobrepor"],
-        "Fechadura p/ vidro":        ["fechadura", "vidro"],
-        "Fonte MDR 12V":             ["fonte", "mdr"],
-        "Protetor de Cabo":          ["protetor", "cabo"],
-        "Sirene Estrobo":            ["sirene"],
-        "Sonda Hidroestatica 4m":    ["sonda"],
-      };
-
-      // Remove acentos e converte para minuscula para comparacao
-      function normalizar(str) {
-        return str.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      // Normaliza string: minúsculas + sem acentos + sem hífen suave
+      function norm(str) {
+        return String(str || '').toLowerCase()
+          .normalize('NFD').replace(/[̀-ͯ­]/g, '');
       }
 
-      function matchCampanha(produto) {
-        const norm = normalizar(produto);
-        for (const [campanha, palavras] of Object.entries(MAPEAMENTO)) {
-          if (palavras.every(p => norm.includes(p))) return campanha;
+      // MAPEAMENTO unificado: [label, [[grupos_produto]], [[grupos_campanha]]]
+      // Cada "grupo" é um array de palavras — TODAS devem estar presentes para casar.
+      // A lista é verificada em ordem; primeiro match vence. Entradas mais específicas PRIMEIRO.
+      const MAPEAMENTO = [
+        // Central Laço 220V — verificar "220" antes de "12v" pois há produtos com ambos
+        ["Central Laço 220V",
+          [["central","laco","220"],["central","laco","garen"],["central","laco","controle","acesso","220"]],
+          [["central","220"],["central","laco","220"]]],
+        // Central Laço 12V
+        ["Central Laço 12V",
+          [["central","laco","12v"],["central","laco","12 vdc"],["central","laco","12"]],
+          [["central","12v"],["central","12"]]],
+        // Central Laço genérico (sem tensão definida — títulos antigos)
+        ["Central Laço (outros)",
+          [["central","laco","controle","acesso"]],
+          []],
+        // Central Laço 2 canais
+        ["Central Laço 2 Canais",
+          [["central","laco","2 canais"],["central","laco","2canais"]],
+          []],
+        // Extensor PoE (todos os modelos — 1 campanha cobre todos)
+        ["Extensor PoE",
+          [["extensor","poe"],["divisor","poe"],["divisor","extensor","poe"]],
+          [["extensor","poe"],["extensor","10/100"]]],
+        // Sonda hidrostática
+        ["Sonda Hidrostática",
+          [["sonda"]],
+          [["sonda"]]],
+        // Protetor de Cabo
+        ["Protetor de Cabo",
+          [["protetor","cabo"]],
+          [["protetor"]]],
+        // Fechadura Sobrepor
+        ["Fechadura Sobrepor",
+          [["fechadura","sobrepor"]],
+          [["fechadura","sobrepor"]]],
+        // Fechadura Vidro (temporizada)
+        ["Fechadura Vidro",
+          [["fechadura","vidro"],["fechadura","temporiz"]],
+          [["fechadura","vidro"],["fechadura","190526"]]],
+        // Fonte 12V (MDR/Chaveada)
+        ["Fonte 12V",
+          [["fonte","12v"]],
+          [["fonte","12v"]]],
+        // Fonte 24V (MDR/Chaveada)
+        ["Fonte 24V",
+          [["fonte","24v"]],
+          [["fonte","24v"]]],
+        // Sirene Estroboscópica
+        ["Sirene Estroboscópica",
+          [["sirene"]],
+          [["sirene"]]],
+        // Sensor de Pressão
+        ["Sensor de Pressão",
+          [["sensor","pressao"],["sensor","transmissor"]],
+          []],
+        // Controle Acesso Biometria
+        ["Controle Biometria",
+          [["biometria"],["controle","acesso","tuya"]],
+          []],
+        // Hub Gateway Tuya
+        ["Hub Gateway Tuya",
+          [["hub","gateway"]],
+          []],
+        // RFID
+        ["Leitor RFID",
+          [["rfid"]],
+          []],
+        // Produtos Garen (revendas)
+        ["Garen Central Laço",
+          [["garen","central"],["garen","sensor","magnetico","laco"]],
+          []],
+      ];
+
+      function matchKey(str, tipo) {
+        const n = norm(str);
+        for (const [label, prodGrps, campGrps] of MAPEAMENTO) {
+          const grps = tipo === 'campaign' ? campGrps : prodGrps;
+          for (const words of grps) {
+            if (words.every(w => n.includes(norm(w)))) return label;
+          }
         }
         return null;
       }
 
-      // Agregar dashboard_ads por nome de campanha
-      const ads_por_campanha = {};
+      // ── Agregar dashboard_ads por chave canônica ──
+      const adsPorChave = {};
       dashboard.forEach(row => {
-        const campanha = (row['Campanha'] || '').trim();
-        if (!campanha) return;
-        if (!ads_por_campanha[campanha]) {
-          ads_por_campanha[campanha] = { v_ads: 0, v_sem: 0, receita_ads: 0, invest: 0 };
-        }
-        ads_por_campanha[campanha].v_ads       += parseLocalNumber(row['Pedidos Diretos ADS']   || row['Vendas por Product Ads']);
-        ads_por_campanha[campanha].v_sem       += parseLocalNumber(row['Pedidos Indiretos ADS'] || row['Vendas sem Product Ads']);
-        ads_por_campanha[campanha].receita_ads += parseLocalNumber(row['Receita ADS (R$)']);
-        ads_por_campanha[campanha].invest      += parseLocalNumber(row['Investimento ADS (R$)']);
+        const camp = (row['Campanha'] || '').trim();
+        if (!camp) return;
+        const key = matchKey(camp, 'campaign') || camp;
+        if (!adsPorChave[key]) adsPorChave[key] = { vDir:0, vInd:0, uDir:0, uInd:0, rec:0, inv:0 };
+        adsPorChave[key].vDir += parseLocalNumber(row['Pedidos Diretos ADS']   || row['Vendas por Product Ads']);
+        adsPorChave[key].vInd += parseLocalNumber(row['Pedidos Indiretos ADS'] || row['Vendas sem Product Ads']);
+        adsPorChave[key].uDir += parseLocalNumber(row['Unidades Diretas ADS']);
+        adsPorChave[key].uInd += parseLocalNumber(row['Unidades Indiretas ADS']);
+        adsPorChave[key].rec  += parseLocalNumber(row['Receita ADS (R$)']);
+        adsPorChave[key].inv  += parseLocalNumber(row['Investimento ADS (R$)']);
       });
 
-      // Agregar pedidos_completos — TODOS os produtos
-      // Produtos com campanha ADS: agrupados pelo nome da campanha
-      // Produtos sem campanha ADS: agrupados pelo nome exato do produto
-
-      // Descobrir chave real da coluna N° Pedido (o caractere ° varia por encoding)
-      const col_pedido = pedidos.length > 0
-        ? (Object.keys(pedidos[0]).find(k => k.toLowerCase().includes('pedido')) || '')
-        : '';
-
-      const por_chave = {};
-      const pedidos_set = new Set(); // N° Pedido distintos → Número de Vendas
-      pedidos.forEach(row => {
-        const produto  = (row['Produto'] || 'Desconhecido').trim();
-        const campanha = matchCampanha(produto);
-        const chave    = campanha || produto;
-
-        if (!por_chave[chave]) {
-          por_chave[chave] = { label: chave, campanha, tem_ads: campanha !== null, qtd: 0, receita: 0 };
-        }
-        por_chave[chave].qtd     += parseLocalNumber(row['Qtd']);
-        por_chave[chave].receita += parseLocalNumber(row['Receita Bruta']);
-
-        const num_pedido = col_pedido ? (row[col_pedido] || '').trim() : '';
-        if (num_pedido) pedidos_set.add(num_pedido);
-      });
-      const num_vendas = pedidos_set.size;
-
-      // Ordenar: campanhas ADS primeiro, depois sem ADS; dentro de cada grupo por qtd desc
-      const itens = Object.values(por_chave).sort((a, b) => {
-        if (a.tem_ads !== b.tem_ads) return a.tem_ads ? -1 : 1;
-        return b.qtd - a.qtd;
+      // ── Agregar vendas_produto por chave canônica ──
+      const vendPorChave = {};
+      vendas.forEach(row => {
+        const prod = (row['Produto'] || 'Desconhecido').trim();
+        const key  = matchKey(prod, 'product') || prod;
+        if (!vendPorChave[key]) vendPorChave[key] = { label: key, qtd: 0, rec: 0 };
+        vendPorChave[key].qtd += parseLocalNumber(row['Qtd Vendida']);
+        vendPorChave[key].rec += parseLocalNumber(row['Receita Bruta (R$)']);
       });
 
-      // Construir linhas da tabela
-      let total_qtd = 0, total_receita = 0, total_invest = 0;
-      let total_v_ads = 0, total_v_sem = 0, total_v_org = 0;
+      // ── Montar itens com dados ADS ──
+      const itens = Object.values(vendPorChave).map(item => ({
+        ...item,
+        ads:    adsPorChave[item.label] || null,
+        temAds: !!adsPorChave[item.label],
+      })).sort((a, b) => {
+        if (a.temAds !== b.temAds) return a.temAds ? -1 : 1;
+        return b.rec - a.rec;
+      });
+
+      // ── Construir linhas da tabela ──
+      let totQtd=0, totRec=0, totInv=0, totRecAds=0;
+      let totVDir=0, totVInd=0, totUDir=0, totUInd=0;
       let rows = '';
 
       itens.forEach(item => {
-        const ads = item.campanha
-          ? (ads_por_campanha[item.campanha] || { v_ads: 0, v_sem: 0, receita_ads: 0, invest: 0 })
-          : { v_ads: 0, v_sem: 0, receita_ads: 0, invest: 0 };
+        const ads = item.ads || { vDir:0, vInd:0, uDir:0, uInd:0, rec:0, inv:0 };
+        const uOrg = Math.max(0, item.qtd - ads.uDir - ads.uInd);
+        const roas = ads.inv > 0 ? (ads.rec / ads.inv).toFixed(2) : '-';
 
-        const v_total_ads = ads.v_ads + ads.v_sem;
-        const v_org = Math.max(0, item.qtd - v_total_ads);
-        const roas  = ads.invest > 0 ? (ads.receita_ads / ads.invest).toFixed(2) : '-';
+        totQtd   += item.qtd;
+        totRec   += item.rec;
+        totInv   += ads.inv;
+        totRecAds+= ads.rec;
+        totVDir  += ads.vDir;
+        totVInd  += ads.vInd;
+        totUDir  += ads.uDir;
+        totUInd  += ads.uInd;
 
-        total_qtd     += item.qtd;
-        total_receita += item.receita;
-        total_invest  += ads.invest;
-        total_v_ads   += ads.v_ads;
-        total_v_sem   += ads.v_sem;
-        total_v_org   += v_org;
-
-        const badge = item.tem_ads
-          ? '<span style="background:var(--accent);color:#fff;padding:1px 5px;border-radius:3px;font-size:0.65rem;margin-left:6px;vertical-align:middle;">ADS</span>'
+        const badge = item.temAds
+          ? `<span style="background:var(--accent-blue);color:#fff;padding:1px 5px;border-radius:3px;font-size:0.65rem;margin-left:6px;vertical-align:middle;">ADS</span>`
           : '';
 
         rows += `<tr>
           <td class="text-left">${item.label}${badge}</td>
           <td>${item.qtd}</td>
-          <td>${formatCurrency(item.receita)}</td>
-          <td>${ads.v_ads > 0 ? ads.v_ads : '-'}</td>
-          <td>${ads.v_sem > 0 ? ads.v_sem : '-'}</td>
-          <td>${v_org > 0 ? v_org : '-'}</td>
-          <td>${ads.invest > 0 ? formatCurrency(ads.invest) : '-'}</td>
+          <td>${formatCurrency(item.rec)}</td>
+          <td>${ads.vDir > 0 ? ads.vDir : '-'}</td>
+          <td>${ads.vInd > 0 ? ads.vInd : '-'}</td>
+          <td>${ads.uDir > 0 ? ads.uDir : '-'}</td>
+          <td>${ads.uInd > 0 ? ads.uInd : '-'}</td>
+          <td>${uOrg > 0 ? uOrg : '-'}</td>
+          <td>${ads.inv > 0 ? formatCurrency(ads.inv) : '-'}</td>
           <td>${roas}</td>
         </tr>`;
       });
 
       // Linha de total
-      rows += `<tr style="font-weight:bold;border-top:2px solid var(--accent);">
+      const totUOrg = Math.max(0, totQtd - totUDir - totUInd);
+      const roasGeral = totInv > 0 ? (totRecAds / totInv).toFixed(2) : '-';
+      rows += `<tr style="font-weight:bold;border-top:2px solid var(--accent-blue);">
         <td class="text-left">TOTAL</td>
-        <td>${total_qtd}</td>
-        <td>${formatCurrency(total_receita)}</td>
-        <td>${total_v_ads || '-'}</td>
-        <td>${total_v_sem || '-'}</td>
-        <td>${total_v_org || '-'}</td>
-        <td>${formatCurrency(total_invest)}</td>
-        <td>-</td>
+        <td>${totQtd}</td>
+        <td>${formatCurrency(totRec)}</td>
+        <td>${totVDir || '-'}</td>
+        <td>${totVInd || '-'}</td>
+        <td>${totUDir || '-'}</td>
+        <td>${totUInd || '-'}</td>
+        <td>${totUOrg || '-'}</td>
+        <td>${formatCurrency(totInv)}</td>
+        <td>${roasGeral}</td>
       </tr>`;
 
       const tableHtml = `
         <table style="width:100%">
           <thead><tr>
             <th class="text-left">Produto / Campanha</th>
-            <th>Total<br>Unidades</th>
+            <th class="tooltip-header" data-tooltip="Total de unidades vendidas (de todas as fontes)">Unid.<br>Total</th>
             <th>Receita<br>Bruta</th>
-            <th class="tooltip-header" data-tooltip="Vendas geradas por clique em Product Ads">Vendas<br>c/ ADS</th>
-            <th class="tooltip-header" data-tooltip="Vendas em sessao ADS mas sem clique no anuncio">Vendas<br>s/ ADS</th>
-            <th class="tooltip-header" data-tooltip="Vendas fora de qualquer sessao ADS (organicas puras)">Vendas<br>Organicas</th>
-            <th class="tooltip-header" data-tooltip="Valor total investido em Product Ads">Invest.<br>ADS</th>
-            <th class="tooltip-header" data-tooltip="Retorno sobre investimento: Receita ADS / Investimento">ROAS</th>
+            <th class="tooltip-header" data-tooltip="Pedidos Diretos ADS: transações em que o comprador clicou no anúncio e comprou esse produto (direct_items_quantity)">Ped.<br>Dir.</th>
+            <th class="tooltip-header" data-tooltip="Pedidos Indiretos ADS: transações em que o comprador clicou num anúncio e comprou outro produto (indirect_items_quantity)">Ped.<br>Ind.</th>
+            <th class="tooltip-header" data-tooltip="Unidades Diretas ADS: unidades físicas vendidas via clique direto no anúncio (direct_units_quantity — igual ao que o ML Ads exibe)">Unid.<br>Dir.</th>
+            <th class="tooltip-header" data-tooltip="Unidades Indiretas ADS: unidades físicas vendidas em sessão ADS mas sem clique direto no produto (indirect_units_quantity)">Unid.<br>Ind.</th>
+            <th class="tooltip-header" data-tooltip="Unidades Orgânicas: Total Unid. − Unid.Dir. − Unid.Ind. (vendas sem nenhuma atribuição ADS)">Unid.<br>Org.</th>
+            <th class="tooltip-header" data-tooltip="Total investido em Product Ads no período">Invest.<br>ADS</th>
+            <th class="tooltip-header" data-tooltip="Receita ADS / Investimento ADS">ROAS</th>
           </tr></thead>
           <tbody>${rows}</tbody>
         </table>`;
 
-      // Datas do periodo
+      // Datas do período
       let datasPeriodo = '';
       let sd = state.startDate, ed = state.endDate;
       if (!sd || !ed) {
@@ -1617,19 +1673,18 @@
         datasPeriodo = ` <span style="font-size:0.85rem;color:var(--text-secondary);font-weight:400;">de ${sd.toLocaleDateString('pt-BR', fmt)} a ${ed.toLocaleDateString('pt-BR', fmt)}</span>`;
       }
 
-      const pct_ads = total_qtd > 0 ? (total_v_ads / total_qtd * 100).toFixed(1) : 0;
-      const pct_org = total_qtd > 0 ? (total_v_org / total_qtd * 100).toFixed(1) : 0;
+      const pctAds = totQtd > 0 ? (totUDir / totQtd * 100).toFixed(1) : 0;
 
       document.getElementById('vendas-organicas-content').innerHTML = `
         <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;">
           <h2 style="margin:0;">Vendas — Todos os Produtos</h2>${datasPeriodo}
         </div>
         <div class="kpi-grid">
-          ${renderKPICard('Numero de Vendas', num_vendas, 0, false, 'Quantidade de pedidos distintos no periodo (N° Pedido unico)')}
-          ${renderKPICard('Unidades Vendidas', total_qtd, 0, false, 'Total de itens vendidos no periodo — um pedido pode ter multiplas unidades')}
-          ${renderKPICard('Faturamento Bruto', total_receita, 0, true, 'Receita bruta total de todos os produtos')}
-          ${renderKPICard('Vendas c/ ADS', total_v_ads, 0, false, 'Unidades geradas por Product Ads (' + pct_ads + '% do total)')}
-          ${renderKPICard('Investimento ADS', total_invest, 0, true, 'Total investido em Product Ads no periodo')}
+          ${renderKPICard('Unidades Vendidas', totQtd, 0, false, 'Total de unidades vendidas no periodo (soma de Qtd Vendida da aba Vendas_Produto)')}
+          ${renderKPICard('Faturamento Bruto', totRec, 0, true, 'Receita bruta total de todos os produtos no periodo')}
+          ${renderKPICard('Unid. Diretas ADS', totUDir, 0, false, 'Unidades geradas diretamente por Product Ads — direct_units_quantity (' + pctAds + '% do total)')}
+          ${renderKPICard('Investimento ADS', totInv, 0, true, 'Total investido em Product Ads no periodo')}
+          ${renderKPICardAds('ROAS Geral', roasGeral, 'Receita ADS total / Investimento ADS total no periodo')}
         </div>
         <div class="table-container">${tableHtml}</div>`;
     }
