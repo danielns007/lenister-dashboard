@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- FIX-COLUNAS-ADS-v2.3.2-2026-06-16 -->
+<!-- FIX-COLUNAS-VENDAS-v2.3.3-2026-06-16 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="version" content="2.3.2-2026-06-16-fix-colunas-ads">
+  <meta name="version" content="2.3.3-2026-06-16-fix-colunas-vendas">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.3.2 · 16/jun';
+    const DASHBOARD_VERSION = 'v2.3.3 · 16/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1746,8 +1746,8 @@
             <th class="text-left" style="text-align:left">Produto / Campanha</th>
             <th class="tooltip-header" data-tooltip="Total de unidades vendidas no período (soma de todas as fontes: ADS diretas + ADS indiretas + orgânicas)">Unidades<br>Totais</th>
             <th>Receita<br>Bruta</th>
-            <th class="tooltip-header" data-tooltip="Pedidos Diretos ADS: nº de transações em que o comprador clicou no anúncio e comprou esse produto (direct_items_quantity)">Pedidos<br>Diretos</th>
-            <th class="tooltip-header" data-tooltip="Pedidos Indiretos ADS: nº de transações em que o comprador clicou num anúncio e comprou outro produto seu (indirect_items_quantity)">Pedidos<br>Indiretos</th>
+            <th class="tooltip-header" data-tooltip="Vendas Diretas ADS: unidades físicas vendidas com atribuição direta ao clique no anúncio (direct_items_quantity)">Vendas<br>Diretas</th>
+            <th class="tooltip-header" data-tooltip="Vendas Indiretas ADS: unidades físicas vendidas em sessão ADS mas por outro produto seu (indirect_items_quantity)">Vendas<br>Indiretas</th>
             <th class="tooltip-header" data-tooltip="Unidades Diretas ADS: unidades físicas vendidas via clique direto no anúncio (direct_units_quantity — é o número que o ML Ads exibe como Vendas)">Unid.<br>Diretas</th>
             <th class="tooltip-header" data-tooltip="Unidades Indiretas ADS: unidades físicas vendidas em sessão ADS mas sem clique direto no produto (indirect_units_quantity)">Unid.<br>Indiretas</th>
             <th class="tooltip-header" data-tooltip="Unidades Orgânicas: Totais − Diretas − Indiretas (vendas sem nenhuma atribuição ADS)">Unid.<br>Orgânicas</th>
