@@ -198,14 +198,16 @@ def selecionar_todas_opcoes(driver, timeout=15):
                         pass
                     return
 
-            # Pagina tem variantes mas "Todas as opcoes" nao esta visivel ainda
-            if "Condi" in body_text and "Op" in body_text:
-                # Abre dropdown via JS — busca qualquer botao com "Op" no texto
+            # Pagina tem variantes: exige "Condicao de venda" E "Opcao N |" (com pipe e numero)
+            import re as _re
+            tem_variantes = ("Condi" in body_text and _re.search(r'Op[çc]ão\s+\d', body_text) is not None)
+            if tem_variantes:
+                # Abre dropdown via JS — busca botao que contenha "Opcao" seguido de numero
                 try:
                     abriu = driver.execute_script("""
                         var btns = document.querySelectorAll('button, [role="button"]');
                         for (var b of btns) {
-                            if (b.innerText && b.innerText.includes('Op')) {
+                            if (b.innerText && /Op[çc]ão\\s+\\d/.test(b.innerText)) {
                                 b.click();
                                 return true;
                             }
@@ -214,7 +216,6 @@ def selecionar_todas_opcoes(driver, timeout=15):
                     """)
                     if abriu:
                         time.sleep(2)
-                        # Agora clica em "Todas as opcoes de venda"
                         clicou = driver.execute_script("""
                             var els = document.querySelectorAll('li, button, [role="option"], [role="menuitem"]');
                             for (var el of els) {
