@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- ABA-PRODUTOS-COMPLETA-v2.3.0-2026-06-16 -->
+<!-- ABA-PRODUTOS-COMPLETA-v2.3.1-2026-06-16 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.3.0 · 16/jun';
+    const DASHBOARD_VERSION = 'v2.3.1 · 16/jun';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1219,8 +1219,8 @@
       const conversaoGeral      = totalVisitasUnicas > 0 ? (totalUnidades / totalVisitasUnicas) * 100 : 0;
       const melhor = produtos.reduce((b, p) => p.vendasBrutas > b.vendasBrutas ? p : b, produtos[0] || {nome:'-'});
 
-      // Ordenar por Vendas Brutas desc
-      produtos.sort((a, b) => b.vendasBrutas - a.vendasBrutas);
+      // Ordenar por Visitas Únicas desc; empate: mais vendas primeiro
+      produtos.sort((a, b) => b.visitasUnicas - a.visitasUnicas || b.vendasBrutas - a.vendasBrutas);
 
       // Tabela
       let tableHtml = `
