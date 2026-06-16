@@ -1,0 +1,38 @@
+name: Atualização Diária Sheets
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # 06:00 BRT = 09:00 UTC
+  workflow_dispatch:        # permite rodar manualmente no GitHub Actions
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Setup Chrome (para coletar_desempenho.py)
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Instalar dependências Python
+        run: pip install requests gspread google-auth selenium webdriver-manager
+
+      - name: Rodar atualização diária
+        run: python atualizar_diario.py
+        env:
+          ML_CLIENT_ID:            ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET:        ${{ secrets.ML_CLIENT_SECRET }}
+          ML_REFRESH_TOKEN:        ${{ secrets.ML_REFRESH_TOKEN }}
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          ML_COOKIES_JSON:         ${{ secrets.ML_COOKIES_JSON }}
+          CHROME_HEADLESS:         "1"
+          DISPLAY:                 ""

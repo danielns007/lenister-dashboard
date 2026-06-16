@@ -2,9 +2,19 @@
 ml_token.json
 credenciais.json
 
-# Scripts Python (não versionados)
+# Scripts Python — arquivos locais/utilitários não versionados
 *.py
 chrome_profile/
+chrome_perfil_ml/
+
+# Scripts de coleta versionados (sem credenciais hardcoded)
+!atualizar_diario.py
+!coletar_ads_api.py
+!coletar_vendas_api.py
+!coletar_custos_api_v2_reports.py
+!ressincronizar_ads_recentes.py
+!renovar_token.py
+!coletar_desempenho.py
 
 # IDE
 .claude/
