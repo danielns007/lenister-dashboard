@@ -243,13 +243,6 @@ def selecionar_todas_opcoes(driver, timeout=15):
 
 
 def extrair_kpis(driver, mlb_id=""):
-            break
-
-    except Exception as e:
-        print(f"    ⚠️ selecionar_todas_opcoes: {e}")
-
-
-def extrair_kpis(driver, mlb_id=""):
     """
     Extrai os KPIs da página de desempenho do ML.
     Aguarda ativamente o carregamento antes de parsear.
