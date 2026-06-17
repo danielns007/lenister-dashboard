@@ -2,7 +2,7 @@ name: Atualização Diária Sheets
 
 on:
   schedule:
-    - cron: '0 9 * * *'   # 06:00 BRT = 09:00 UTC
+    - cron: '30 13 * * *'  # 10:30 BRT = 13:30 UTC
   workflow_dispatch:        # permite rodar manualmente no GitHub Actions
 
 jobs:
