@@ -68,13 +68,17 @@ def run(script, extra_env=None):
         env.update(extra_env)
     # coletar_desempenho.py tem 14 produtos × ~10s cada + overhead = ~180s
     timeout = 600 if script == 'coletar_desempenho.py' else 300
-    r = subprocess.run(
-        [sys.executable, script],
-        capture_output=True,
-        text=True,
-        timeout=timeout,
-        env=env,
-    )
+    try:
+        r = subprocess.run(
+            [sys.executable, script],
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            env=env,
+        )
+    except subprocess.TimeoutExpired:
+        log(f"❌ {script} TIMEOUT após {timeout}s")
+        return False
     if r.returncode == 0:
         log(f"✅ {script} OK")
         if r.stdout:
