@@ -166,82 +166,6 @@ def aguardar_pagina_carregada(driver, timeout=20):
     return False
 
 
-def selecionar_todas_opcoes(driver, timeout=15):
-    """
-    Se a pagina tiver dropdown 'Condicao de venda', seleciona 'Todas as opcoes de venda'.
-    Necessario para produtos com variantes (ex: Extensor PoE Hi-AT13FL).
-    Usa JS click para funcionar em headless.
-    """
-    try:
-        fim = time.time() + timeout
-        while time.time() < fim:
-            try:
-                body_text = driver.find_element(By.TAG_NAME, "body").text
-            except Exception:
-                time.sleep(1)
-                continue
-
-            # Se "Todas as opcoes" ja esta no body como elemento unico = ja selecionado
-            if "Todas as op" in body_text:
-                els = driver.find_elements(By.XPATH, "//*[contains(text(),'Todas as op')]")
-                # Se apenas 1 elemento (o botao fechado), ja esta selecionado
-                if len(els) == 1:
-                    print("    [info] Todas as opcoes ja selecionado")
-                    return
-                # Se > 1, o dropdown esta aberto mostrando a opcao — clica nela
-                if len(els) > 1:
-                    try:
-                        driver.execute_script("arguments[0].click();", els[-1])
-                        time.sleep(2)
-                        print("    OK: Todas as opcoes de venda selecionado")
-                    except Exception:
-                        pass
-                    return
-
-            # Pagina tem variantes: exige "Condicao de venda" E "Opcao N |" (com pipe e numero)
-            import re as _re
-            tem_variantes = ("Condi" in body_text and _re.search(r'Op[çc]ão\s+\d', body_text) is not None)
-            if tem_variantes:
-                # Abre dropdown via JS — busca botao que contenha "Opcao" seguido de numero
-                try:
-                    abriu = driver.execute_script("""
-                        var btns = document.querySelectorAll('button, [role="button"]');
-                        for (var b of btns) {
-                            if (b.innerText && /Op[çc]ão\\s+\\d/.test(b.innerText)) {
-                                b.click();
-                                return true;
-                            }
-                        }
-                        return false;
-                    """)
-                    if abriu:
-                        time.sleep(2)
-                        clicou = driver.execute_script("""
-                            var els = document.querySelectorAll('li, button, [role="option"], [role="menuitem"]');
-                            for (var el of els) {
-                                if (el.innerText && el.innerText.includes('Todas as op')) {
-                                    el.click();
-                                    return true;
-                                }
-                            }
-                            return false;
-                        """)
-                        if clicou:
-                            time.sleep(2)
-                            print("    OK: Todas as opcoes de venda selecionado")
-                            return
-                except Exception as e:
-                    print(f"    [warn] JS click falhou: {e}")
-                time.sleep(1)
-                continue
-
-            # Sem dropdown de variantes na pagina
-            break
-
-    except Exception as e:
-        print(f"    [warn] selecionar_todas_opcoes: {e}")
-
-
 def extrair_kpis(driver, mlb_id=""):
     """
     Extrai os KPIs da página de desempenho do ML.
@@ -338,9 +262,6 @@ for produto in PRODUTOS:
         driver.get(url)
         # Aguarda SPA inicializar antes de buscar KPIs
         time.sleep(5 if not HEADLESS else 8)
-
-        # Se produto tiver variantes, seleciona "Todas as opções de venda"
-        selecionar_todas_opcoes(driver)
 
         kpis = extrair_kpis(driver, mlb_id)
 
