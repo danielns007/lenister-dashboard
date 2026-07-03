@@ -36,7 +36,7 @@ PRODUTOS = [
     {"nome": "Fechadura Sobrepor",        "id": "MLB4205584415"},
     {"nome": "Sonda 0-4mca",              "id": "MLB3904989803"},
     {"nome": "Central Laço 12V Preto",    "id": "MLB5697266066"},
-    {"nome": "Extensor PoE Hi-AT13FL",    "id": "MLB4241298943"},
+    {"nome": "Extensor PoE Hi-AT13FL",    "id": "MLB4273561454"},
     {"nome": "Central Laço 220V",         "id": "MLB5694900528"},
     {"nome": "Sensor Pressão 10 Bar",     "id": "MLB6294668236"},
 ]
