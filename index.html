@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- FIX-KPI-FONT-v2.3.7-2026-06-16 -->
+<!-- ADD-SONDA-0-2MCA-v2.3.8-2026-07-03 -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, s-maxage=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta name="version" content="2.3.7-2026-06-16-fix-kpi-font">
+  <meta name="version" content="2.3.8-2026-07-03-add-sonda-0-2mca">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
@@ -766,7 +766,7 @@
 
   <!-- SCRIPTS -->
   <script>
-    const DASHBOARD_VERSION = 'v2.3.7 · 16/jun';
+    const DASHBOARD_VERSION = 'v2.3.8 · 03/jul';
 
     // Force clear cache on page load
     window.location.hash = Math.random();
@@ -1594,6 +1594,10 @@
         // Sonda 0-10mca — sem campanha ADS (verificar antes da 4m)
         ["Sonda 0-10mca",
           [["sonda","10mca"],["sonda","10m"],["sonda","0-10"],["sonda","0..10"]],
+          []],
+        // Sonda 0-2mca (MLB4811412531) — sem campanha ADS (verificar antes da 4m)
+        ["Sonda 0-2mca",
+          [["sonda","2mca"],["sonda","0-2"]],
           []],
         // Sonda 0-4mca — campanha "Sonda Hidroestatica 4m"
         ["Sonda 0-4mca",

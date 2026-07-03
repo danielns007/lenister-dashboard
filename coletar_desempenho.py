@@ -35,6 +35,7 @@ PRODUTOS = [
     {"nome": "Fonte 12V",                 "id": "MLB6128512354"},
     {"nome": "Fonte 24V",                 "id": "MLB6128447010"},
     {"nome": "Sonda 0-10mca",             "id": "MLB4470736687"},
+    {"nome": "Sonda 0-2mca",              "id": "MLB4811412531"},
     {"nome": "Central Laço 12V Manual",   "id": "MLB4559395191"},
     {"nome": "Fechadura Vidro",           "id": "MLB6718341398"},
     {"nome": "Extensor PoE Giga",         "id": "MLB6508001372"},
