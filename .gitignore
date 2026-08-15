@@ -1,6 +1,9 @@
 # Credenciais e Tokens
 ml_token.json
 credenciais.json
+ml_all_cookies.json
+ml_session_cookies.json
+*cookies*.json
 
 # Scripts Python — arquivos locais/utilitários não versionados
 *.py
@@ -15,6 +18,7 @@ chrome_perfil_ml/
 !ressincronizar_ads_recentes.py
 !renovar_token.py
 !coletar_desempenho.py
+!coletar_promocoes.py
 
 # IDE
 .claude/
