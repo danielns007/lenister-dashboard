@@ -66,7 +66,9 @@ def run(script, extra_env=None):
     env = {**os.environ}
     if extra_env:
         env.update(extra_env)
-    # coletar_desempenho.py tem 14 produtos × ~10s cada + overhead = ~180s
+    # coletar_desempenho.py tem 17 produtos (atualizado 2026-08-14: Central 12V
+    # separada em Premium/Clássico + sondas 0-1mca/0-5mca adicionadas) × ~10s
+    # cada + overhead = ~200s, folga confortável dentro do timeout de 600s
     timeout = 600 if script == 'coletar_desempenho.py' else 300
     r = subprocess.run(
         [sys.executable, script],
@@ -103,12 +105,16 @@ if __name__ == '__main__':
         'coletar_vendas_api.py',
         'coletar_custos_api_v2_reports.py',
         'coletar_desempenho.py',
+        'coletar_promocoes.py',
     ]
+
+    # Scripts Selenium precisam de CHROME_HEADLESS=1 no CI (GitHub Actions) —
+    # sem chrome_profile local, dependem de ML_COOKIES_JSON pra autenticar.
+    SCRIPTS_SELENIUM = {'coletar_desempenho.py', 'coletar_promocoes.py'}
 
     resultados = {}
     for s in scripts:
-        # coletar_desempenho.py precisa de CHROME_HEADLESS=1 no CI
-        extra = {'CHROME_HEADLESS': '1'} if s == 'coletar_desempenho.py' else None
+        extra = {'CHROME_HEADLESS': '1'} if s in SCRIPTS_SELENIUM else None
         resultados[s] = run(s, extra_env=extra)
 
     log("\n=== RESUMO ===")
@@ -117,8 +123,8 @@ if __name__ == '__main__':
 
     falhas = [s for s, ok in resultados.items() if not ok]
 
-    # coletar_desempenho.py é opcional (depende de cookies ML) — não falha o job
-    falhas_criticas = [f for f in falhas if f != 'coletar_desempenho.py']
+    # Scripts Selenium são opcionais (dependem de cookies ML) — não falham o job
+    falhas_criticas = [f for f in falhas if f not in SCRIPTS_SELENIUM]
 
     if falhas:
         log(f"\n⚠️  {len(falhas)} script(s) com falha: {falhas}")
