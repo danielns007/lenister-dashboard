@@ -40,20 +40,27 @@ jobs:
           CHROME_HEADLESS:         "1"
           DISPLAY:                 ""
 
-      - name: Publicar snapshot JSON (Desempenho_Anuncios + Promocoes)
-        # coletar_desempenho.py e coletar_promocoes.py rodam num runner
-        # efêmero (sem disco persistente entre execuções), então o JSON
-        # gerado em data/ precisa ser commitado de volta no repo aqui — é
-        # assim que o weekly_digest.py (VPS) consegue buscar esse dado
-        # depois, via URL raw do GitHub. Ver 28_ROADMAP_PIPELINE.md, Fase
-        # 6.1 / A5. Promocoes adicionado em 2026-08-15, mesmo motivo do
-        # Desempenho. [skip ci] evita disparar o workflow de novo neste push.
+      - name: Publicar snapshot JSON (Promocoes)
+        # coletar_promocoes.py roda num runner efemero (sem disco persistente
+        # entre execucoes), entao o JSON gerado em data/ precisa ser
+        # commitado de volta no repo aqui - e assim que o weekly_digest.py
+        # (VPS) consegue buscar esse dado depois, via URL raw do GitHub. Ver
+        # 28_ROADMAP_PIPELINE.md, Fase 6.1 / A5.
+        #
+        # So cobre promocoes_*.json por enquanto: o snapshot JSON do
+        # coletar_desempenho.py (desempenho_*.json) vem de outro commit
+        # (48aa864, "descoberta dinamica de anuncios + snapshot JSON"),
+        # ainda so na branch local master, nao deployado - se rodar aqui
+        # sem esses arquivos existirem, quebra o job (2026-08-22, primeira
+        # execucao real: "fatal: pathspec did not match any files").
+        # Quando 48aa864 for deployado, reincluir data/desempenho_*.json.
+        # [skip ci] evita disparar o workflow de novo neste push.
         run: |
-          if [ -d data ] && [ -n "$(git status --porcelain data/)" ]; then
+          if [ -d data ] && [ -n "$(git status --porcelain data/promocoes_*.json 2>/dev/null)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add data/desempenho_latest.json data/desempenho_*.json data/promocoes_latest.json data/promocoes_*.json
-            git commit -m "chore: atualizar snapshot Desempenho_Anuncios + Promocoes [skip ci]"
+            git add data/promocoes_latest.json data/promocoes_*.json
+            git commit -m "chore: atualizar snapshot Promocoes [skip ci]"
             git push
           else
             echo "Nada novo em data/ para commitar."
