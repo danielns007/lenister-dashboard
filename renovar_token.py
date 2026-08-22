@@ -38,7 +38,12 @@ if resp.status_code != 200:
     exit(1)
 
 new_data = resp.json()
-new_data['refresh_token'] = refresh_token  # Manter o refresh_token antigo
+# Corrigido em 2026-08-15: o Mercado Livre rotaciona o refresh_token a cada uso
+# (confirmado testando ao vivo — resposta devolve um refresh_token diferente do
+# enviado). Guardar o novo, nao o antigo, senao o proximo refresh eventualmente
+# falha quando a tolerancia do ML a token rotacionado antigo se esgotar.
+if 'refresh_token' not in new_data:
+    new_data['refresh_token'] = refresh_token  # fallback, resposta sem novo token
 
 # Salvar
 with open(TOKEN_FILE, 'w') as f:

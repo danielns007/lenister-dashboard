@@ -1,6 +1,9 @@
 # Credenciais e Tokens
 ml_token.json
 credenciais.json
+ml_all_cookies.json
+ml_session_cookies.json
+*cookies*.json
 
 # Scripts Python — arquivos locais/utilitários não versionados
 *.py
@@ -15,6 +18,19 @@ chrome_perfil_ml/
 !ressincronizar_ads_recentes.py
 !renovar_token.py
 !coletar_desempenho.py
+!coletar_promocoes.py
+
+# Scripts de teste versionados
+!testar_integracao_completa.py
+!testar_componentes_locais.py
+
+# Scripts JS — arquivos locais/utilitários não versionados (vários contêm credenciais hardcoded)
+*.js
+
+# Scripts JS versionados (sem credenciais hardcoded)
+!cartoes_server.js
+!google_sheets_reader.js
+!scripts/migrate_html_to_sheets.js
 
 # IDE
 .claude/
