@@ -8,7 +8,9 @@ import requests
 from pathlib import Path
 
 CLIENT_ID     = os.environ.get('ML_CLIENT_ID',     '739123530612333')
-CLIENT_SECRET = os.environ.get('ML_CLIENT_SECRET', 'tCZxVQNaeUZKMm8AxQFlsaGTgMYLj4U1')
+CLIENT_SECRET = os.environ.get('ML_CLIENT_SECRET', '')
+if not CLIENT_SECRET:
+    raise SystemExit('ML_CLIENT_SECRET ausente: definir como secret do GitHub Actions. Sem fallback no codigo -- este repositorio e PUBLICO.')
 
 _token_default = r"C:\Users\DanielNS\Lenister\ml_token.json"
 TOKEN_FILE = Path(os.environ.get('ML_TOKEN_FILE', _token_default))
