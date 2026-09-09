@@ -10,7 +10,9 @@ from google.oauth2.service_account import Credentials
 # ─── CONFIGURAÇÕES ───────────────────────────────────────────────
 import os as _os
 ML_CLIENT_ID     = _os.environ.get('ML_CLIENT_ID',     '739123530612333')
-ML_CLIENT_SECRET = _os.environ.get('ML_CLIENT_SECRET', 'tCZxVQNaeUZKMm8AxQFlsaGTgMYLj4U1')
+ML_CLIENT_SECRET = _os.environ.get('ML_CLIENT_SECRET', '')
+if not ML_CLIENT_SECRET:
+    raise SystemExit('ML_CLIENT_SECRET ausente: definir como secret do GitHub Actions. Sem fallback no codigo -- este repositorio e PUBLICO.')
 ID_PLANILHA      = _os.environ.get('ML_SPREADSHEET_ID', '18qObMZY06om7paVmu7RxtakWBOAGb216HY9ScPfyFHk')
 
 _token_default = r"C:\Users\DanielNS\Lenister\ml_token.json"
