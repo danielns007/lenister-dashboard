@@ -1,5 +1,10 @@
 import sys, io, os, json
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', line_buffering=True)
+# line_buffering=True e o que faz o log de saida parcial existir quando o
+# orquestrador mata este processo por timeout. Sem isso o texto fica no buffer
+# de bloco (~8KB), o processo morre antes de encher, e subprocess.run entrega
+# stdout VAZIO no TimeoutExpired -- medido: 0 caractere. PYTHONUNBUFFERED e
+# python -u NAO resolvem, porque este wrapper rebufferiza depois deles.
 import time
 import re
 import requests
@@ -34,15 +39,18 @@ PRODUTOS = [
     {"nome": "Sirene Estroboscópica",     "id": "MLB6168880144"},
     {"nome": "Fonte 12V",                 "id": "MLB6128512354"},
     {"nome": "Fonte 24V",                 "id": "MLB6128447010"},
+    {"nome": "Sonda 0-1mca",              "id": "MLB4960886183"},
     {"nome": "Sonda 0-10mca",             "id": "MLB4470736687"},
     {"nome": "Sonda 0-2mca",              "id": "MLB4811412531"},
+    {"nome": "Sonda 0-5mca",              "id": "MLB7277760266"},
     {"nome": "Central Laço 12V Manual",   "id": "MLB4559395191"},
     {"nome": "Fechadura Vidro",           "id": "MLB6718341398"},
     {"nome": "Extensor PoE Giga",         "id": "MLB6508001372"},
     {"nome": "Protetor Cabo",             "id": "MLB5482550358"},
     {"nome": "Fechadura Sobrepor",        "id": "MLB4205584415"},
     {"nome": "Sonda 0-4mca",              "id": "MLB3904989803"},
-    {"nome": "Central Laço 12V Preto",    "id": ["MLB5697266066", "MLB4250306527"]},
+    {"nome": "Central Laço 12V Preto (Premium)", "id": "MLB5697266066"},
+    {"nome": "Central Laço 12V Preto (Clássico)", "id": "MLB4250306527"},
     {"nome": "Extensor PoE Hi-AT13FL",    "id": "MLB4273561454"},
     {"nome": "Central Laço 220V",         "id": "MLB5694900528"},
     {"nome": "Sensor Pressão 10 Bar",     "id": "MLB6294668236"},
@@ -92,6 +100,73 @@ def motivo_texto(sub_status_list):
         return ""
     return "; ".join(MOTIVO_LEGIVEL.get(s, s) for s in sub_status_list)
 
+# ─── DESCOBERTA DINÂMICA DE ANÚNCIOS (2026-07-21) ────────────────
+# PRODUTOS acima é curado à mão (nome curto + agrupamento de anúncios-irmãos
+# do mesmo produto) — não dá pra substituir por API sem perder essas duas
+# coisas. Em vez disso, checa contra a API a cada execução e avisa/inclui
+# qualquer anúncio ativo que não esteja na lista curada, para não ficar
+# invisível até alguém lembrar de editar o código manualmente.
+
+def buscar_seller_id(token):
+    if not token:
+        return None
+    try:
+        r = requests.get(
+            "https://api.mercadolibre.com/users/me",
+            headers={"Authorization": f"Bearer {token}"},
+            timeout=15,
+        )
+        if r.status_code == 200:
+            return r.json().get("id")
+    except Exception as e:
+        print(f"⚠️  Falha ao obter seller_id: {e}")
+    return None
+
+def buscar_todos_ids_api(token, seller_id):
+    """Retorna TODOS os IDs de anúncio da conta (ativos E pausados), via API
+    (sem Selenium) — /items/search não filtra por status por padrão. O status
+    real de cada ID precisa ser checado separadamente via consultar_status()."""
+    if not token or not seller_id:
+        return []
+    ids = []
+    offset = 0
+    limite = 50
+    try:
+        while True:
+            r = requests.get(
+                f"https://api.mercadolibre.com/users/{seller_id}/items/search",
+                headers={"Authorization": f"Bearer {token}"},
+                params={"offset": offset, "limit": limite},
+                timeout=15,
+            )
+            if r.status_code != 200:
+                break
+            dados = r.json()
+            lote = dados.get("results", [])
+            ids.extend(lote)
+            total = dados.get("paging", {}).get("total", 0)
+            if not lote or len(ids) >= total:
+                break
+            offset += limite
+    except Exception as e:
+        print(f"⚠️  Falha ao buscar anúncios ativos via API: {e}")
+        return []
+    return ids
+
+def buscar_titulo_item(mlb_id, token):
+    try:
+        r = requests.get(
+            f"https://api.mercadolibre.com/items/{mlb_id}",
+            headers={"Authorization": f"Bearer {token}"},
+            params={"attributes": "id,title,status"},
+            timeout=15,
+        )
+        if r.status_code == 200:
+            return r.json().get("title", mlb_id)
+    except Exception:
+        pass
+    return mlb_id
+
 # ─── GOOGLE SHEETS ───────────────────────────────────────────────
 print("🔗 Conectando ao Google Sheets...")
 scopes = [
@@ -116,6 +191,36 @@ for produto in PRODUTOS:
         marca = "✅" if status == "active" else "⏸️"
         print(f"  {marca} {mlb_id}: {STATUS_LEGIVEL.get(status, status)}"
               + (f" ({motivo_texto(sub_status)})" if status != "active" else ""))
+
+# ─── Checar anúncios que não estão na lista curada (PRODUTOS) ───────────
+print("\n🔎 Checando anúncios novos via API (comparando com a lista monitorada)...")
+ids_conhecidos = set(status_por_id.keys())
+produtos_novos_descobertos = []
+seller_id = buscar_seller_id(token_ml)
+ids_todos_api = buscar_todos_ids_api(token_ml, seller_id)
+ids_novos = [i for i in ids_todos_api if i not in ids_conhecidos]
+
+if ids_novos:
+    print(f"  ⚠️  {len(ids_novos)} anúncio(s) NÃO estão na lista monitorada (PRODUTOS):")
+    novos_ativos = 0
+    for mlb_id in ids_novos:
+        status, sub_status = consultar_status(mlb_id, token_ml)
+        status_por_id[mlb_id] = (status, sub_status)
+        titulo = buscar_titulo_item(mlb_id, token_ml)
+        marca = "🆕✅" if status == "active" else "🆕⏸️"
+        print(f"    {marca} {mlb_id} — {titulo} ({STATUS_LEGIVEL.get(status, status)})")
+        produto_auto = {"nome": titulo, "id": mlb_id, "auto_descoberto": True}
+        PRODUTOS.append(produto_auto)
+        produtos_novos_descobertos.append({**produto_auto, "status": status})
+        if status == "active":
+            novos_ativos += 1
+    print(f"  → {novos_ativos} novo(s) ativo(s) incluído(s) nesta coleta com o título bruto do ML.")
+    print(f"    Considere adicionar um nome curto e checar se algum é anúncio-irmão de um produto")
+    print(f"    já monitorado (editar PRODUTOS manualmente).")
+elif ids_todos_api:
+    print(f"  ✅ Nenhum anúncio novo — todos os {len(ids_todos_api)} da conta já estão monitorados.")
+else:
+    print(f"  ⚠️  Não foi possível confirmar via API (token/seller_id indisponível) — seguindo só com a lista curada.")
 
 produtos_com_ativo = []
 for produto in PRODUTOS:
@@ -270,8 +375,8 @@ def extrair_kpis(driver, mlb_id=""):
     try:
         carregou = aguardar_pagina_carregada(driver, timeout=25)
         if not carregou:
-            print(f"    ⚠️ Página não carregou KPIs esperados — aguardando mais 10s...")
-            time.sleep(10)
+            print(f"    ⚠️ Página não carregou KPIs esperados — aguardando mais 5s...")
+            time.sleep(5)
 
         body = driver.find_element(By.TAG_NAME, "body").text
         linhas = [l.strip() for l in body.split("\n") if l.strip()]
@@ -393,6 +498,9 @@ for produto in PRODUTOS:
 
     print(f"📦 Coletando: {nome} ({', '.join(ids_ativos)})"
           + (f" — {len(ids_pausados)} anúncio(s) irmão(s) pausado(s)" if ids_pausados else ""))
+    _inicio_produto = time.time()  # instrumentacao de tempo (RA, 2026-09-12) --
+    # antes disso nao havia como saber, no log, qual produto especifico consumia
+    # o orcamento de tempo quando o job estourava os 600s do timeout externo.
 
     try:
         kpis_por_id = []
@@ -402,7 +510,12 @@ for produto in PRODUTOS:
                 f"?start_period_evolutionary=custom|{data_inicio}T03:00:00.000Zto{data_fim}T03:00:00.000Z"
             )
             driver.get(url)
-            time.sleep(5 if not HEADLESS else 8)
+            # Reduzido de 5/8s pra 2/3s (RA, 2026-09-12): extrair_kpis() ja chama
+            # aguardar_pagina_carregada(), que espera ativamente ate 25s pelo
+            # primeiro label de KPI aparecer -- esse sleep fixo era tempo morto
+            # em cima de uma espera que ja e adaptativa, e o job vem estourando
+            # os 600s do timeout externo todo dia.
+            time.sleep(2 if not HEADLESS else 3)
             kpis_por_id.append(extrair_kpis(driver, mlb_id))
             time.sleep(1)
 
@@ -451,10 +564,10 @@ for produto in PRODUTOS:
         ]
 
         resultados.append(linha)
-        print(f"  ✅ Vendas: {kpis['vendas_brutas']} | Un: {kpis['unidades']} | Visitas: {kpis['visitas_unicas']} | Conv: {kpis['conversao']} | Compradores: {kpis['compradores_unicos']}")
+        print(f"  ✅ Vendas: {kpis['vendas_brutas']} | Un: {kpis['unidades']} | Visitas: {kpis['visitas_unicas']} | Conv: {kpis['conversao']} | Compradores: {kpis['compradores_unicos']} | ⏱️ {time.time() - _inicio_produto:.1f}s")
 
     except Exception as e:
-        print(f"  ❌ Erro: {e}")
+        print(f"  ❌ Erro: {e} | ⏱️ {time.time() - _inicio_produto:.1f}s")
         resultados.append([data_referencia, nome, mlb_id_coluna] + ["ERRO"] * 13 + ["Erro", str(e)[:100]])
 
     time.sleep(2)
@@ -478,6 +591,41 @@ try:
     print(f"✅ {len(resultados)} produtos salvos na aba Desempenho_Anuncios")
 except Exception as e:
     print(f"❌ Erro ao salvar: {e}")
+
+# ─── SALVAR JSON (2026-07-21) ────────────────────────────────────
+# Este script roda no GitHub Actions (sem disco persistente entre execuções),
+# então o JSON é commitado de volta no repositório pelo workflow — o
+# weekly_digest.py (VPS) busca via URL raw do GitHub, mesma técnica de
+# urlopen já usada para os CSVs, sem depender de cache de publish-to-web
+# do Google Sheets (ver 28_ROADMAP_PIPELINE.md, Fase 6.1 / A5).
+print("\n💾 Salvando snapshot JSON...")
+try:
+    COLUNAS_DESEMPENHO = [
+        "data_referencia", "produto", "mlb_id", "vendas_brutas_r$", "vendas_concluidas_r$",
+        "unidades_vendidas", "preco_medio_r$", "visitas_unicas", "total_visitas",
+        "compradores_unicos", "conversao_pct", "funil_visitas", "funil_intencao_r$",
+        "funil_vendas_r$", "qtd_vendas_brutas", "data_coleta", "status_anuncio", "motivo",
+    ]
+    resultados_json = [dict(zip(COLUNAS_DESEMPENHO, linha)) for linha in resultados]
+
+    payload = {
+        "run_at": datetime.now().astimezone().isoformat(),
+        "data_referencia": data_referencia,
+        "data_coleta": data_coleta,
+        "produtos_monitorados": len(PRODUTOS),
+        "produtos_novos_descobertos": produtos_novos_descobertos,
+        "resultados": resultados_json,
+    }
+
+    os.makedirs("data", exist_ok=True)
+    with open("data/desempenho_latest.json", "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    data_arquivo = datetime.strptime(data_referencia, "%d/%m/%Y").strftime("%Y-%m-%d")
+    with open(f"data/desempenho_{data_arquivo}.json", "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    print(f"✅ JSON salvo: data/desempenho_latest.json + data/desempenho_{data_arquivo}.json")
+except Exception as e:
+    print(f"❌ Erro ao salvar JSON: {e}")
 
 if driver:
     driver.quit()

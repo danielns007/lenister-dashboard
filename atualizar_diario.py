@@ -66,9 +66,13 @@ def run(script, extra_env=None):
     env = {**os.environ}
     if extra_env:
         env.update(extra_env)
-    # coletar_desempenho.py tem 15 produtos × ~10s cada + overhead = ~180s,
-    # folga confortável dentro do timeout de 600s
-    timeout = 600 if script == 'coletar_desempenho.py' else 300
+    # coletar_desempenho.py tem 17 produtos. A estimativa original de ~10s/produto
+    # (~200s total) não bate mais com a realidade -- o job vem estourando os 600s
+    # todos os dias desde pelo menos agosto/2026 (RA, 2026-09-12), então a folga
+    # nunca existiu de fato. Subiu para 900s (o job do GitHub Actions tem 360min
+    # de teto, folga de sobra) até a causa raiz da lentidão por produto ser
+    # confirmada e corrigida.
+    timeout = 900 if script == 'coletar_desempenho.py' else 300
     try:
         r = subprocess.run(
             [sys.executable, script],
@@ -77,8 +81,18 @@ def run(script, extra_env=None):
             timeout=timeout,
             env=env,
         )
-    except subprocess.TimeoutExpired:
+    except subprocess.TimeoutExpired as exc:
+        # Antes deste fix, um timeout não revelava NADA do que o script tinha
+        # impresso até morrer -- ficava impossível saber se travou no produto 1
+        # ou no 17. Agora loga o que foi capturado antes do kill (RA, 2026-09-12).
         log(f"❌ {script} TIMEOUT após {timeout}s")
+        saida_parcial = (exc.stdout or "")
+        if isinstance(saida_parcial, bytes):
+            saida_parcial = saida_parcial.decode("utf-8", errors="replace")
+        if saida_parcial:
+            log(f"   Saída parcial antes do timeout (últimos 2000 caracteres):\n{saida_parcial[-2000:]}")
+        else:
+            log("   Nenhuma saída capturada antes do timeout (travou antes do primeiro print, ou buffering).")
         return False
     if r.returncode == 0:
         log(f"✅ {script} OK")
