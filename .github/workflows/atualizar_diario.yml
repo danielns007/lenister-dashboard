@@ -53,7 +53,12 @@ jobs:
           if [ -d data ] && [ -n "$(git status --porcelain data/)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add data/desempenho_latest.json data/desempenho_*.json data/promocoes_latest.json data/promocoes_*.json data/afiliados_latest.json data/afiliados_*.json
+            # git add -A em vez da lista explicita: os arquivos de afiliados ainda nao
+            # existem no repo e nao sao criados quando o coletor falha (cookie
+            # expirada, o cenario para o qual ele e nao-critico). git add em
+            # pathspec que nao casa nada sai com erro, o step roda em bash -e, e
+            # o job inteiro ficava vermelho por causa de um coletor opcional.
+            git add -A data/
             git commit -m "chore: atualizar snapshot Desempenho_Anuncios + Promocoes + Afiliados [skip ci]"
             git push
           else
