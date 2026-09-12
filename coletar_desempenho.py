@@ -1,5 +1,10 @@
 import sys, io, os, json
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', line_buffering=True)
+# line_buffering=True e o que faz o log de saida parcial existir quando o
+# orquestrador mata este processo por timeout. Sem isso o texto fica no buffer
+# de bloco (~8KB), o processo morre antes de encher, e subprocess.run entrega
+# stdout VAZIO no TimeoutExpired -- medido: 0 caractere. PYTHONUNBUFFERED e
+# python -u NAO resolvem, porque este wrapper rebufferiza depois deles.
 import time
 import re
 import requests
