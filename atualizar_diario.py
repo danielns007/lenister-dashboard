@@ -106,11 +106,17 @@ if __name__ == '__main__':
         'coletar_custos_api_v2_reports.py',
         'coletar_desempenho.py',
         'coletar_promocoes.py',
+        'coletar_afiliados.py',
     ]
 
     # Scripts Selenium precisam de CHROME_HEADLESS=1 no CI (GitHub Actions) —
     # sem chrome_profile local, dependem de ML_COOKIES_JSON pra autenticar.
     SCRIPTS_SELENIUM = {'coletar_desempenho.py', 'coletar_promocoes.py'}
+
+    # coletar_afiliados.py também depende de ML_COOKIES_JSON (mesma cookie,
+    # mesmo risco de expirar), mas não abre Chrome — não precisa de
+    # CHROME_HEADLESS, só entra no grupo "não crítico" abaixo (2026-09-12).
+    SCRIPTS_DEPENDEM_DE_COOKIE_ML = SCRIPTS_SELENIUM | {'coletar_afiliados.py'}
 
     resultados = {}
     for s in scripts:
@@ -123,13 +129,13 @@ if __name__ == '__main__':
 
     falhas = [s for s, ok in resultados.items() if not ok]
 
-    # Scripts Selenium são opcionais (dependem de cookies ML) — não falham o job
-    falhas_criticas = [f for f in falhas if f not in SCRIPTS_SELENIUM]
+    # Scripts que dependem da cookie de sessão ML são opcionais — não falham o job
+    falhas_criticas = [f for f in falhas if f not in SCRIPTS_DEPENDEM_DE_COOKIE_ML]
 
     if falhas:
         log(f"\n⚠️  {len(falhas)} script(s) com falha: {falhas}")
         if not falhas_criticas:
-            log("   (apenas coletar_desempenho.py — falha não-crítica)")
+            log(f"   (só script(s) dependente(s) de cookie ML — falha não-crítica: {falhas})")
 
     if falhas_criticas:
         log(f"\n❌ {len(falhas_criticas)} falha(s) crítica(s) — saindo com código 1")

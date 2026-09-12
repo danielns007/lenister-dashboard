@@ -19,6 +19,7 @@ chrome_perfil_ml/
 !renovar_token.py
 !coletar_desempenho.py
 !coletar_promocoes.py
+!coletar_afiliados.py
 
 # IDE
 .claude/

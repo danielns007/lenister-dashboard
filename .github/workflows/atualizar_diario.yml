@@ -40,20 +40,21 @@ jobs:
           CHROME_HEADLESS:         "1"
           DISPLAY:                 ""
 
-      - name: Publicar snapshot JSON (Desempenho_Anuncios + Promocoes)
+      - name: Publicar snapshot JSON (Desempenho_Anuncios + Promocoes + Afiliados)
         # coletar_desempenho.py e coletar_promocoes.py rodam num runner
         # efêmero (sem disco persistente entre execuções), então o JSON
         # gerado em data/ precisa ser commitado de volta no repo aqui — é
         # assim que o weekly_digest.py (VPS) consegue buscar esse dado
         # depois, via URL raw do GitHub. Ver 28_ROADMAP_PIPELINE.md, Fase
         # 6.1 / A5. Promocoes adicionado em 2026-08-15, mesmo motivo do
-        # Desempenho. [skip ci] evita disparar o workflow de novo neste push.
+        # Desempenho. Afiliados adicionado em 2026-09-12 (mesma cookie ML,
+        # mesmo motivo). [skip ci] evita disparar o workflow de novo neste push.
         run: |
           if [ -d data ] && [ -n "$(git status --porcelain data/)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add data/desempenho_latest.json data/desempenho_*.json data/promocoes_latest.json data/promocoes_*.json
-            git commit -m "chore: atualizar snapshot Desempenho_Anuncios + Promocoes [skip ci]"
+            git add data/desempenho_latest.json data/desempenho_*.json data/promocoes_latest.json data/promocoes_*.json data/afiliados_latest.json data/afiliados_*.json
+            git commit -m "chore: atualizar snapshot Desempenho_Anuncios + Promocoes + Afiliados [skip ci]"
             git push
           else
             echo "Nada novo em data/ para commitar."
