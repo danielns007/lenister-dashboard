@@ -1,5 +1,10 @@
 import sys, io, os, json
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', line_buffering=True)
+# line_buffering=True e o que faz o log de saida parcial existir quando o
+# orquestrador mata este processo por timeout. Sem isso o texto fica no buffer
+# de bloco (~8KB), o processo morre antes de encher, e subprocess.run entrega
+# stdout VAZIO no TimeoutExpired -- medido: 0 caractere. PYTHONUNBUFFERED e
+# python -u NAO resolvem, porque este wrapper rebufferiza depois deles.
 import time
 import re
 import requests
@@ -370,8 +375,8 @@ def extrair_kpis(driver, mlb_id=""):
     try:
         carregou = aguardar_pagina_carregada(driver, timeout=25)
         if not carregou:
-            print(f"    ⚠️ Página não carregou KPIs esperados — aguardando mais 10s...")
-            time.sleep(10)
+            print(f"    ⚠️ Página não carregou KPIs esperados — aguardando mais 5s...")
+            time.sleep(5)
 
         body = driver.find_element(By.TAG_NAME, "body").text
         linhas = [l.strip() for l in body.split("\n") if l.strip()]
@@ -493,6 +498,9 @@ for produto in PRODUTOS:
 
     print(f"📦 Coletando: {nome} ({', '.join(ids_ativos)})"
           + (f" — {len(ids_pausados)} anúncio(s) irmão(s) pausado(s)" if ids_pausados else ""))
+    _inicio_produto = time.time()  # instrumentacao de tempo (RA, 2026-09-12) --
+    # antes disso nao havia como saber, no log, qual produto especifico consumia
+    # o orcamento de tempo quando o job estourava os 600s do timeout externo.
 
     try:
         kpis_por_id = []
@@ -502,7 +510,12 @@ for produto in PRODUTOS:
                 f"?start_period_evolutionary=custom|{data_inicio}T03:00:00.000Zto{data_fim}T03:00:00.000Z"
             )
             driver.get(url)
-            time.sleep(5 if not HEADLESS else 8)
+            # Reduzido de 5/8s pra 2/3s (RA, 2026-09-12): extrair_kpis() ja chama
+            # aguardar_pagina_carregada(), que espera ativamente ate 25s pelo
+            # primeiro label de KPI aparecer -- esse sleep fixo era tempo morto
+            # em cima de uma espera que ja e adaptativa, e o job vem estourando
+            # os 600s do timeout externo todo dia.
+            time.sleep(2 if not HEADLESS else 3)
             kpis_por_id.append(extrair_kpis(driver, mlb_id))
             time.sleep(1)
 
@@ -551,10 +564,10 @@ for produto in PRODUTOS:
         ]
 
         resultados.append(linha)
-        print(f"  ✅ Vendas: {kpis['vendas_brutas']} | Un: {kpis['unidades']} | Visitas: {kpis['visitas_unicas']} | Conv: {kpis['conversao']} | Compradores: {kpis['compradores_unicos']}")
+        print(f"  ✅ Vendas: {kpis['vendas_brutas']} | Un: {kpis['unidades']} | Visitas: {kpis['visitas_unicas']} | Conv: {kpis['conversao']} | Compradores: {kpis['compradores_unicos']} | ⏱️ {time.time() - _inicio_produto:.1f}s")
 
     except Exception as e:
-        print(f"  ❌ Erro: {e}")
+        print(f"  ❌ Erro: {e} | ⏱️ {time.time() - _inicio_produto:.1f}s")
         resultados.append([data_referencia, nome, mlb_id_coluna] + ["ERRO"] * 13 + ["Erro", str(e)[:100]])
 
     time.sleep(2)
