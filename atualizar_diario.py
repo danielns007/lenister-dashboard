@@ -121,12 +121,23 @@ if __name__ == '__main__':
         'coletar_ads_api.py',
         'coletar_vendas_api.py',
         'coletar_custos_api_v2_reports.py',
-        'coletar_desempenho.py',
+        # 'coletar_desempenho.py'  -- MIGRADO PRO PC em 2026-09-12.
+        #   No runner do GitHub o Mercado Livre entrega a tela de login com
+        #   reCAPTCHA em vez do painel, e o coletor gravava 25 linhas VAZIAS
+        #   reportando sucesso (medido no run 34695148867: 0/25 campos
+        #   preenchidos, 36s por anuncio queimados esperando um KPI que nunca
+        #   aparece). Passou a rodar no PC do Daniel, com Chrome real e perfil
+        #   logado, mesmo desenho do monitor_concorrentes.py -- tarefa
+        #   "Lenister - Coletar Desempenho", saida em C:\Agente\data\,
+        #   replicada pra VPS pelo Syncthing. Ver item AP.3 do roadmap.
+        #   NAO reativar aqui sem resolver a autenticacao de sessao no runner.
         'coletar_promocoes.py',
     ]
 
     # Scripts Selenium precisam de CHROME_HEADLESS=1 no CI (GitHub Actions) —
     # sem chrome_profile local, dependem de ML_COOKIES_JSON pra autenticar.
+    # coletar_desempenho.py continua listado aqui de proposito: se um dia
+    # voltar pra lista de scripts, volta ja com o tratamento certo.
     SCRIPTS_SELENIUM = {'coletar_desempenho.py', 'coletar_promocoes.py'}
 
     resultados = {}
@@ -146,7 +157,7 @@ if __name__ == '__main__':
     if falhas:
         log(f"\n⚠️  {len(falhas)} script(s) com falha: {falhas}")
         if not falhas_criticas:
-            log("   (apenas coletar_desempenho.py — falha não-crítica)")
+            log(f"   (só script(s) de sessão ML — falha não-crítica: {falhas})")
 
     if falhas_criticas:
         log(f"\n❌ {len(falhas_criticas)} falha(s) crítica(s) — saindo com código 1")
