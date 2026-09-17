@@ -66,9 +66,13 @@ def run(script, extra_env=None):
     env = {**os.environ}
     if extra_env:
         env.update(extra_env)
-    # coletar_desempenho.py tem 15 produtos × ~10s cada + overhead = ~180s,
-    # folga confortável dentro do timeout de 600s
-    timeout = 600 if script == 'coletar_desempenho.py' else 300
+    # coletar_desempenho.py tem 17 produtos. A estimativa original de ~10s/produto
+    # (~200s total) não bate mais com a realidade -- o job vem estourando os 600s
+    # todos os dias desde pelo menos agosto/2026 (RA, 2026-09-12), então a folga
+    # nunca existiu de fato. Subiu para 900s (o job do GitHub Actions tem 360min
+    # de teto, folga de sobra) até a causa raiz da lentidão por produto ser
+    # confirmada e corrigida.
+    timeout = 900 if script == 'coletar_desempenho.py' else 300
     try:
         r = subprocess.run(
             [sys.executable, script],
@@ -77,8 +81,18 @@ def run(script, extra_env=None):
             timeout=timeout,
             env=env,
         )
-    except subprocess.TimeoutExpired:
+    except subprocess.TimeoutExpired as exc:
+        # Antes deste fix, um timeout não revelava NADA do que o script tinha
+        # impresso até morrer -- ficava impossível saber se travou no produto 1
+        # ou no 17. Agora loga o que foi capturado antes do kill (RA, 2026-09-12).
         log(f"❌ {script} TIMEOUT após {timeout}s")
+        saida_parcial = (exc.stdout or "")
+        if isinstance(saida_parcial, bytes):
+            saida_parcial = saida_parcial.decode("utf-8", errors="replace")
+        if saida_parcial:
+            log(f"   Saída parcial antes do timeout (últimos 2000 caracteres):\n{saida_parcial[-2000:]}")
+        else:
+            log("   Nenhuma saída capturada antes do timeout (travou antes do primeiro print, ou buffering).")
         return False
     if r.returncode == 0:
         log(f"✅ {script} OK")
@@ -107,12 +121,23 @@ if __name__ == '__main__':
         'coletar_ads_api.py',
         'coletar_vendas_api.py',
         'coletar_custos_api_v2_reports.py',
-        'coletar_desempenho.py',
+        # 'coletar_desempenho.py'  -- MIGRADO PRO PC em 2026-09-12.
+        #   No runner do GitHub o Mercado Livre entrega a tela de login com
+        #   reCAPTCHA em vez do painel, e o coletor gravava 25 linhas VAZIAS
+        #   reportando sucesso (medido no run 34695148867: 0/25 campos
+        #   preenchidos, 36s por anuncio queimados esperando um KPI que nunca
+        #   aparece). Passou a rodar no PC do Daniel, com Chrome real e perfil
+        #   logado, mesmo desenho do monitor_concorrentes.py -- tarefa
+        #   "Lenister - Coletar Desempenho", saida em C:\Agente\data\,
+        #   replicada pra VPS pelo Syncthing. Ver item AP.3 do roadmap.
+        #   NAO reativar aqui sem resolver a autenticacao de sessao no runner.
         'coletar_promocoes.py',
     ]
 
     # Scripts Selenium precisam de CHROME_HEADLESS=1 no CI (GitHub Actions) —
     # sem chrome_profile local, dependem de ML_COOKIES_JSON pra autenticar.
+    # coletar_desempenho.py continua listado aqui de proposito: se um dia
+    # voltar pra lista de scripts, volta ja com o tratamento certo.
     SCRIPTS_SELENIUM = {'coletar_desempenho.py', 'coletar_promocoes.py'}
 
     resultados = {}
@@ -132,7 +157,7 @@ if __name__ == '__main__':
     if falhas:
         log(f"\n⚠️  {len(falhas)} script(s) com falha: {falhas}")
         if not falhas_criticas:
-            log("   (apenas coletar_desempenho.py — falha não-crítica)")
+            log(f"   (só script(s) de sessão ML — falha não-crítica: {falhas})")
 
     if falhas_criticas:
         log(f"\n❌ {len(falhas_criticas)} falha(s) crítica(s) — saindo com código 1")
