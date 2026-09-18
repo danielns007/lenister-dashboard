@@ -115,6 +115,16 @@ if __name__ == '__main__':
     # sem chrome_profile local, dependem de ML_COOKIES_JSON pra autenticar.
     SCRIPTS_SELENIUM = {'coletar_desempenho.py', 'coletar_promocoes.py'}
 
+    # coletar_custos_api_v2_reports.py: o endpoint /reports/sales que ele usa
+    # foi DESCONTINUADO pela API do Mercado Livre (confirmado ao vivo em
+    # 17/09/2026, 404 "resource not found" -- nao e bug de parametro, e o
+    # recurso nao existe mais). O script agora falha alto (antes reportava
+    # sucesso falso, ver AJ-C2 no roadmap). Ate haver decisao de aposentar
+    # este passo ou trocar a fonte de dado, tratado como nao-critico pelo
+    # mesmo motivo dos scripts Selenium: falha conhecida, sem conserto local.
+    SCRIPTS_CONHECIDOS_QUEBRADOS = {'coletar_custos_api_v2_reports.py'}
+    SCRIPTS_NAO_CRITICOS = SCRIPTS_SELENIUM | SCRIPTS_CONHECIDOS_QUEBRADOS
+
     resultados = {}
     for s in scripts:
         extra = {'CHROME_HEADLESS': '1'} if s in SCRIPTS_SELENIUM else None
@@ -126,13 +136,14 @@ if __name__ == '__main__':
 
     falhas = [s for s, ok in resultados.items() if not ok]
 
-    # Scripts Selenium são opcionais (dependem de cookies ML) — não falham o job
-    falhas_criticas = [f for f in falhas if f not in SCRIPTS_SELENIUM]
+    # Scripts nao-criticos nao derrubam o job -- mas continuam aparecendo com
+    # ❌ no resumo acima, entao a falha fica visivel sem travar tudo.
+    falhas_criticas = [f for f in falhas if f not in SCRIPTS_NAO_CRITICOS]
 
     if falhas:
         log(f"\n⚠️  {len(falhas)} script(s) com falha: {falhas}")
         if not falhas_criticas:
-            log("   (apenas coletar_desempenho.py — falha não-crítica)")
+            log(f"   (apenas nao-criticos: {[f for f in falhas if f in SCRIPTS_NAO_CRITICOS]})")
 
     if falhas_criticas:
         log(f"\n❌ {len(falhas_criticas)} falha(s) crítica(s) — saindo com código 1")

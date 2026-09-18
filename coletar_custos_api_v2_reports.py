@@ -188,17 +188,25 @@ def buscar_reporte_vendas(access_token, days=7):
     print("Solicitando reporte...")
     resp = requests.post(url_create, json=payload, headers=headers)
 
+    # Antes disso, toda falha aqui virava "return None", e o chamador tratava
+    # None como "sem dados no reporte" -- um resultado legitimo -- e saia com
+    # exit(0). Nao existe "relatorio vazio por falta de venda" que chegue
+    # None: um periodo sem vendas ainda gera CSV so com cabecalho. Todo None
+    # daqui pra baixo e falha de verdade, entao agora sobe excecao (ver
+    # tratamento no chamador). Confirmado ao vivo em 17/09/2026: o endpoint
+    # /reports/sales foi DESCONTINUADO pela API do Mercado Livre (404
+    # "resource not found", nao e problema de parametro) -- ver AJ-C2 no
+    # roadmap. Nao ha substituto direto documentado; o dado por pedido ja
+    # existe pela coleta atomica (daily_vendas_pedidos), que nao depende
+    # deste endpoint.
     if resp.status_code != 200 and resp.status_code != 201:
-        print(f"ERRO ao criar reporte: {resp.status_code}")
-        print(f"Resposta: {resp.text}")
-        return None
+        raise RuntimeError(f"ERRO ao criar reporte: {resp.status_code} — {resp.text[:300]}")
 
     report_data = resp.json()
     report_href = report_data.get('href')
 
     if not report_href:
-        print("ERRO: Reporte sem href")
-        return None
+        raise RuntimeError("Reporte criado sem 'href' na resposta")
 
     print(f"Reporte criado. ID: {report_data.get('id')}")
 
@@ -223,16 +231,14 @@ def buscar_reporte_vendas(access_token, days=7):
                 print(f"  [{tentativa}] Processando...")
 
     if tentativa >= max_tentativas:
-        print("TIMEOUT aguardando reporte")
-        return None
+        raise RuntimeError("TIMEOUT aguardando reporte ficar disponível")
 
     # 3. Baixar reporte como CSV
     print("Baixando dados do reporte...")
     csv_resp = requests.get(f"{report_href}?format=csv", headers=headers)
 
     if csv_resp.status_code != 200:
-        print(f"ERRO ao baixar CSV: {csv_resp.status_code}")
-        return None
+        raise RuntimeError(f"ERRO ao baixar CSV: {csv_resp.status_code}")
 
     return csv_resp.text
 
@@ -342,7 +348,16 @@ access_token = obter_token()
 print("Token valido.")
 
 # 6. Buscar reporte
-csv_reporte = buscar_reporte_vendas(access_token, days=days)
+try:
+    csv_reporte = buscar_reporte_vendas(access_token, days=days)
+except RuntimeError as e:
+    # Antes: qualquer falha aqui virava "None" e o script saia com exit(0)
+    # dizendo "sem dados", mascarando o erro real. Ver comentario na funcao
+    # buscar_reporte_vendas() -- o endpoint /reports/sales foi descontinuado
+    # pela API do Mercado Livre, confirmado ao vivo em 17/09/2026.
+    print(f"FALHA na coleta de custos: {e}")
+    set_config(config_ws, "coletar_custos_ultima_execucao_status", f"FALHA: {e}"[:200])
+    exit(1)
 
 if not csv_reporte:
     print("Nenhum dado no reporte.")

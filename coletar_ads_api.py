@@ -88,19 +88,24 @@ def ultimo_dia_no_sheets(aba):
 
 # ─── BUSCAR UM DIA NA API ────────────────────────────────────────
 def buscar_dia(token, data_iso):
+    # Endpoint antigo (sem "marketplace/" e sem "MLB/") foi descontinuado pela
+    # API do Mercado Ads -- retornava 404 "No static resource..." todo dia,
+    # silenciosamente, desde pelo menos 14/09/2026. Trocado pelo padrao que
+    # ja roda em producao em ml_ads_collect.py (fetch_campaigns), verificado
+    # ao vivo em 17/09/2026 antes deste conserto.
     url = (
-        f"https://api.mercadolibre.com/advertising/advertisers/{ML_ADVERTISER_ID}"
-        f"/product_ads/campaigns"
+        f"https://api.mercadolibre.com/marketplace/advertising/MLB/advertisers/{ML_ADVERTISER_ID}"
+        f"/product_ads/campaigns/search"
         f"?date_from={data_iso}&date_to={data_iso}&metrics={METRICAS}"
     )
     resp = requests.get(url, headers={
         "Authorization": f"Bearer {token}",
-        "api-version": "2",
+        "Api-Version": "2",
     })
     if resp.status_code == 200:
-        return resp.json().get('results', [])
+        return resp.json().get('results', []), True
     print(f"    ⚠ API {data_iso}: {resp.status_code} — {resp.text[:80]}")
-    return []
+    return [], False
 
 def montar_linha(data_br, c):
     m       = c.get('metrics', {})
@@ -203,16 +208,20 @@ while d <= ONTEM:
 
 print(f"\n📡 Buscando {len(dias)} dias na API ML...")
 dias_dados = {}  # {date: [linhas]}
+dias_com_erro = []  # dias em que a API respondeu erro (nao e "sem campanha nesse dia")
 
 for dia in dias:
     dia_iso = dia.strftime('%Y-%m-%d')
     dia_br  = dia.strftime('%d/%m/%Y')
-    resultados = buscar_dia(token, dia_iso)
-    if resultados:
+    resultados, ok = buscar_dia(token, dia_iso)
+    if not ok:
+        dias_com_erro.append(dia_br)
+        print(f"  ❌ {dia_br}: erro na API")
+    elif resultados:
         dias_dados[dia_iso] = [montar_linha(dia_br, c) for c in resultados]
         print(f"  ✅ {dia_br}: {len(resultados)} campanhas")
     else:
-        print(f"  ⚠  {dia_br}: sem dados")
+        print(f"  ⚠  {dia_br}: sem dados (API OK, 0 campanhas no dia)")
     time.sleep(0.3)
 
 novas_linhas = []
@@ -221,8 +230,20 @@ for dia in dias:
     if iso in dias_dados:
         novas_linhas.extend(dias_dados[iso])
 
+# Falhar alto quando TODOS os dias deram erro de API -- antes disso o script
+# saia com codigo 0 (sucesso) mesmo com a API inteira fora do ar, porque erro
+# e "sem campanha nesse dia" caiam no mesmo "sem dados novos". Medido em
+# producao 08-17/09/2026: endpoint descontinuado, 100% dos dias em erro,
+# reportando OK todo santo dia.
+if dias_com_erro and len(dias_com_erro) == len(dias):
+    print(f"\n❌ Todos os {len(dias)} dia(s) falharam na API — nao e ausencia de dado, e a API fora do ar.")
+    sys.exit(1)
+
 if not novas_linhas:
-    print("\n⚠️  Nenhuma linha nova para adicionar.")
+    if dias_com_erro:
+        print(f"\n❌ {len(dias_com_erro)} dia(s) com erro de API, mesmo com algum dado coletado: {dias_com_erro}")
+        sys.exit(1)
+    print("\n⚠️  Nenhuma linha nova para adicionar (API OK, sem campanhas no período).")
     sys.exit(0)
 
 # ─── DEDUP E SALVAR ──────────────────────────────────────────────
