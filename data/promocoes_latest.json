@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-10-10T15:08:36.165937+00:00",
-  "run_date": "2026-10-10",
+  "run_at": "2026-10-11T15:25:29.793086+00:00",
+  "run_date": "2026-10-11",
   "total_produtos": 19,
   "resumo": {
     "ativa": 19,
@@ -62,7 +62,7 @@
       "titulo": "Protetor De Cabo Fio Laço De Porta Flexível Blindado Inox Mangueira Blindada 30cm",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55,90",
-      "estoque_info": "Depósito: 36 u.",
+      "estoque_info": "Depósito: 35 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -98,11 +98,11 @@
           "preco_final": "R$ 524,37",
           "voce_recebe": "R$ 443,28 | Reduzimos R$ 14,15 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 8,
+      "total_oportunidades": 7,
       "cupons": []
     },
     {
@@ -146,7 +146,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 188",
-      "estoque_info": "Depósito: 45 u.",
+      "estoque_info": "Depósito: 48 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -170,7 +170,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 16 u.",
+      "estoque_info": "Depósito: 19 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -186,7 +186,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -194,7 +194,7 @@
       "titulo": "Fonte Chaveada 12v 5.0a 60w P/ Trilho Din 100~240v Mdr-60-12",
       "tipo_anuncio": "Premium",
       "preco": "R$ 218",
-      "estoque_info": "Depósito: 30 u.",
+      "estoque_info": "Depósito: 31 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -234,7 +234,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 8,
+      "total_oportunidades": 7,
       "cupons": []
     },
     {
@@ -258,7 +258,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -354,7 +354,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -368,21 +368,8 @@
         {
           "item_status": "active",
           "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "4 a 11/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 89,97",
-          "preco_final": "R$ 325,03",
-          "voce_recebe": "R$ 266,45 | Reduzimos R$ 19,50 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [
-        {
-          "item_status": "programmed",
-          "titulo_promocao": "Com redução de tarifas",
           "vigencia": "1/out a 1/nov",
-          "selo": "PROGRAMADA",
+          "selo": "ATIVA",
           "desconto": "R$ 80,81",
           "preco_final": "R$ 334,19",
           "voce_recebe": "R$ 274,65 | Reduzimos R$ 20,05 das suas tarifas por cada venda",
@@ -390,6 +377,7 @@
           "botao": "Deixar de participar"
         }
       ],
+      "promocoes_programadas": [],
       "total_oportunidades": 4,
       "cupons": []
     },
@@ -498,7 +486,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": []
     }
   ],
