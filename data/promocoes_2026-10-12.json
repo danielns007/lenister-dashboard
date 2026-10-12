@@ -1,0 +1,458 @@
+{
+  "run_at": "2026-10-12T18:44:26.269405+00:00",
+  "run_date": "2026-10-12",
+  "total_produtos": 18,
+  "resumo": {
+    "ativa": 18,
+    "programada": 0,
+    "sem_estoque": 0,
+    "sem_promocao": 0
+  },
+  "produtos": [
+    {
+      "id": "#5782589830345680",
+      "titulo": "Divisor E Extensor Poe Até 250m Câmera Ip Lenister Hi-at13fl",
+      "tipo_anuncio": "Clássico e Premium",
+      "preco": "R$ 140 a R$ 165",
+      "estoque_info": "Depósito: 4 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Diferentes promoções",
+          "vigencia": "Contém datas específicas",
+          "selo": "ATIVA",
+          "desconto": "R$ 7",
+          "preco_final": "R$ 133",
+          "voce_recebe": "R$ 98,76",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 5,
+      "cupons": []
+    },
+    {
+      "id": "#5923338689872466",
+      "titulo": "Central De Laço Indutivo 1 Canal 220v Controle De Acesso",
+      "tipo_anuncio": "Clássico e Premium",
+      "preco": "R$ 295,80 a R$ 305",
+      "estoque_info": "Depósito: 100 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Diferentes promoções",
+          "vigencia": "Contém datas específicas",
+          "selo": "ATIVA",
+          "desconto": "R$ 61,43 a R$ 63,47",
+          "preco_final": "R$ 219,18 a R$ 225,36",
+          "voce_recebe": "R$ 174,52 a R$ 175,54 | Reduzimos R$ 9,01 a R$ 13,15 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 6,
+      "cupons": []
+    },
+    {
+      "id": "#5482550358",
+      "titulo": "Protetor De Cabo Fio Laço De Porta Flexível Blindado Inox Mangueira Blindada 30cm",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 55,90",
+      "estoque_info": "Depósito: 36 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "16/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 6,15",
+          "preco_final": "R$ 49,75",
+          "voce_recebe": "R$ 34,10 | Reduzimos R$ 0,71 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 4,
+      "cupons": []
+    },
+    {
+      "id": "#3904989803",
+      "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Cabo Pvc 5m 24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 550,21",
+      "estoque_info": "Depósito: 24 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "26/set a 26/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 25,84",
+          "preco_final": "R$ 524,37",
+          "voce_recebe": "R$ 443,28 | Reduzimos R$ 14,15 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 7,
+      "cupons": []
+    },
+    {
+      "id": "#703364279687762",
+      "titulo": "Central Laço Indutivo 1 Canal 12v Controle De Acesso",
+      "tipo_anuncio": "Clássico e Premium",
+      "preco": "R$ 315 a R$ 325",
+      "estoque_info": "Depósito: 50 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Diferentes promoções",
+          "vigencia": "Contém datas específicas",
+          "selo": "ATIVA",
+          "desconto": "R$ 78 a R$ 80",
+          "preco_final": "R$ 223,25 a R$ 247 | PREÇO ALTO",
+          "voce_recebe": "R$ 184,59 a R$ 187,68 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 6,
+      "cupons": []
+    },
+    {
+      "id": "#6128447010",
+      "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
+      "tipo_anuncio": "Clássico",
+      "preco": "R$ 188",
+      "estoque_info": "Depósito: 47 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "17/set a 17/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 54,52",
+          "preco_final": "R$ 133,48",
+          "voce_recebe": "R$ 102,65 | Reduzimos R$ 4,67 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 3,
+      "cupons": []
+    },
+    {
+      "id": "#4205584415",
+      "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 398,71",
+      "estoque_info": "Depósito: 19 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "1/out a 1/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 47,88",
+          "preco_final": "R$ 350,83",
+          "voce_recebe": "R$ 290,32 | Reduzimos R$ 20,63 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 5,
+      "cupons": []
+    },
+    {
+      "id": "#6128512354",
+      "titulo": "Fonte Chaveada 12v 5.0a 60w P/ Trilho Din 100~240v Mdr-60-12",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 218",
+      "estoque_info": "Depósito: 31 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "16/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 57,29",
+          "preco_final": "R$ 160,71",
+          "voce_recebe": "R$ 116,05 | Reduzimos R$ 5,62 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 3,
+      "cupons": []
+    },
+    {
+      "id": "#4470736687",
+      "titulo": "Sonda Sensor De Nível Hidrostática 0-10mca 4-20ma Cabo 11m 12-24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 799",
+      "estoque_info": "Depósito: 7 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "16/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 159,80",
+          "preco_final": "R$ 639,20",
+          "voce_recebe": "R$ 546,46 | Reduzimos R$ 18 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 7,
+      "cupons": []
+    },
+    {
+      "id": "#5347161629",
+      "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Lenister Lnt-s04m 24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 555",
+      "estoque_info": "Depósito: 6 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Desconto Proprio",
+          "vigencia": "17/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 27,75",
+          "preco_final": "R$ 527,25",
+          "voce_recebe": "R$ 432,82",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 2,
+      "cupons": []
+    },
+    {
+      "id": "#5347148775",
+      "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Lenister 24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 555",
+      "estoque_info": "Depósito: 6 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Desconto Proprio",
+          "vigencia": "17/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 27,75",
+          "preco_final": "R$ 527,25",
+          "voce_recebe": "R$ 432,82",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 2,
+      "cupons": []
+    },
+    {
+      "id": "#6508001372",
+      "titulo": "Divisor Extensor Poe 250m Repetidor Câmeras Ip Giga Lenister",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 178",
+      "estoque_info": "Depósito: 28 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "16/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 13,97",
+          "preco_final": "R$ 164,03",
+          "voce_recebe": "R$ 119,60 | Reduzimos R$ 4,15 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 5,
+      "cupons": []
+    },
+    {
+      "id": "#4811412531",
+      "titulo": "Sonda Sensor De Nível Hidrostática 0-2mca 4-20ma Cabo Pvc 4m 24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 560",
+      "estoque_info": "Depósito: 6 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "16/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 65,69",
+          "preco_final": "R$ 494,31",
+          "voce_recebe": "R$ 418,99 | Reduzimos R$ 15,86 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 7,
+      "cupons": []
+    },
+    {
+      "id": "#6294668236",
+      "titulo": "Sensor Transmissor Pressão Água 10 Bar 4-20ma Alta Precisão 24",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 550",
+      "estoque_info": "Depósito: 2 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Desconto Proprio",
+          "vigencia": "17/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 319",
+          "preco_final": "R$ 231",
+          "voce_recebe": "R$ 178,17",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 5,
+      "cupons": []
+    },
+    {
+      "id": "#6718341398",
+      "titulo": "Fechadura Solenoide Lenister 12v Porta De Vidro Temporizada Prata",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 415",
+      "estoque_info": "Depósito: 13 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "1/out a 1/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 80,81",
+          "preco_final": "R$ 334,19",
+          "voce_recebe": "R$ 274,65 | Reduzimos R$ 20,05 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 4,
+      "cupons": []
+    },
+    {
+      "id": "#5090061779",
+      "titulo": "Kit 4 Divisor Extensor Poe 250m Câmera Ip Lenister Hi-at13fl",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 696",
+      "estoque_info": "Depósito: 3 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "1 a 31/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 184",
+          "preco_final": "R$ 512",
+          "voce_recebe": "R$ 422,19 | Reduzimos R$ 25,60 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [
+        {
+          "item_status": "programmed",
+          "titulo_promocao": "Desconto por porcentagem",
+          "vigencia": "16/set a 16/out",
+          "selo": "PROGRAMADA",
+          "desconto": "R$ 178",
+          "preco_final": "R$ 518",
+          "voce_recebe": "R$ 401,51",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "total_oportunidades": 4,
+      "cupons": []
+    },
+    {
+      "id": "#5163909431",
+      "titulo": "Controlador Indicador De Nível Lenister 4-20ma Lnt-t80 220v 220v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 560",
+      "estoque_info": "Depósito: 8 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Desconto por porcentagem",
+          "vigencia": "16/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 224",
+          "preco_final": "R$ 336",
+          "voce_recebe": "R$ 288,96",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 2,
+      "cupons": []
+    },
+    {
+      "id": "#6168880144",
+      "titulo": "Sirene Audio Visual Estroboscópica Led 5v-12v Alarme 120db Vermelho",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 55",
+      "estoque_info": "Depósito: 18 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "3/out a 2/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 17,17",
+          "preco_final": "R$ 37,83",
+          "voce_recebe": "R$ 20,15 | Reduzimos R$ 1,51 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 4,
+      "cupons": []
+    }
+  ],
+  "fonte": "Selenium, Central de Promocoes do Mercado Livre (vendedores.mercadolivre.com.br/anuncios/lista/promos)"
+}

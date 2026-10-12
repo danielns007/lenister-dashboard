@@ -1,9 +1,9 @@
 {
-  "run_at": "2026-10-11T15:25:29.793086+00:00",
-  "run_date": "2026-10-11",
-  "total_produtos": 19,
+  "run_at": "2026-10-12T18:44:26.269405+00:00",
+  "run_date": "2026-10-12",
+  "total_produtos": 18,
   "resumo": {
-    "ativa": 19,
+    "ativa": 18,
     "programada": 0,
     "sem_estoque": 0,
     "sem_promocao": 0
@@ -30,7 +30,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -62,7 +62,7 @@
       "titulo": "Protetor De Cabo Fio Laço De Porta Flexível Blindado Inox Mangueira Blindada 30cm",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55,90",
-      "estoque_info": "Depósito: 35 u.",
+      "estoque_info": "Depósito: 36 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -74,7 +74,7 @@
           "preco_final": "R$ 49,75",
           "voce_recebe": "R$ 34,10 | Reduzimos R$ 0,71 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Alterar"
+          "botao": "Deixar de participar"
         }
       ],
       "promocoes_programadas": [],
@@ -125,19 +125,7 @@
           "botao": "Deixar de participar"
         }
       ],
-      "promocoes_programadas": [
-        {
-          "item_status": "programmed",
-          "titulo_promocao": "Oferta relámpago",
-          "vigencia": "Contém datas específicas",
-          "selo": "PROGRAMADA",
-          "desconto": "R$ 84,70",
-          "preco_final": "R$ 229,24",
-          "voce_recebe": "R$ 180,83 | Reduzimos R$ 11,06 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
+      "promocoes_programadas": [],
       "total_oportunidades": 6,
       "cupons": []
     },
@@ -146,7 +134,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 188",
-      "estoque_info": "Depósito: 48 u.",
+      "estoque_info": "Depósito: 47 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -238,30 +226,6 @@
       "cupons": []
     },
     {
-      "id": "#4960886183",
-      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 520",
-      "estoque_info": "Depósito: 1 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Desconto Proprio",
-          "vigencia": "17/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 31,20",
-          "preco_final": "R$ 488,80",
-          "voce_recebe": "R$ 399,56",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 6,
-      "cupons": []
-    },
-    {
       "id": "#5347161629",
       "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Lenister Lnt-s04m 24v",
       "tipo_anuncio": "Premium",
@@ -330,7 +294,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -354,7 +318,31 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 7,
+      "cupons": []
+    },
+    {
+      "id": "#6294668236",
+      "titulo": "Sensor Transmissor Pressão Água 10 Bar 4-20ma Alta Precisão 24",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 550",
+      "estoque_info": "Depósito: 2 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Desconto Proprio",
+          "vigencia": "17/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 319",
+          "preco_final": "R$ 231",
+          "voce_recebe": "R$ 178,17",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -463,30 +451,6 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 4,
-      "cupons": []
-    },
-    {
-      "id": "#6294668236",
-      "titulo": "Sensor Transmissor Pressão Água 10 Bar 4-20ma Alta Precisão 24",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 550",
-      "estoque_info": "Depósito: 2 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Desconto Proprio",
-          "vigencia": "17/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 319",
-          "preco_final": "R$ 231",
-          "voce_recebe": "R$ 178,17",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 5,
       "cupons": []
     }
   ],
