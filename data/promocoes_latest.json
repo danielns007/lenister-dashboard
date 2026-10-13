@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-10-12T18:44:26.269405+00:00",
-  "run_date": "2026-10-12",
-  "total_produtos": 18,
+  "run_at": "2026-10-13T16:49:11.390718+00:00",
+  "run_date": "2026-10-13",
+  "total_produtos": 19,
   "resumo": {
     "ativa": 18,
     "programada": 0,
     "sem_estoque": 0,
-    "sem_promocao": 0
+    "sem_promocao": 1
   },
   "produtos": [
     {
@@ -30,7 +30,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -54,7 +54,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -62,7 +62,7 @@
       "titulo": "Protetor De Cabo Fio Laço De Porta Flexível Blindado Inox Mangueira Blindada 30cm",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55,90",
-      "estoque_info": "Depósito: 36 u.",
+      "estoque_info": "Depósito: 39 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -74,11 +74,11 @@
           "preco_final": "R$ 49,75",
           "voce_recebe": "R$ 34,10 | Reduzimos R$ 0,71 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -87,44 +87,8 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 550,21",
       "estoque_info": "Depósito: 24 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "26/set a 26/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 25,84",
-          "preco_final": "R$ 524,37",
-          "voce_recebe": "R$ 443,28 | Reduzimos R$ 14,15 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 7,
-      "cupons": []
-    },
-    {
-      "id": "#703364279687762",
-      "titulo": "Central Laço Indutivo 1 Canal 12v Controle De Acesso",
-      "tipo_anuncio": "Clássico e Premium",
-      "preco": "R$ 315 a R$ 325",
-      "estoque_info": "Depósito: 50 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Diferentes promoções",
-          "vigencia": "Contém datas específicas",
-          "selo": "ATIVA",
-          "desconto": "R$ 78 a R$ 80",
-          "preco_final": "R$ 223,25 a R$ 247 | PREÇO ALTO",
-          "voce_recebe": "R$ 184,59 a R$ 187,68 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
       "total_oportunidades": 6,
       "cupons": []
@@ -134,7 +98,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 188",
-      "estoque_info": "Depósito: 47 u.",
+      "estoque_info": "Depósito: 44 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -143,14 +107,14 @@
           "vigencia": "17/set a 17/out",
           "selo": "ATIVA",
           "desconto": "R$ 54,52",
-          "preco_final": "R$ 133,48",
+          "preco_final": "R$ 133,48 | PREÇO ALTO",
           "voce_recebe": "R$ 102,65 | Reduzimos R$ 4,67 das suas tarifas por cada venda",
           "mlb_especifico": null,
           "botao": "Deixar de participar"
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": []
     },
     {
@@ -158,7 +122,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 19 u.",
+      "estoque_info": "Depósito: 17 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -174,7 +138,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -198,31 +162,31 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": []
     },
     {
-      "id": "#4470736687",
-      "titulo": "Sonda Sensor De Nível Hidrostática 0-10mca 4-20ma Cabo 11m 12-24v",
+      "id": "#4960886183",
+      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
       "tipo_anuncio": "Premium",
-      "preco": "R$ 799",
-      "estoque_info": "Depósito: 7 u.",
+      "preco": "R$ 520",
+      "estoque_info": "Depósito: 1 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
           "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "16/set a 16/out",
+          "titulo_promocao": "Desconto Proprio",
+          "vigencia": "17/set a 16/out",
           "selo": "ATIVA",
-          "desconto": "R$ 159,80",
-          "preco_final": "R$ 639,20",
-          "voce_recebe": "R$ 546,46 | Reduzimos R$ 18 das suas tarifas por cada venda",
+          "desconto": "R$ 31,20",
+          "preco_final": "R$ 488,80",
+          "voce_recebe": "R$ 399,56",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -246,7 +210,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 2,
+      "total_oportunidades": 1,
       "cupons": []
     },
     {
@@ -270,7 +234,31 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 2,
+      "total_oportunidades": 1,
+      "cupons": []
+    },
+    {
+      "id": "#703364279687762",
+      "titulo": "Central Laço Indutivo 1 Canal 12v Controle De Acesso",
+      "tipo_anuncio": "Clássico e Premium",
+      "preco": "R$ 315 a R$ 325",
+      "estoque_info": "Depósito: 50 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Diferentes promoções",
+          "vigencia": "Contém datas específicas",
+          "selo": "ATIVA",
+          "desconto": "R$ 78 a R$ 80",
+          "preco_final": "R$ 223,25 a R$ 247",
+          "voce_recebe": "R$ 184,59 a R$ 187,68 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -290,11 +278,11 @@
           "preco_final": "R$ 164,03",
           "voce_recebe": "R$ 119,60 | Reduzimos R$ 4,15 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -318,7 +306,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -342,7 +330,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -366,7 +354,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -402,7 +390,7 @@
           "botao": "Alterar"
         }
       ],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -450,7 +438,31 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
+      "cupons": []
+    },
+    {
+      "id": "#4470736687",
+      "titulo": "Sonda Sensor De Nível Hidrostática 0-10mca 4-20ma Cabo 11m 12-24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 799",
+      "estoque_info": "Depósito: 7 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "16/set a 16/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 159,80",
+          "preco_final": "R$ 639,20",
+          "voce_recebe": "R$ 546,46 | Reduzimos R$ 18 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 6,
       "cupons": []
     }
   ],
