@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-10-13T16:49:11.390718+00:00",
-  "run_date": "2026-10-13",
-  "total_produtos": 19,
+  "run_at": "2026-10-14T14:25:51.340465+00:00",
+  "run_date": "2026-10-14",
+  "total_produtos": 17,
   "resumo": {
-    "ativa": 18,
+    "ativa": 17,
     "programada": 0,
     "sem_estoque": 0,
-    "sem_promocao": 1
+    "sem_promocao": 0
   },
   "produtos": [
     {
@@ -87,10 +87,22 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 550,21",
       "estoque_info": "Depósito: 24 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "1/out a 1/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 27,85",
+          "preco_final": "R$ 522,36",
+          "voce_recebe": "R$ 439,61 | Reduzimos R$ 12,22 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -98,7 +110,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 188",
-      "estoque_info": "Depósito: 44 u.",
+      "estoque_info": "Depósito: 41 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -122,7 +134,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 17 u.",
+      "estoque_info": "Depósito: 16 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -146,7 +158,7 @@
       "titulo": "Fonte Chaveada 12v 5.0a 60w P/ Trilho Din 100~240v Mdr-60-12",
       "tipo_anuncio": "Premium",
       "preco": "R$ 218",
-      "estoque_info": "Depósito: 31 u.",
+      "estoque_info": "Depósito: 29 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -170,7 +182,7 @@
       "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 520",
-      "estoque_info": "Depósito: 1 u.",
+      "estoque_info": "Depósito: 2 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -187,54 +199,6 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
-      "cupons": []
-    },
-    {
-      "id": "#5347161629",
-      "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Lenister Lnt-s04m 24v",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 555",
-      "estoque_info": "Depósito: 6 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Desconto Proprio",
-          "vigencia": "17/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 27,75",
-          "preco_final": "R$ 527,25",
-          "voce_recebe": "R$ 432,82",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 1,
-      "cupons": []
-    },
-    {
-      "id": "#5347148775",
-      "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Lenister 24v",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 555",
-      "estoque_info": "Depósito: 6 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Desconto Proprio",
-          "vigencia": "17/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 27,75",
-          "preco_final": "R$ 527,25",
-          "voce_recebe": "R$ 432,82",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 1,
       "cupons": []
     },
     {
@@ -290,7 +254,7 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-2mca 4-20ma Cabo Pvc 4m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
-      "estoque_info": "Depósito: 6 u.",
+      "estoque_info": "Depósito: 10 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -390,7 +354,7 @@
           "botao": "Alterar"
         }
       ],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": []
     },
     {
