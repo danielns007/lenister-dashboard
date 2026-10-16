@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-10-15T14:03:50.702482+00:00",
-  "run_date": "2026-10-15",
+  "run_at": "2026-10-16T13:50:19.852873+00:00",
+  "run_date": "2026-10-16",
   "total_produtos": 17,
   "resumo": {
     "ativa": 17,
@@ -54,7 +54,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -62,7 +62,7 @@
       "titulo": "Protetor De Cabo Fio Laço De Porta Flexível Blindado Inox Mangueira Blindada 40cm",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55,90",
-      "estoque_info": "Depósito: 37 u.",
+      "estoque_info": "Depósito: 25 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -74,7 +74,7 @@
           "preco_final": "R$ 49,75",
           "voce_recebe": "R$ 34,10 | Reduzimos R$ 0,71 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
@@ -102,6 +102,30 @@
         }
       ],
       "promocoes_programadas": [],
+      "total_oportunidades": 6,
+      "cupons": []
+    },
+    {
+      "id": "#703364279687762",
+      "titulo": "Central Laço Indutivo 1 Canal 12v Controle Acesso Lenister",
+      "tipo_anuncio": "Clássico e Premium",
+      "preco": "R$ 315 a R$ 325",
+      "estoque_info": "Depósito: 50 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Diferentes promoções",
+          "vigencia": "Contém datas específicas",
+          "selo": "ATIVA",
+          "desconto": "R$ 78 a R$ 80",
+          "preco_final": "R$ 223,25 a R$ 247",
+          "voce_recebe": "R$ 184,59 a R$ 187,68 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
       "total_oportunidades": 5,
       "cupons": []
     },
@@ -110,7 +134,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 188",
-      "estoque_info": "Depósito: 36 u.",
+      "estoque_info": "Depósito: 29 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -134,7 +158,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 16 u.",
+      "estoque_info": "Depósito: 15 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -225,35 +249,11 @@
       "cupons": []
     },
     {
-      "id": "#703364279687762",
-      "titulo": "Central Laço Indutivo 1 Canal 12v Controle Acesso Lenister",
-      "tipo_anuncio": "Clássico e Premium",
-      "preco": "R$ 315 a R$ 325",
-      "estoque_info": "Depósito: 50 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Diferentes promoções",
-          "vigencia": "Contém datas específicas",
-          "selo": "ATIVA",
-          "desconto": "R$ 78 a R$ 80",
-          "preco_final": "R$ 223,25 a R$ 247",
-          "voce_recebe": "R$ 184,59 a R$ 187,68 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 4,
-      "cupons": []
-    },
-    {
       "id": "#6508001372",
       "titulo": "Divisor Extensor Poe 250m Repetidor Câmeras Ip Giga Lenister",
       "tipo_anuncio": "Premium",
       "preco": "R$ 178",
-      "estoque_info": "Depósito: 27 u.",
+      "estoque_info": "Depósito: 26 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -269,7 +269,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -297,6 +297,30 @@
       "cupons": []
     },
     {
+      "id": "#6718341398",
+      "titulo": "Fechadura Solenoide Lenister 12v Porta De Vidro Temporizada Prata",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 415",
+      "estoque_info": "Depósito: 12 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "1/out a 1/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 80,81",
+          "preco_final": "R$ 334,19",
+          "voce_recebe": "R$ 274,65 | Reduzimos R$ 20,05 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 3,
+      "cupons": []
+    },
+    {
       "id": "#6294668236",
       "titulo": "Sensor Transmissor Pressão Água 10 Bar 4-20ma Alta Precisão 24",
       "tipo_anuncio": "Premium",
@@ -317,31 +341,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
-      "cupons": []
-    },
-    {
-      "id": "#6718341398",
-      "titulo": "Fechadura Solenoide Lenister 12v Porta De Vidro Temporizada Prata",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 415",
-      "estoque_info": "Depósito: 13 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "1/out a 1/nov",
-          "selo": "ATIVA",
-          "desconto": "R$ 80,81",
-          "preco_final": "R$ 334,19",
-          "voce_recebe": "R$ 274,65 | Reduzimos R$ 20,05 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -377,7 +377,7 @@
           "botao": "Alterar"
         }
       ],
-      "total_oportunidades": 2,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
