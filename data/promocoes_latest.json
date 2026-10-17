@@ -1,34 +1,22 @@
 {
-  "run_at": "2026-10-16T13:50:19.852873+00:00",
-  "run_date": "2026-10-16",
+  "run_at": "2026-10-17T12:47:59.949833+00:00",
+  "run_date": "2026-10-17",
   "total_produtos": 17,
   "resumo": {
-    "ativa": 17,
+    "ativa": 8,
     "programada": 0,
-    "sem_estoque": 0,
-    "sem_promocao": 0
+    "sem_estoque": 1,
+    "sem_promocao": 8
   },
   "produtos": [
     {
       "id": "#5782589830345680",
-      "titulo": "Divisor E Extensor Poe Até 250m Câmera Ip Lenister Hi-at13fl",
+      "titulo": "Divisor E Extensor Poe 250m Câmera Ip Lenister Lnt-fe13-30",
       "tipo_anuncio": "Clássico e Premium",
-      "preco": "R$ 140 a R$ 165",
+      "preco": "R$ 133,86 a R$ 165",
       "estoque_info": "Depósito: 4 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Diferentes promoções",
-          "vigencia": "Contém datas específicas",
-          "selo": "ATIVA",
-          "desconto": "R$ 7",
-          "preco_final": "R$ 133",
-          "voce_recebe": "R$ 98,76",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
       "cupons": []
@@ -54,7 +42,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -63,20 +51,8 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 55,90",
       "estoque_info": "Depósito: 25 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "16/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 6,15",
-          "preco_final": "R$ 49,75",
-          "voce_recebe": "R$ 34,10 | Reduzimos R$ 0,71 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
       "total_oportunidades": 3,
       "cupons": []
@@ -102,7 +78,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -118,9 +94,9 @@
           "titulo_promocao": "Diferentes promoções",
           "vigencia": "Contém datas específicas",
           "selo": "ATIVA",
-          "desconto": "R$ 78 a R$ 80",
-          "preco_final": "R$ 223,25 a R$ 247",
-          "voce_recebe": "R$ 184,59 a R$ 187,68 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
+          "desconto": "",
+          "preco_final": "R$ 223,25 a R$ 234,65",
+          "voce_recebe": "R$ 186,63 a R$ 187,68 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
           "mlb_especifico": null,
           "botao": "Deixar de participar"
         }
@@ -133,24 +109,12 @@
       "id": "#6128447010",
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
-      "preco": "R$ 188",
-      "estoque_info": "Depósito: 29 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "17/set a 17/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 54,52",
-          "preco_final": "R$ 133,48 | PREÇO ALTO",
-          "voce_recebe": "R$ 102,65 | Reduzimos R$ 4,67 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
+      "preco": "R$ 133,48",
+      "estoque_info": "Depósito: 28 u.",
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 2,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -170,11 +134,11 @@
           "preco_final": "R$ 350,83",
           "voce_recebe": "R$ 290,32 | Reduzimos R$ 20,63 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -187,28 +151,17 @@
       "promocoes_ativas": [
         {
           "item_status": "active",
-          "titulo_promocao": "Desconto Proprio",
-          "vigencia": "17/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 69,76",
-          "preco_final": "R$ 148,24",
-          "voce_recebe": "R$ 104,61",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [
-        {
-          "item_status": "programmed",
           "titulo_promocao": "Com redução de tarifas",
           "vigencia": "14/out a 13/nov",
-          "selo": "PROGRAMADA",
+          "selo": "ATIVA",
           "desconto": "R$ 57,29",
-          "preco_final": "R$ 160,71",
+          "preco_final": "R$ 160,71 | PREÇO ALTO",
           "voce_recebe": "R$ 122,37 | Reduzimos R$ 9,64 das suas tarifas por cada venda",
           "mlb_especifico": null,
           "botao": "Deixar de participar"
-        },
+        }
+      ],
+      "promocoes_programadas": [
         {
           "item_status": "programmed",
           "titulo_promocao": "11.11",
@@ -222,78 +175,6 @@
         }
       ],
       "total_oportunidades": 0,
-      "cupons": []
-    },
-    {
-      "id": "#4960886183",
-      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 520",
-      "estoque_info": "Depósito: 2 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Desconto Proprio",
-          "vigencia": "17/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 31,20",
-          "preco_final": "R$ 488,80",
-          "voce_recebe": "R$ 399,56",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 5,
-      "cupons": []
-    },
-    {
-      "id": "#6508001372",
-      "titulo": "Divisor Extensor Poe 250m Repetidor Câmeras Ip Giga Lenister",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 178",
-      "estoque_info": "Depósito: 26 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "16/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 13,97",
-          "preco_final": "R$ 164,03",
-          "voce_recebe": "R$ 119,60 | Reduzimos R$ 4,15 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 3,
-      "cupons": []
-    },
-    {
-      "id": "#4811412531",
-      "titulo": "Sonda Sensor De Nível Hidrostática 0-2mca 4-20ma Cabo Pvc 4m 24v",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 560",
-      "estoque_info": "Depósito: 10 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "16/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 65,69",
-          "preco_final": "R$ 494,31",
-          "voce_recebe": "R$ 418,99 | Reduzimos R$ 15,86 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -317,7 +198,43 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
+      "cupons": []
+    },
+    {
+      "id": "#4960886183",
+      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 520",
+      "estoque_info": "Depósito: 2 u.",
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
+      "promocoes_programadas": [],
+      "total_oportunidades": 5,
+      "cupons": []
+    },
+    {
+      "id": "#6508001372",
+      "titulo": "Divisor Extensor Poe Repetidor Câmeras Ip Giga Lenister",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 178",
+      "estoque_info": "Depósito: 26 u.",
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
+      "promocoes_programadas": [],
+      "total_oportunidades": 4,
+      "cupons": []
+    },
+    {
+      "id": "#4811412531",
+      "titulo": "Sonda Sensor De Nível Hidrostática 0-2mca 4-20ma Cabo Pvc 4m 24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 560",
+      "estoque_info": "Depósito: 10 u.",
+      "categoria": "sem_estoque",
+      "promocoes_ativas": [],
+      "promocoes_programadas": [],
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -326,20 +243,8 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 550",
       "estoque_info": "Depósito: 2 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Desconto Proprio",
-          "vigencia": "17/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 319",
-          "preco_final": "R$ 231",
-          "voce_recebe": "R$ 178,17",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
       "cupons": []
@@ -349,7 +254,7 @@
       "titulo": "Kit 4 Divisor Extensor Poe 250m Câmera Ip Lenister Hi-at13fl",
       "tipo_anuncio": "Premium",
       "preco": "R$ 696",
-      "estoque_info": "Depósito: 3 u.",
+      "estoque_info": "Depósito: 2 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -364,20 +269,8 @@
           "botao": "Deixar de participar"
         }
       ],
-      "promocoes_programadas": [
-        {
-          "item_status": "programmed",
-          "titulo_promocao": "Desconto por porcentagem",
-          "vigencia": "16/set a 16/out",
-          "selo": "PROGRAMADA",
-          "desconto": "R$ 178",
-          "preco_final": "R$ 518",
-          "voce_recebe": "R$ 401,51",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "total_oportunidades": 3,
+      "promocoes_programadas": [],
+      "total_oportunidades": 2,
       "cupons": []
     },
     {
@@ -386,22 +279,10 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
       "estoque_info": "Depósito: 8 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Desconto por porcentagem",
-          "vigencia": "16/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 224",
-          "preco_final": "R$ 336",
-          "voce_recebe": "R$ 288,96",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 2,
+      "total_oportunidades": 1,
       "cupons": []
     },
     {
@@ -425,7 +306,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": []
     },
     {
@@ -434,20 +315,8 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 799",
       "estoque_info": "Depósito: 7 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "16/set a 16/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 159,80",
-          "preco_final": "R$ 639,20",
-          "voce_recebe": "R$ 546,46 | Reduzimos R$ 18 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
       "total_oportunidades": 6,
       "cupons": []
