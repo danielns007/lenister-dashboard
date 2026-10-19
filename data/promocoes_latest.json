@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-10-18T13:04:44.633844+00:00",
-  "run_date": "2026-10-18",
-  "total_produtos": 17,
+  "run_at": "2026-10-19T16:18:55.651431+00:00",
+  "run_date": "2026-10-19",
+  "total_produtos": 18,
   "resumo": {
     "ativa": 8,
     "programada": 0,
     "sem_estoque": 0,
-    "sem_promocao": 9
+    "sem_promocao": 10
   },
   "produtos": [
     {
@@ -54,7 +54,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 2,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -110,11 +110,11 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 24 u.",
+      "estoque_info": "Depósito: 22 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": []
     },
     {
@@ -151,27 +151,27 @@
       "promocoes_ativas": [
         {
           "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "14/out a 13/nov",
+          "titulo_promocao": "11.11",
+          "vigencia": "19/out a 12/nov",
           "selo": "ATIVA",
-          "desconto": "R$ 57,29",
-          "preco_final": "R$ 160,71 | PREÇO ALTO",
-          "voce_recebe": "R$ 122,37 | Reduzimos R$ 9,64 das suas tarifas por cada venda",
+          "desconto": "R$ 69,76",
+          "preco_final": "R$ 148,24 | PREÇO ALTO",
+          "voce_recebe": "R$ 104,61",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [
         {
           "item_status": "programmed",
-          "titulo_promocao": "11.11",
-          "vigencia": "19/out a 12/nov",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "14/out a 13/nov",
           "selo": "PROGRAMADA",
-          "desconto": "R$ 69,76",
-          "preco_final": "R$ 148,24",
-          "voce_recebe": "R$ 104,61",
+          "desconto": "R$ 57,29",
+          "preco_final": "R$ 160,71",
+          "voce_recebe": "R$ 122,37 | Reduzimos R$ 9,64 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Alterar"
+          "botao": "Deixar de participar"
         }
       ],
       "total_oportunidades": 0,
@@ -182,7 +182,7 @@
       "titulo": "Fechadura Solenoide Lenister 12v Porta De Vidro Temporizada Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 415",
-      "estoque_info": "Depósito: 11 u.",
+      "estoque_info": "Depósito: 10 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -234,7 +234,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -274,11 +274,23 @@
       "cupons": []
     },
     {
+      "id": "#7277760266",
+      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-5mca 4-20ma Lenister 24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 580",
+      "estoque_info": "Depósito: 6 u.",
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
+      "promocoes_programadas": [],
+      "total_oportunidades": 5,
+      "cupons": []
+    },
+    {
       "id": "#5163909431",
       "titulo": "Controlador Indicador De Nível Lenister 4-20ma Lnt-t80 220v 220v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
-      "estoque_info": "Depósito: 8 u.",
+      "estoque_info": "Depósito: 7 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
@@ -314,7 +326,7 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-10mca 4-20ma Cabo 11m 12-24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 799",
-      "estoque_info": "Depósito: 7 u.",
+      "estoque_info": "Depósito: 6 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
