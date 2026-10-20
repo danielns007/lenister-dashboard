@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-10-19T16:18:55.651431+00:00",
-  "run_date": "2026-10-19",
+  "run_at": "2026-10-20T14:12:35.886650+00:00",
+  "run_date": "2026-10-20",
   "total_produtos": 18,
   "resumo": {
     "ativa": 8,
@@ -62,7 +62,7 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Cabo Pvc 5m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 550,21",
-      "estoque_info": "Depósito: 24 u.",
+      "estoque_info": "Depósito: 21 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -78,7 +78,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -110,7 +110,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 22 u.",
+      "estoque_info": "Depósito: 15 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
@@ -194,7 +194,7 @@
           "preco_final": "R$ 334,19",
           "voce_recebe": "R$ 274,65 | Reduzimos R$ 20,05 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
@@ -210,7 +210,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -246,7 +246,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -282,7 +282,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -330,7 +330,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": []
     }
   ],
