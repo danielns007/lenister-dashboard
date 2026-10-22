@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-10-21T14:26:09.248825+00:00",
-  "run_date": "2026-10-21",
-  "total_produtos": 19,
+  "run_at": "2026-10-22T14:27:03.548138+00:00",
+  "run_date": "2026-10-22",
+  "total_produtos": 18,
   "resumo": {
     "ativa": 8,
     "programada": 0,
-    "sem_estoque": 1,
-    "sem_promocao": 10
+    "sem_estoque": 2,
+    "sem_promocao": 8
   },
   "produtos": [
     {
@@ -18,7 +18,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -50,8 +50,8 @@
       "titulo": "Protetor De Cabo Fio Laço De Porta Flexível Blindado Inox Mangueira Blindada 40cm",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55,90",
-      "estoque_info": "Depósito: 21 u.",
-      "categoria": "sem_promocao",
+      "estoque_info": "Depósito: 20 u.",
+      "categoria": "sem_estoque",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
@@ -70,15 +70,39 @@
       "cupons": []
     },
     {
+      "id": "#703364279687762",
+      "titulo": "Central Laço Indutivo 1 Canal 12v Controle Acesso Lenister",
+      "tipo_anuncio": "Clássico e Premium",
+      "preco": "R$ 315 a R$ 325",
+      "estoque_info": "Depósito: 50 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Diferentes promoções",
+          "vigencia": "Contém datas específicas",
+          "selo": "ATIVA",
+          "desconto": "R$ 75,10 a R$ 75,75",
+          "preco_final": "R$ 223,25 a R$ 249,90",
+          "voce_recebe": "R$ 186,63 a R$ 190,09 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 6,
+      "cupons": []
+    },
+    {
       "id": "#6128447010",
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 13 u.",
+      "estoque_info": "Depósito: 4 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -86,7 +110,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 13 u.",
+      "estoque_info": "Depósito: 12 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
@@ -142,47 +166,11 @@
       "cupons": []
     },
     {
-      "id": "#4960886183",
-      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 520",
-      "estoque_info": "Depósito: 1 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 4,
-      "cupons": []
-    },
-    {
-      "id": "#703364279687762",
-      "titulo": "Central Laço Indutivo 1 Canal 12v Controle Acesso Lenister",
-      "tipo_anuncio": "Clássico e Premium",
-      "preco": "R$ 315 a R$ 325",
-      "estoque_info": "Depósito: 50 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Diferentes promoções",
-          "vigencia": "Contém datas específicas",
-          "selo": "ATIVA",
-          "desconto": "R$ 75,10 a R$ 75,75",
-          "preco_final": "R$ 223,25 a R$ 249,90",
-          "voce_recebe": "R$ 186,63 a R$ 190,09 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 4,
-      "cupons": []
-    },
-    {
       "id": "#6508001372",
       "titulo": "Divisor Extensor Poe Repetidor Câmeras Ip Giga Lenister",
       "tipo_anuncio": "Premium",
       "preco": "R$ 178",
-      "estoque_info": "Depósito: 26 u.",
+      "estoque_info": "Depósito: 25 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -254,7 +242,7 @@
       "titulo": "Kit 4 Divisor Extensor Poe 250m Câmera Ip Lenister Hi-at13fl",
       "tipo_anuncio": "Premium",
       "preco": "R$ 696",
-      "estoque_info": "Depósito: 2 u.",
+      "estoque_info": "Depósito: 1 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -286,11 +274,23 @@
       "cupons": []
     },
     {
+      "id": "#7855401196",
+      "titulo": "Torre Luminosa Sinalizadora Led 3 Cores Buzina 24v Lenister",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 209,90",
+      "estoque_info": "Depósito: 4 u.",
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
+      "promocoes_programadas": [],
+      "total_oportunidades": 3,
+      "cupons": []
+    },
+    {
       "id": "#6168880144",
       "titulo": "Sirene Audio Visual Estroboscópica Led 5v-12v Alarme 120db Vermelho",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55",
-      "estoque_info": "Depósito: 18 u.",
+      "estoque_info": "Depósito: 12 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -300,7 +300,7 @@
           "selo": "ATIVA",
           "desconto": "R$ 22",
           "preco_final": "R$ 33",
-          "voce_recebe": "R$ 15,91 | Reduzimos R$ 1,30 das suas tarifas por cada venda",
+          "voce_recebe": "R$ 22,01 | Reduzimos R$ 1,30 das suas tarifas por cada venda",
           "mlb_especifico": null,
           "botao": "Deixar de participar"
         }
@@ -331,18 +331,6 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 4,
-      "cupons": []
-    },
-    {
-      "id": "#7855401196",
-      "titulo": "Torre Luminosa Sinalizadora Led 3 Cores Buzina 24v Lenister",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 209,90",
-      "estoque_info": "Depósito: 4 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 2,
       "cupons": []
     }
   ],
