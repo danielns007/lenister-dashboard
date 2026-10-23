@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-10-22T14:27:03.548138+00:00",
-  "run_date": "2026-10-22",
+  "run_at": "2026-10-23T14:09:51.982275+00:00",
+  "run_date": "2026-10-23",
   "total_produtos": 18,
   "resumo": {
-    "ativa": 8,
+    "ativa": 6,
     "programada": 0,
-    "sem_estoque": 2,
-    "sem_promocao": 8
+    "sem_estoque": 3,
+    "sem_promocao": 9
   },
   "produtos": [
     {
@@ -75,22 +75,10 @@
       "tipo_anuncio": "Clássico e Premium",
       "preco": "R$ 315 a R$ 325",
       "estoque_info": "Depósito: 50 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Diferentes promoções",
-          "vigencia": "Contém datas específicas",
-          "selo": "ATIVA",
-          "desconto": "R$ 75,10 a R$ 75,75",
-          "preco_final": "R$ 223,25 a R$ 249,90",
-          "voce_recebe": "R$ 186,63 a R$ 190,09 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
+      "categoria": "sem_estoque",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 7,
       "cupons": []
     },
     {
@@ -102,7 +90,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -114,7 +102,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -122,7 +110,7 @@
       "titulo": "Fonte Chaveada 12v 5.0a 60w P/ Trilho Din 100~240v Mdr-60-12",
       "tipo_anuncio": "Premium",
       "preco": "R$ 218",
-      "estoque_info": "Depósito: 27 u.",
+      "estoque_info": "Depósito: 26 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -162,7 +150,7 @@
       "categoria": "sem_estoque",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -171,20 +159,8 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 178",
       "estoque_info": "Depósito: 25 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "16 a 31/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 21,37",
-          "preco_final": "R$ 156,63",
-          "voce_recebe": "R$ 118,31 | Reduzimos R$ 8,92 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
       "cupons": []
@@ -314,7 +290,7 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-10mca 4-20ma Cabo 11m 12-24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 799",
-      "estoque_info": "Depósito: 6 u.",
+      "estoque_info": "Depósito: 2 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
