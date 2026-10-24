@@ -1,22 +1,34 @@
 {
-  "run_at": "2026-10-23T14:09:51.982275+00:00",
-  "run_date": "2026-10-23",
+  "run_at": "2026-10-24T13:12:08.350674+00:00",
+  "run_date": "2026-10-24",
   "total_produtos": 18,
   "resumo": {
-    "ativa": 6,
+    "ativa": 13,
     "programada": 0,
-    "sem_estoque": 3,
-    "sem_promocao": 9
+    "sem_estoque": 1,
+    "sem_promocao": 4
   },
   "produtos": [
     {
       "id": "#5782589830345680",
       "titulo": "Divisor E Extensor Poe 250m Câmera Ip Lenister Lnt-fe13-30",
-      "tipo_anuncio": "Clássico e Premium",
+      "tipo_anuncio": "Clássico",
       "preco": "R$ 133,86 a R$ 165",
       "estoque_info": "Depósito: 4 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Diferentes promoções",
+          "vigencia": "Contém datas específicas",
+          "selo": "ATIVA",
+          "desconto": "R$ 1,94",
+          "preco_final": "R$ 129,01",
+          "voce_recebe": "R$ 98,20 | Reduzimos R$ 2,91 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
       "promocoes_programadas": [],
       "total_oportunidades": 6,
       "cupons": []
@@ -34,14 +46,26 @@
           "titulo_promocao": "Diferentes promoções",
           "vigencia": "Contém datas específicas",
           "selo": "ATIVA",
-          "desconto": "R$ 61,43",
-          "preco_final": "R$ 225,36",
-          "voce_recebe": "R$ 175,54 | Reduzimos R$ 9,01 das suas tarifas por cada venda",
+          "desconto": "R$ 77,80",
+          "preco_final": "R$ 218",
+          "voce_recebe": "R$ 160,38",
           "mlb_especifico": null,
           "botao": "Deixar de participar"
         }
       ],
-      "promocoes_programadas": [],
+      "promocoes_programadas": [
+        {
+          "item_status": "programmed",
+          "titulo_promocao": "Con aporte de Mercado Libre",
+          "vigencia": "Contém datas específicas",
+          "selo": "PROGRAMADA",
+          "desconto": "R$ 69,36",
+          "preco_final": "R$ 216",
+          "voce_recebe": "R$ 169,15 | Reduzimos R$ 10,44 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
       "total_oportunidades": 6,
       "cupons": []
     },
@@ -50,7 +74,7 @@
       "titulo": "Protetor De Cabo Fio Laço De Porta Flexível Blindado Inox Mangueira Blindada 40cm",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55,90",
-      "estoque_info": "Depósito: 20 u.",
+      "estoque_info": "Depósito: 10 u.",
       "categoria": "sem_estoque",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
@@ -66,19 +90,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
-      "cupons": []
-    },
-    {
-      "id": "#703364279687762",
-      "titulo": "Central Laço Indutivo 1 Canal 12v Controle Acesso Lenister",
-      "tipo_anuncio": "Clássico e Premium",
-      "preco": "R$ 315 a R$ 325",
-      "estoque_info": "Depósito: 50 u.",
-      "categoria": "sem_estoque",
-      "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -99,8 +111,20 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
       "estoque_info": "Depósito: 12 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "11.11",
+          "vigencia": "19/out a 12/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 49,71",
+          "preco_final": "R$ 349",
+          "voce_recebe": "R$ 268,17",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
       "promocoes_programadas": [],
       "total_oportunidades": 6,
       "cupons": []
@@ -118,27 +142,15 @@
           "titulo_promocao": "11.11",
           "vigencia": "19/out a 12/nov",
           "selo": "ATIVA",
-          "desconto": "R$ 69,76",
-          "preco_final": "R$ 148,24 | PREÇO ALTO",
-          "voce_recebe": "R$ 104,61",
+          "desconto": "R$ 74,21",
+          "preco_final": "R$ 143,79",
+          "voce_recebe": "R$ 100,96",
           "mlb_especifico": null,
           "botao": "Alterar"
         }
       ],
-      "promocoes_programadas": [
-        {
-          "item_status": "programmed",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "14/out a 13/nov",
-          "selo": "PROGRAMADA",
-          "desconto": "R$ 57,29",
-          "preco_final": "R$ 160,71",
-          "voce_recebe": "R$ 122,37 | Reduzimos R$ 9,64 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "total_oportunidades": 2,
+      "promocoes_programadas": [],
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -147,8 +159,44 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 415",
       "estoque_info": "Depósito: 10 u.",
-      "categoria": "sem_estoque",
-      "promocoes_ativas": [],
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "11.11",
+          "vigencia": "19/out a 12/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 91",
+          "preco_final": "R$ 324",
+          "voce_recebe": "R$ 246,09",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 5,
+      "cupons": []
+    },
+    {
+      "id": "#703364279687762",
+      "titulo": "Central Laço Indutivo 1 Canal 12v Controle Acesso Lenister",
+      "tipo_anuncio": "Clássico e Premium",
+      "preco": "R$ 315 a R$ 325",
+      "estoque_info": "Depósito: 50 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Diferentes promoções",
+          "vigencia": "Contém datas específicas",
+          "selo": "ATIVA",
+          "desconto": "R$ 75,10 a R$ 75,75",
+          "preco_final": "R$ 223,25 a R$ 249,90",
+          "voce_recebe": "R$ 186,63 a R$ 190,09 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
       "cupons": []
@@ -162,7 +210,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -171,10 +219,34 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
       "estoque_info": "Depósito: 9 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "11.11",
+          "vigencia": "19/out a 12/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 65,14",
+          "preco_final": "R$ 494,86",
+          "voce_recebe": "R$ 403,60",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 3,
+      "cupons": []
+    },
+    {
+      "id": "#4470736687",
+      "titulo": "Sonda Sensor De Nível Hidrostática 0-10mca 4-20ma Cabo 11m 12-24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 799",
+      "estoque_info": "Depósito: 2 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -183,10 +255,22 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 580",
       "estoque_info": "Depósito: 6 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "11.11",
+          "vigencia": "19/out a 12/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 84,52",
+          "preco_final": "R$ 495,48",
+          "voce_recebe": "R$ 405,34",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -243,10 +327,22 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
       "estoque_info": "Depósito: 7 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "23/out a 22/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 224",
+          "preco_final": "R$ 336",
+          "voce_recebe": "R$ 309,12 | Reduzimos R$ 20,16 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": []
     },
     {
@@ -255,10 +351,22 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 209,90",
       "estoque_info": "Depósito: 4 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "11.11",
+          "vigencia": "19/out a 12/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 62,97",
+          "preco_final": "R$ 146,93",
+          "voce_recebe": "R$ 105",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": []
     },
     {
@@ -277,30 +385,6 @@
           "desconto": "R$ 22",
           "preco_final": "R$ 33",
           "voce_recebe": "R$ 22,01 | Reduzimos R$ 1,30 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 4,
-      "cupons": []
-    },
-    {
-      "id": "#4470736687",
-      "titulo": "Sonda Sensor De Nível Hidrostática 0-10mca 4-20ma Cabo 11m 12-24v",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 799",
-      "estoque_info": "Depósito: 2 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "20/out a 19/nov",
-          "selo": "ATIVA",
-          "desconto": "R$ 159,80",
-          "preco_final": "R$ 639,20",
-          "voce_recebe": "R$ 566,81 | Reduzimos R$ 38,35 das suas tarifas por cada venda",
           "mlb_especifico": null,
           "botao": "Deixar de participar"
         }
