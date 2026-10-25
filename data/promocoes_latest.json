@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-10-24T13:12:08.350674+00:00",
-  "run_date": "2026-10-24",
-  "total_produtos": 18,
+  "run_at": "2026-10-25T13:39:37.883659+00:00",
+  "run_date": "2026-10-25",
+  "total_produtos": 19,
   "resumo": {
     "ativa": 13,
     "programada": 0,
     "sem_estoque": 1,
-    "sem_promocao": 4
+    "sem_promocao": 5
   },
   "produtos": [
     {
@@ -30,7 +30,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 7,
       "cupons": []
     },
     {
@@ -86,11 +86,11 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Cabo Pvc 5m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 550,21",
-      "estoque_info": "Depósito: 19 u.",
+      "estoque_info": "Depósito: 12 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -110,7 +110,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 12 u.",
+      "estoque_info": "Depósito: 13 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -175,6 +175,18 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
+      "cupons": []
+    },
+    {
+      "id": "#4960886183",
+      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 520",
+      "estoque_info": "Depósito: 6 u.",
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
+      "promocoes_programadas": [],
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -250,30 +262,6 @@
       "cupons": []
     },
     {
-      "id": "#7277760266",
-      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-5mca 4-20ma Lenister 24v",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 580",
-      "estoque_info": "Depósito: 6 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "11.11",
-          "vigencia": "19/out a 12/nov",
-          "selo": "ATIVA",
-          "desconto": "R$ 84,52",
-          "preco_final": "R$ 495,48",
-          "voce_recebe": "R$ 405,34",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 3,
-      "cupons": []
-    },
-    {
       "id": "#6294668236",
       "titulo": "Sensor Transmissor Pressão Água 10 Bar 4-20ma Alta Precisão 24",
       "tipo_anuncio": "Premium",
@@ -322,11 +310,35 @@
       "cupons": []
     },
     {
+      "id": "#7277760266",
+      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-5mca 4-20ma Lenister 24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 580",
+      "estoque_info": "Depósito: 5 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "11.11",
+          "vigencia": "19/out a 12/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 84,52",
+          "preco_final": "R$ 495,48",
+          "voce_recebe": "R$ 405,34",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 3,
+      "cupons": []
+    },
+    {
       "id": "#5163909431",
       "titulo": "Controlador Indicador De Nível Lenister 4-20ma Lnt-t80 220v 220v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
-      "estoque_info": "Depósito: 7 u.",
+      "estoque_info": "Depósito: 6 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
