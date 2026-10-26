@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-10-25T13:39:37.883659+00:00",
-  "run_date": "2026-10-25",
+  "run_at": "2026-10-26T15:58:07.857458+00:00",
+  "run_date": "2026-10-26",
   "total_produtos": 19,
   "resumo": {
-    "ativa": 13,
+    "ativa": 11,
     "programada": 0,
     "sem_estoque": 1,
-    "sem_promocao": 5
+    "sem_promocao": 7
   },
   "produtos": [
     {
@@ -15,22 +15,10 @@
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,86 a R$ 165",
       "estoque_info": "Depósito: 4 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Diferentes promoções",
-          "vigencia": "Contém datas específicas",
-          "selo": "ATIVA",
-          "desconto": "R$ 1,94",
-          "preco_final": "R$ 129,01",
-          "voce_recebe": "R$ 98,20 | Reduzimos R$ 2,91 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 8,
       "cupons": []
     },
     {
@@ -66,7 +54,7 @@
           "botao": "Deixar de participar"
         }
       ],
-      "total_oportunidades": 6,
+      "total_oportunidades": 7,
       "cupons": []
     },
     {
@@ -78,7 +66,7 @@
       "categoria": "sem_estoque",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -90,7 +78,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -102,7 +90,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -126,7 +114,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 7,
       "cupons": []
     },
     {
@@ -150,7 +138,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -174,19 +162,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
-      "cupons": []
-    },
-    {
-      "id": "#4960886183",
-      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 520",
-      "estoque_info": "Depósito: 6 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -210,7 +186,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -222,7 +198,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 7,
       "cupons": []
     },
     {
@@ -246,7 +222,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -258,55 +234,19 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
+      "total_oportunidades": 6,
+      "cupons": []
+    },
+    {
+      "id": "#4960886183",
+      "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 520",
+      "estoque_info": "Depósito: 6 u.",
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
+      "promocoes_programadas": [],
       "total_oportunidades": 5,
-      "cupons": []
-    },
-    {
-      "id": "#6294668236",
-      "titulo": "Sensor Transmissor Pressão Água 10 Bar 4-20ma Alta Precisão 24",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 550",
-      "estoque_info": "Depósito: 2 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "20/out a 19/nov",
-          "selo": "ATIVA",
-          "desconto": "R$ 325,93",
-          "preco_final": "R$ 224,07",
-          "voce_recebe": "R$ 185,61 | Reduzimos R$ 13,44 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 3,
-      "cupons": []
-    },
-    {
-      "id": "#5090061779",
-      "titulo": "Kit 4 Divisor Extensor Poe 250m Câmera Ip Lenister Hi-at13fl",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 696",
-      "estoque_info": "Depósito: 1 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "1 a 31/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 184",
-          "preco_final": "R$ 512",
-          "voce_recebe": "R$ 422,19 | Reduzimos R$ 25,60 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -330,7 +270,55 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 4,
+      "cupons": []
+    },
+    {
+      "id": "#6294668236",
+      "titulo": "Sensor Transmissor Pressão Água 10 Bar 4-20ma Alta Precisão 24",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 550",
+      "estoque_info": "Depósito: 2 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "20/out a 19/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 325,93",
+          "preco_final": "R$ 224,07",
+          "voce_recebe": "R$ 185,61 | Reduzimos R$ 13,44 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 4,
+      "cupons": []
+    },
+    {
+      "id": "#5090061779",
+      "titulo": "Kit 4 Divisor Extensor Poe 250m Câmera Ip Lenister Hi-at13fl",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 696",
+      "estoque_info": "Depósito: 1 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "1 a 31/out",
+          "selo": "ATIVA",
+          "desconto": "R$ 184",
+          "preco_final": "R$ 512",
+          "voce_recebe": "R$ 422,19 | Reduzimos R$ 25,60 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -339,22 +327,10 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
       "estoque_info": "Depósito: 6 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "23/out a 22/nov",
-          "selo": "ATIVA",
-          "desconto": "R$ 224",
-          "preco_final": "R$ 336",
-          "voce_recebe": "R$ 309,12 | Reduzimos R$ 20,16 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 2,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -378,7 +354,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 2,
+      "total_oportunidades": 3,
       "cupons": []
     },
     {
@@ -402,7 +378,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 5,
       "cupons": []
     }
   ],
