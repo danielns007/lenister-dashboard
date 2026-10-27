@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-10-26T15:58:07.857458+00:00",
-  "run_date": "2026-10-26",
+  "run_at": "2026-10-27T15:13:55.983200+00:00",
+  "run_date": "2026-10-27",
   "total_produtos": 19,
   "resumo": {
     "ativa": 11,
@@ -74,7 +74,7 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Cabo Pvc 5m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 550,21",
-      "estoque_info": "Depósito: 12 u.",
+      "estoque_info": "Depósito: 8 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
@@ -90,7 +90,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -98,7 +98,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 13 u.",
+      "estoque_info": "Depósito: 11 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
