@@ -1,9 +1,9 @@
 {
-  "run_at": "2026-10-27T15:13:55.983200+00:00",
-  "run_date": "2026-10-27",
-  "total_produtos": 19,
+  "run_at": "2026-10-28T15:49:44.709683+00:00",
+  "run_date": "2026-10-28",
+  "total_produtos": 18,
   "resumo": {
-    "ativa": 11,
+    "ativa": 10,
     "programada": 0,
     "sem_estoque": 1,
     "sem_promocao": 7
@@ -78,7 +78,31 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 5,
+      "cupons": []
+    },
+    {
+      "id": "#703364279687762",
+      "titulo": "Central Laço Indutivo 1 Canal 12v Controle Acesso Lenister",
+      "tipo_anuncio": "Clássico e Premium",
+      "preco": "R$ 315 a R$ 325",
+      "estoque_info": "Depósito: 50 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Diferentes promoções",
+          "vigencia": "Contém datas específicas",
+          "selo": "ATIVA",
+          "desconto": "R$ 75,10 a R$ 75,75",
+          "preco_final": "R$ 223,25 a R$ 249,90",
+          "voce_recebe": "R$ 186,63 a R$ 190,09 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -98,7 +122,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 11 u.",
+      "estoque_info": "Depósito: 9 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -114,7 +138,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 6,
       "cupons": []
     },
     {
@@ -122,7 +146,7 @@
       "titulo": "Fonte Chaveada 12v 5.0a 60w P/ Trilho Din 100~240v Mdr-60-12",
       "tipo_anuncio": "Premium",
       "preco": "R$ 218",
-      "estoque_info": "Depósito: 26 u.",
+      "estoque_info": "Depósito: 25 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -162,31 +186,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
-      "cupons": []
-    },
-    {
-      "id": "#703364279687762",
-      "titulo": "Central Laço Indutivo 1 Canal 12v Controle Acesso Lenister",
-      "tipo_anuncio": "Clássico e Premium",
-      "preco": "R$ 315 a R$ 325",
-      "estoque_info": "Depósito: 50 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Diferentes promoções",
-          "vigencia": "Contém datas específicas",
-          "selo": "ATIVA",
-          "desconto": "R$ 75,10 a R$ 75,75",
-          "preco_final": "R$ 223,25 a R$ 249,90",
-          "voce_recebe": "R$ 186,63 a R$ 190,09 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -242,7 +242,7 @@
       "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 520",
-      "estoque_info": "Depósito: 6 u.",
+      "estoque_info": "Depósito: 5 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
@@ -295,30 +295,6 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 4,
-      "cupons": []
-    },
-    {
-      "id": "#5090061779",
-      "titulo": "Kit 4 Divisor Extensor Poe 250m Câmera Ip Lenister Hi-at13fl",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 696",
-      "estoque_info": "Depósito: 1 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "1 a 31/out",
-          "selo": "ATIVA",
-          "desconto": "R$ 184",
-          "preco_final": "R$ 512",
-          "voce_recebe": "R$ 422,19 | Reduzimos R$ 25,60 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 5,
       "cupons": []
     },
     {
