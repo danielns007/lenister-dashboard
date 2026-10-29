@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-10-28T15:49:44.709683+00:00",
-  "run_date": "2026-10-28",
+  "run_at": "2026-10-29T15:57:29.208265+00:00",
+  "run_date": "2026-10-29",
   "total_produtos": 18,
   "resumo": {
-    "ativa": 10,
+    "ativa": 16,
     "programada": 0,
     "sem_estoque": 1,
-    "sem_promocao": 7
+    "sem_promocao": 1
   },
   "produtos": [
     {
@@ -15,10 +15,34 @@
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,86 a R$ 165",
       "estoque_info": "Depósito: 4 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 8,
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Diferentes promoções",
+          "vigencia": "Contém datas específicas",
+          "selo": "ATIVA",
+          "desconto": "R$ 6,70",
+          "preco_final": "R$ 127,16",
+          "voce_recebe": "R$ 93,68",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "promocoes_programadas": [
+        {
+          "item_status": "programmed",
+          "titulo_promocao": "Oferta relámpago",
+          "vigencia": "Contém datas específicas",
+          "selo": "PROGRAMADA",
+          "desconto": "R$ 3,32",
+          "preco_final": "R$ 127",
+          "voce_recebe": "R$ 97,08 | Reduzimos R$ 3,54 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
+      "total_oportunidades": 7,
       "cupons": []
     },
     {
@@ -74,11 +98,23 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Cabo Pvc 5m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 550,21",
-      "estoque_info": "Depósito: 8 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
+      "estoque_info": "Depósito: 9 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Desconto",
+          "vigencia": "20/out a 19/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 27,52",
+          "preco_final": "R$ 522,69",
+          "voce_recebe": "R$ 427,68",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -111,10 +147,22 @@
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
       "estoque_info": "Depósito: 4 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "11.11",
+          "vigencia": "19/out a 12/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 4,48",
+          "preco_final": "R$ 129",
+          "voce_recebe": "R$ 94,08",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -122,7 +170,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 9 u.",
+      "estoque_info": "Depósito: 6 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -142,11 +190,35 @@
       "cupons": []
     },
     {
+      "id": "#6508001372",
+      "titulo": "Divisor Extensor Poe Repetidor Câmeras Ip Giga Lenister",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 178",
+      "estoque_info": "Depósito: 25 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "11.11",
+          "vigencia": "19/out a 12/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 16,03",
+          "preco_final": "R$ 161,97",
+          "voce_recebe": "R$ 113,77",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 8,
+      "cupons": []
+    },
+    {
       "id": "#6128512354",
       "titulo": "Fonte Chaveada 12v 5.0a 60w P/ Trilho Din 100~240v Mdr-60-12",
       "tipo_anuncio": "Premium",
       "preco": "R$ 218",
-      "estoque_info": "Depósito: 25 u.",
+      "estoque_info": "Depósito: 23 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -187,18 +259,6 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
-      "cupons": []
-    },
-    {
-      "id": "#6508001372",
-      "titulo": "Divisor Extensor Poe Repetidor Câmeras Ip Giga Lenister",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 178",
-      "estoque_info": "Depósito: 25 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 7,
       "cupons": []
     },
     {
@@ -243,10 +303,22 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 520",
       "estoque_info": "Depósito: 5 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "28/out a 27/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 31,20",
+          "preco_final": "R$ 488,80",
+          "voce_recebe": "R$ 411,39 | Reduzimos R$ 11,83 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": []
     },
     {
@@ -303,10 +375,22 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
       "estoque_info": "Depósito: 6 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Com redução de tarifas",
+          "vigencia": "28/out a 27/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 224",
+          "preco_final": "R$ 336",
+          "voce_recebe": "R$ 309,12 | Reduzimos R$ 20,16 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": []
     },
     {
