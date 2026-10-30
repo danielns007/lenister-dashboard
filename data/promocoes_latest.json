@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-10-29T15:57:29.208265+00:00",
-  "run_date": "2026-10-29",
+  "run_at": "2026-10-30T15:41:01.689603+00:00",
+  "run_date": "2026-10-30",
   "total_produtos": 18,
   "resumo": {
-    "ativa": 16,
+    "ativa": 15,
     "programada": 0,
-    "sem_estoque": 1,
-    "sem_promocao": 1
+    "sem_estoque": 0,
+    "sem_promocao": 3
   },
   "produtos": [
     {
@@ -15,34 +15,10 @@
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,86 a R$ 165",
       "estoque_info": "Depósito: 4 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Diferentes promoções",
-          "vigencia": "Contém datas específicas",
-          "selo": "ATIVA",
-          "desconto": "R$ 6,70",
-          "preco_final": "R$ 127,16",
-          "voce_recebe": "R$ 93,68",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "promocoes_programadas": [
-        {
-          "item_status": "programmed",
-          "titulo_promocao": "Oferta relámpago",
-          "vigencia": "Contém datas específicas",
-          "selo": "PROGRAMADA",
-          "desconto": "R$ 3,32",
-          "preco_final": "R$ 127",
-          "voce_recebe": "R$ 97,08 | Reduzimos R$ 3,54 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
-      "total_oportunidades": 7,
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
+      "promocoes_programadas": [],
+      "total_oportunidades": 1,
       "cupons": []
     },
     {
@@ -86,8 +62,8 @@
       "titulo": "Protetor De Cabo Fio Laço De Porta Flexível Blindado Inox Mangueira Blindada 40cm",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55,90",
-      "estoque_info": "Depósito: 10 u.",
-      "categoria": "sem_estoque",
+      "estoque_info": "Depósito: 8 u.",
+      "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
       "total_oportunidades": 6,
@@ -107,7 +83,7 @@
           "vigencia": "20/out a 19/nov",
           "selo": "ATIVA",
           "desconto": "R$ 27,52",
-          "preco_final": "R$ 522,69",
+          "preco_final": "R$ 522,69 | 5 preços de atacado",
           "voce_recebe": "R$ 427,68",
           "mlb_especifico": null,
           "botao": "Alterar"
@@ -138,7 +114,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 7,
       "cupons": []
     },
     {
@@ -155,7 +131,7 @@
           "vigencia": "19/out a 12/nov",
           "selo": "ATIVA",
           "desconto": "R$ 4,48",
-          "preco_final": "R$ 129",
+          "preco_final": "R$ 129 | 3 preços de atacado",
           "voce_recebe": "R$ 94,08",
           "mlb_especifico": null,
           "botao": "Alterar"
@@ -170,7 +146,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 6 u.",
+      "estoque_info": "Depósito: 7 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -179,14 +155,14 @@
           "vigencia": "19/out a 12/nov",
           "selo": "ATIVA",
           "desconto": "R$ 49,71",
-          "preco_final": "R$ 349",
+          "preco_final": "R$ 349 | 3 preços de atacado",
           "voce_recebe": "R$ 268,17",
           "mlb_especifico": null,
           "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": []
     },
     {
@@ -203,14 +179,14 @@
           "vigencia": "19/out a 12/nov",
           "selo": "ATIVA",
           "desconto": "R$ 16,03",
-          "preco_final": "R$ 161,97",
+          "preco_final": "R$ 161,97 | 5 preços de atacado",
           "voce_recebe": "R$ 113,77",
           "mlb_especifico": null,
           "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 8,
+      "total_oportunidades": 9,
       "cupons": []
     },
     {
@@ -218,7 +194,7 @@
       "titulo": "Fonte Chaveada 12v 5.0a 60w P/ Trilho Din 100~240v Mdr-60-12",
       "tipo_anuncio": "Premium",
       "preco": "R$ 218",
-      "estoque_info": "Depósito: 23 u.",
+      "estoque_info": "Depósito: 20 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -227,7 +203,7 @@
           "vigencia": "19/out a 12/nov",
           "selo": "ATIVA",
           "desconto": "R$ 74,21",
-          "preco_final": "R$ 143,79",
+          "preco_final": "R$ 143,79 | 5 preços de atacado",
           "voce_recebe": "R$ 100,96",
           "mlb_especifico": null,
           "botao": "Alterar"
@@ -386,7 +362,7 @@
           "preco_final": "R$ 336",
           "voce_recebe": "R$ 309,12 | Reduzimos R$ 20,16 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
@@ -434,7 +410,7 @@
           "preco_final": "R$ 33",
           "voce_recebe": "R$ 22,01 | Reduzimos R$ 1,30 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
