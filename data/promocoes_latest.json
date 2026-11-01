@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-10-31T15:10:40.114334+00:00",
-  "run_date": "2026-10-31",
+  "run_at": "2026-11-01T15:53:44.094886+00:00",
+  "run_date": "2026-11-01",
   "total_produtos": 18,
   "resumo": {
     "ativa": 16,
@@ -31,7 +31,13 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 7,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#5923338689872466",
@@ -46,28 +52,22 @@
           "titulo_promocao": "Diferentes promoções",
           "vigencia": "Contém datas específicas",
           "selo": "ATIVA",
-          "desconto": "R$ 77,80",
-          "preco_final": "R$ 218",
-          "voce_recebe": "R$ 160,38",
+          "desconto": "R$ 69,36 a R$ 77,80",
+          "preco_final": "R$ 216 a R$ 218",
+          "voce_recebe": "R$ 160,38 a R$ 169,15 | Reduzimos R$ 10,44 das suas tarifas por cada venda",
           "mlb_especifico": null,
           "botao": "Deixar de participar"
         }
       ],
-      "promocoes_programadas": [
+      "promocoes_programadas": [],
+      "total_oportunidades": 7,
+      "cupons": [
         {
-          "item_status": "programmed",
-          "titulo_promocao": "Con aporte de Mercado Libre",
-          "vigencia": "Contém datas específicas",
-          "selo": "PROGRAMADA",
-          "desconto": "R$ 69,36",
-          "preco_final": "R$ 216",
-          "voce_recebe": "R$ 169,15 | Reduzimos R$ 10,44 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
         }
-      ],
-      "total_oportunidades": 6,
-      "cupons": []
+      ]
     },
     {
       "id": "#5482550358",
@@ -78,15 +78,21 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
-      "cupons": []
+      "total_oportunidades": 5,
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#3904989803",
       "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Cabo Pvc 5m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 550,21",
-      "estoque_info": "Depósito: 8 u.",
+      "estoque_info": "Depósito: 9 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -103,7 +109,13 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 4,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#703364279687762",
@@ -119,22 +131,28 @@
           "vigencia": "Contém datas específicas",
           "selo": "ATIVA",
           "desconto": "R$ 75,10 a R$ 75,75",
-          "preco_final": "R$ 223,25 a R$ 249,90",
-          "voce_recebe": "R$ 186,63 a R$ 190,09 | Reduzimos R$ 11,75 a R$ 12,35 das suas tarifas por cada venda",
+          "preco_final": "R$ 239,25 a R$ 249,90",
+          "voce_recebe": "R$ 187,02 a R$ 190,09",
           "mlb_especifico": null,
           "botao": "Deixar de participar"
         }
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 7,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#6128447010",
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 4 u.",
+      "estoque_info": "Depósito: 5 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -150,8 +168,14 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
-      "cupons": []
+      "total_oportunidades": 4,
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#4205584415",
@@ -175,7 +199,13 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#6508001372",
@@ -198,8 +228,14 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 9,
-      "cupons": []
+      "total_oportunidades": 8,
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#6128512354",
@@ -223,7 +259,13 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 4,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#6718341398",
@@ -247,14 +289,20 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#4811412531",
       "titulo": "Sonda Sensor De Nível Hidrostática 0-2mca 4-20ma Cabo Pvc 4m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
-      "estoque_info": "Depósito: 9 u.",
+      "estoque_info": "Depósito: 7 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -271,7 +319,13 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 4,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#4470736687",
@@ -283,7 +337,13 @@
       "promocoes_ativas": [],
       "promocoes_programadas": [],
       "total_oportunidades": 6,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#4960886183",
@@ -307,14 +367,20 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 4,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#7277760266",
       "titulo": "Sonda Sensor Nível Hidrostática Agua 0-5mca 4-20ma Lenister 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 580",
-      "estoque_info": "Depósito: 5 u.",
+      "estoque_info": "Depósito: 4 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -330,8 +396,14 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
-      "cupons": []
+      "total_oportunidades": 3,
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#6294668236",
@@ -355,7 +427,13 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 4,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#5163909431",
@@ -379,7 +457,13 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 2,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#7855401196",
@@ -403,7 +487,13 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 3,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     },
     {
       "id": "#6168880144",
@@ -427,7 +517,13 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 5,
-      "cupons": []
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
     }
   ],
   "fonte": "Selenium, Central de Promocoes do Mercado Livre (vendedores.mercadolivre.com.br/anuncios/lista/promos)"
