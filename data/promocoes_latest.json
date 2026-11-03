@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-11-02T19:18:29.126824+00:00",
-  "run_date": "2026-11-02",
+  "run_at": "2026-11-03T16:55:31.714875+00:00",
+  "run_date": "2026-11-03",
   "total_produtos": 18,
   "resumo": {
     "ativa": 15,
@@ -30,7 +30,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 6,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -60,7 +60,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 6,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -74,11 +74,11 @@
       "titulo": "Protetor De Cabo Fio Laço De Porta Flexível Blindado Inox Mangueira Blindada 40cm",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55,90",
-      "estoque_info": "Depósito: 8 u.",
+      "estoque_info": "Depósito: 11 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -92,7 +92,7 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Cabo Pvc 5m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 550,21",
-      "estoque_info": "Depósito: 12 u.",
+      "estoque_info": "Depósito: 16 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -108,7 +108,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -138,7 +138,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 6,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -152,7 +152,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 16 u.",
+      "estoque_info": "Depósito: 24 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -168,7 +168,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -182,7 +182,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 13 u.",
+      "estoque_info": "Depósito: 24 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -198,7 +198,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -212,7 +212,7 @@
       "titulo": "Divisor Extensor Poe Repetidor Câmeras Ip Giga Lenister",
       "tipo_anuncio": "Premium",
       "preco": "R$ 178",
-      "estoque_info": "Depósito: 25 u.",
+      "estoque_info": "Depósito: 24 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -228,7 +228,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 8,
+      "total_oportunidades": 7,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -258,7 +258,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -288,7 +288,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -318,7 +318,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -336,7 +336,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -366,7 +366,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -396,7 +396,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -422,11 +422,11 @@
           "preco_final": "R$ 224,07",
           "voce_recebe": "R$ 185,61 | Reduzimos R$ 13,44 das suas tarifas por cada venda",
           "mlb_especifico": null,
-          "botao": "Deixar de participar"
+          "botao": "Alterar"
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -456,7 +456,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 2,
+      "total_oportunidades": 1,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -486,7 +486,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -504,7 +504,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 5,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
