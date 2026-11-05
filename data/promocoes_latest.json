@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-11-04T16:57:42.522771+00:00",
-  "run_date": "2026-11-04",
-  "total_produtos": 19,
+  "run_at": "2026-11-05T17:12:35.175461+00:00",
+  "run_date": "2026-11-05",
+  "total_produtos": 18,
   "resumo": {
-    "ativa": 16,
+    "ativa": 17,
     "programada": 0,
     "sem_estoque": 0,
-    "sem_promocao": 3
+    "sem_promocao": 1
   },
   "produtos": [
     {
@@ -22,14 +22,26 @@
           "titulo_promocao": "Diferentes promoções",
           "vigencia": "Contém datas específicas",
           "selo": "ATIVA",
-          "desconto": "R$ 6,70",
-          "preco_final": "R$ 127,16",
-          "voce_recebe": "R$ 93,68",
+          "desconto": "R$ 6,64 a R$ 12,06",
+          "preco_final": "R$ 115,50 a R$ 127,16",
+          "voce_recebe": "R$ 89,83 a R$ 94,23 | Reduzimos R$ 3,87 a R$ 6,30 das suas tarifas por cada venda",
           "mlb_especifico": null,
           "botao": "Deixar de participar"
         }
       ],
-      "promocoes_programadas": [],
+      "promocoes_programadas": [
+        {
+          "item_status": "programmed",
+          "titulo_promocao": "Con aporte de Mercado Libre",
+          "vigencia": "Contém datas específicas",
+          "selo": "PROGRAMADA",
+          "desconto": "R$ 6,64",
+          "preco_final": "R$ 123,35",
+          "voce_recebe": "R$ 94,23 | Reduzimos R$ 3,87 das suas tarifas por cada venda",
+          "mlb_especifico": null,
+          "botao": "Deixar de participar"
+        }
+      ],
       "total_oportunidades": 6,
       "cupons": [
         {
@@ -53,7 +65,7 @@
           "vigencia": "Contém datas específicas",
           "selo": "ATIVA",
           "desconto": "R$ 69,36 a R$ 77,80",
-          "preco_final": "R$ 216 a R$ 218",
+          "preco_final": "R$ 216 a R$ 218 | PREÇO ALTO",
           "voce_recebe": "R$ 160,38 a R$ 169,15 | Reduzimos R$ 10,44 das suas tarifas por cada venda",
           "mlb_especifico": null,
           "botao": "Deixar de participar"
@@ -61,24 +73,6 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 6,
-      "cupons": [
-        {
-          "label": "Cupom para carrinhos abandonados",
-          "discount": "10% OFF",
-          "status": "eligible"
-        }
-      ]
-    },
-    {
-      "id": "#5482550358",
-      "titulo": "Protetor De Cabo Fio Laço De Porta Flexível Blindado Inox Mangueira Blindada 40cm",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 55,90",
-      "estoque_info": "Depósito: 2 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 4,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -152,7 +146,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 31 u.",
+      "estoque_info": "Depósito: 35 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -182,7 +176,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 25 u.",
+      "estoque_info": "Depósito: 21 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -228,7 +222,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 7,
+      "total_oportunidades": 8,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -242,7 +236,7 @@
       "titulo": "Fonte Chaveada 12v 5.0a 60w P/ Trilho Din 100~240v Mdr-60-12",
       "tipo_anuncio": "Premium",
       "preco": "R$ 218",
-      "estoque_info": "Depósito: 19 u.",
+      "estoque_info": "Depósito: 17 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -318,7 +312,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 2,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -350,7 +344,7 @@
       "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 520",
-      "estoque_info": "Depósito: 5 u.",
+      "estoque_info": "Depósito: 3 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -367,24 +361,6 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 3,
-      "cupons": [
-        {
-          "label": "Cupom para carrinhos abandonados",
-          "discount": "10% OFF",
-          "status": "eligible"
-        }
-      ]
-    },
-    {
-      "id": "#5090061779",
-      "titulo": "Kit 4 Divisor Extensor Poe 250m Câmera Ip Lenister Hi-at13fl",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 696",
-      "estoque_info": "Depósito: 7 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 1,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -518,7 +494,7 @@
       "titulo": "Sirene Audio Visual Estroboscópica Led 5v-12v Alarme 120db Vermelho",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55",
-      "estoque_info": "Depósito: 11 u.",
+      "estoque_info": "Depósito: 6 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -535,6 +511,36 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 4,
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
+    },
+    {
+      "id": "#5090061779",
+      "titulo": "Kit 4 Divisor Extensor Poe 250m Câmera Ip Lenister Hi-at13fl",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 696",
+      "estoque_info": "Depósito: 7 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Desconto",
+          "vigencia": "20/out a 19/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 222,72",
+          "preco_final": "R$ 473,28",
+          "voce_recebe": "R$ 364,84",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 1,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
