@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-11-06T16:40:57.181998+00:00",
-  "run_date": "2026-11-06",
+  "run_at": "2026-11-07T15:31:58.408940+00:00",
+  "run_date": "2026-11-07",
   "total_produtos": 18,
   "resumo": {
-    "ativa": 15,
+    "ativa": 14,
     "programada": 0,
     "sem_estoque": 0,
-    "sem_promocao": 3
+    "sem_promocao": 4
   },
   "produtos": [
     {
@@ -86,7 +86,7 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Cabo Pvc 5m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 550,21",
-      "estoque_info": "Depósito: 19 u.",
+      "estoque_info": "Depósito: 20 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -102,7 +102,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 2,
+      "total_oportunidades": 4,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -146,7 +146,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 34 u.",
+      "estoque_info": "Depósito: 36 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -162,7 +162,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -176,7 +176,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 20 u.",
+      "estoque_info": "Depósito: 21 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -296,7 +296,7 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-2mca 4-20ma Cabo Pvc 4m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
-      "estoque_info": "Depósito: 6 u.",
+      "estoque_info": "Depósito: 5 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -358,6 +358,36 @@
       ]
     },
     {
+      "id": "#5090061779",
+      "titulo": "Kit 4 Divisor Extensor Poe 250m Câmera Ip Lenister Hi-at13fl",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 696",
+      "estoque_info": "Depósito: 6 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "Desconto",
+          "vigencia": "20/out a 19/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 222,72",
+          "preco_final": "R$ 473,28",
+          "voce_recebe": "R$ 364,84",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 1,
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
+    },
+    {
       "id": "#7277760266",
       "titulo": "Sonda Sensor Nível Hidrostática Agua 0-5mca 4-20ma Lenister 24v",
       "tipo_anuncio": "Premium",
@@ -393,22 +423,10 @@
       "tipo_anuncio": "Premium",
       "preco": "R$ 550",
       "estoque_info": "Depósito: 1 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Com redução de tarifas",
-          "vigencia": "20/out a 19/nov",
-          "selo": "ATIVA",
-          "desconto": "R$ 325,93",
-          "preco_final": "R$ 224,07",
-          "voce_recebe": "R$ 185,61 | Reduzimos R$ 13,44 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 3,
+      "total_oportunidades": 4,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -482,41 +500,11 @@
       "titulo": "Sirene Audio Visual Estroboscópica Led 5v-12v Alarme 120db Vermelho",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55",
-      "estoque_info": "Depósito: 6 u.",
+      "estoque_info": "Depósito: 5 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
       "total_oportunidades": 4,
-      "cupons": [
-        {
-          "label": "Cupom para carrinhos abandonados",
-          "discount": "10% OFF",
-          "status": "eligible"
-        }
-      ]
-    },
-    {
-      "id": "#5090061779",
-      "titulo": "Kit 4 Divisor Extensor Poe 250m Câmera Ip Lenister Hi-at13fl",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 696",
-      "estoque_info": "Depósito: 6 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "Desconto",
-          "vigencia": "20/out a 19/nov",
-          "selo": "ATIVA",
-          "desconto": "R$ 222,72",
-          "preco_final": "R$ 473,28",
-          "voce_recebe": "R$ 364,84",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 1,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
