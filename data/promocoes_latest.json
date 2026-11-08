@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-11-07T15:31:58.408940+00:00",
-  "run_date": "2026-11-07",
+  "run_at": "2026-11-08T15:53:15.092371+00:00",
+  "run_date": "2026-11-08",
   "total_produtos": 18,
   "resumo": {
     "ativa": 14,
@@ -112,6 +112,36 @@
       ]
     },
     {
+      "id": "#6128447010",
+      "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
+      "tipo_anuncio": "Clássico",
+      "preco": "R$ 133,48",
+      "estoque_info": "Depósito: 5 u.",
+      "categoria": "ativa",
+      "promocoes_ativas": [
+        {
+          "item_status": "active",
+          "titulo_promocao": "11.11",
+          "vigencia": "19/out a 12/nov",
+          "selo": "ATIVA",
+          "desconto": "R$ 4,48",
+          "preco_final": "R$ 129 | PREÇO ALTO",
+          "voce_recebe": "R$ 94,08",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "promocoes_programadas": [],
+      "total_oportunidades": 4,
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
+    },
+    {
       "id": "#703364279687762",
       "titulo": "Central Laço Indutivo 1 Canal 12v Controle Acesso Lenister",
       "tipo_anuncio": "Clássico e Premium",
@@ -133,36 +163,6 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 6,
-      "cupons": [
-        {
-          "label": "Cupom para carrinhos abandonados",
-          "discount": "10% OFF",
-          "status": "eligible"
-        }
-      ]
-    },
-    {
-      "id": "#6128447010",
-      "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
-      "tipo_anuncio": "Clássico",
-      "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 36 u.",
-      "categoria": "ativa",
-      "promocoes_ativas": [
-        {
-          "item_status": "active",
-          "titulo_promocao": "11.11",
-          "vigencia": "19/out a 12/nov",
-          "selo": "ATIVA",
-          "desconto": "R$ 4,48",
-          "preco_final": "R$ 129 | PREÇO ALTO",
-          "voce_recebe": "R$ 94,08",
-          "mlb_especifico": null,
-          "botao": "Alterar"
-        }
-      ],
-      "promocoes_programadas": [],
-      "total_oportunidades": 3,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
