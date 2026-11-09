@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-11-08T15:53:15.092371+00:00",
-  "run_date": "2026-11-08",
+  "run_at": "2026-11-09T19:35:55.615994+00:00",
+  "run_date": "2026-11-09",
   "total_produtos": 18,
   "resumo": {
     "ativa": 14,
@@ -86,7 +86,7 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-4mca 4-20ma Cabo Pvc 5m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 550,21",
-      "estoque_info": "Depósito: 20 u.",
+      "estoque_info": "Depósito: 19 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -102,7 +102,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 3,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -116,7 +116,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 5 u.",
+      "estoque_info": "Depósito: 2 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -125,7 +125,7 @@
           "vigencia": "19/out a 12/nov",
           "selo": "ATIVA",
           "desconto": "R$ 4,48",
-          "preco_final": "R$ 129 | PREÇO ALTO",
+          "preco_final": "R$ 129",
           "voce_recebe": "R$ 94,08",
           "mlb_especifico": null,
           "botao": "Alterar"
@@ -176,7 +176,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 21 u.",
+      "estoque_info": "Depósito: 22 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -282,7 +282,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "total_oportunidades": 5,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
