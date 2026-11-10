@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-11-09T19:35:55.615994+00:00",
-  "run_date": "2026-11-09",
+  "run_at": "2026-11-10T16:53:15.955676+00:00",
+  "run_date": "2026-11-10",
   "total_produtos": 18,
   "resumo": {
     "ativa": 14,
@@ -29,19 +29,7 @@
           "botao": "Deixar de participar"
         }
       ],
-      "promocoes_programadas": [
-        {
-          "item_status": "programmed",
-          "titulo_promocao": "Con aporte de Mercado Libre",
-          "vigencia": "Contém datas específicas",
-          "selo": "PROGRAMADA",
-          "desconto": "R$ 6,64",
-          "preco_final": "R$ 123,35",
-          "voce_recebe": "R$ 94,23 | Reduzimos R$ 3,87 das suas tarifas por cada venda",
-          "mlb_especifico": null,
-          "botao": "Deixar de participar"
-        }
-      ],
+      "promocoes_programadas": [],
       "total_oportunidades": 6,
       "cupons": [
         {
@@ -116,7 +104,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 2 u.",
+      "estoque_info": "Depósito: 4 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -125,7 +113,7 @@
           "vigencia": "19/out a 12/nov",
           "selo": "ATIVA",
           "desconto": "R$ 4,48",
-          "preco_final": "R$ 129",
+          "preco_final": "R$ 129 | PREÇO ALTO",
           "voce_recebe": "R$ 94,08",
           "mlb_especifico": null,
           "botao": "Alterar"
@@ -466,6 +454,24 @@
       ]
     },
     {
+      "id": "#6168880144",
+      "titulo": "Sirene Audio Visual Estroboscópica Led 5v-12v Alarme 120db Vermelho",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 55",
+      "estoque_info": "Depósito: 5 u.",
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
+      "promocoes_programadas": [],
+      "total_oportunidades": 4,
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
+    },
+    {
       "id": "#7855401196",
       "titulo": "Torre Luminosa Sinalizadora Led 3 Cores Buzina 24v Lenister",
       "tipo_anuncio": "Premium",
@@ -487,24 +493,6 @@
       ],
       "promocoes_programadas": [],
       "total_oportunidades": 2,
-      "cupons": [
-        {
-          "label": "Cupom para carrinhos abandonados",
-          "discount": "10% OFF",
-          "status": "eligible"
-        }
-      ]
-    },
-    {
-      "id": "#6168880144",
-      "titulo": "Sirene Audio Visual Estroboscópica Led 5v-12v Alarme 120db Vermelho",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 55",
-      "estoque_info": "Depósito: 5 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 4,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
