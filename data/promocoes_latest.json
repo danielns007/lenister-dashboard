@@ -1,12 +1,12 @@
 {
-  "run_at": "2026-11-10T16:53:15.955676+00:00",
-  "run_date": "2026-11-10",
+  "run_at": "2026-11-11T16:59:16.915740+00:00",
+  "run_date": "2026-11-11",
   "total_produtos": 18,
   "resumo": {
     "ativa": 14,
-    "programada": 0,
+    "programada": 1,
     "sem_estoque": 0,
-    "sem_promocao": 4
+    "sem_promocao": 3
   },
   "produtos": [
     {
@@ -30,7 +30,7 @@
         }
       ],
       "promocoes_programadas": [],
-      "total_oportunidades": 6,
+      "total_oportunidades": 4,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -104,7 +104,7 @@
       "titulo": "Fonte Chaveada 24v 2,5a 60w P/ Trilho Din 100~240v Mdr-60-24",
       "tipo_anuncio": "Clássico",
       "preco": "R$ 133,48",
-      "estoque_info": "Depósito: 4 u.",
+      "estoque_info": "Depósito: 1 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -164,7 +164,7 @@
       "titulo": "Fechadura Elétrica Solenoide De Sobrepor Fail Safe 12v Prata",
       "tipo_anuncio": "Premium",
       "preco": "R$ 398,71",
-      "estoque_info": "Depósito: 22 u.",
+      "estoque_info": "Depósito: 19 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -284,7 +284,7 @@
       "titulo": "Sonda Sensor De Nível Hidrostática 0-2mca 4-20ma Cabo Pvc 4m 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
-      "estoque_info": "Depósito: 5 u.",
+      "estoque_info": "Depósito: 4 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -318,7 +318,7 @@
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
-      "total_oportunidades": 5,
+      "total_oportunidades": 4,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
@@ -332,7 +332,25 @@
       "titulo": "Sonda Sensor Nível Hidrostática Agua 0-1mca 4-20ma Lenister 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 520",
-      "estoque_info": "Depósito: 3 u.",
+      "estoque_info": "Depósito: 1 u.",
+      "categoria": "sem_promocao",
+      "promocoes_ativas": [],
+      "promocoes_programadas": [],
+      "total_oportunidades": 4,
+      "cupons": [
+        {
+          "label": "Cupom para carrinhos abandonados",
+          "discount": "10% OFF",
+          "status": "eligible"
+        }
+      ]
+    },
+    {
+      "id": "#6294668236",
+      "titulo": "Sensor Transmissor Pressão Água 10 Bar 4-20ma Alta Precisão 24",
+      "tipo_anuncio": "Premium",
+      "preco": "R$ 550",
+      "estoque_info": "Depósito: 1 u.",
       "categoria": "sem_promocao",
       "promocoes_ativas": [],
       "promocoes_programadas": [],
@@ -380,7 +398,7 @@
       "titulo": "Sonda Sensor Nível Hidrostática Agua 0-5mca 4-20ma Lenister 24v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 580",
-      "estoque_info": "Depósito: 4 u.",
+      "estoque_info": "Depósito: 6 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -406,29 +424,11 @@
       ]
     },
     {
-      "id": "#6294668236",
-      "titulo": "Sensor Transmissor Pressão Água 10 Bar 4-20ma Alta Precisão 24",
-      "tipo_anuncio": "Premium",
-      "preco": "R$ 550",
-      "estoque_info": "Depósito: 1 u.",
-      "categoria": "sem_promocao",
-      "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 4,
-      "cupons": [
-        {
-          "label": "Cupom para carrinhos abandonados",
-          "discount": "10% OFF",
-          "status": "eligible"
-        }
-      ]
-    },
-    {
       "id": "#5163909431",
       "titulo": "Controlador Indicador De Nível Lenister 4-20ma Lnt-t80 220v 220v",
       "tipo_anuncio": "Premium",
       "preco": "R$ 560",
-      "estoque_info": "Depósito: 6 u.",
+      "estoque_info": "Depósito: 4 u.",
       "categoria": "ativa",
       "promocoes_ativas": [
         {
@@ -458,11 +458,23 @@
       "titulo": "Sirene Audio Visual Estroboscópica Led 5v-12v Alarme 120db Vermelho",
       "tipo_anuncio": "Premium",
       "preco": "R$ 55",
-      "estoque_info": "Depósito: 5 u.",
-      "categoria": "sem_promocao",
+      "estoque_info": "Depósito: 23 u.",
+      "categoria": "programada",
       "promocoes_ativas": [],
-      "promocoes_programadas": [],
-      "total_oportunidades": 4,
+      "promocoes_programadas": [
+        {
+          "item_status": "programmed",
+          "titulo_promocao": "Black Friday",
+          "vigencia": "12/nov a 1/dez",
+          "selo": "PROGRAMADA",
+          "desconto": "R$ 21,71",
+          "preco_final": "R$ 33,29 | 4 preços de atacado",
+          "voce_recebe": "R$ 20,95",
+          "mlb_especifico": null,
+          "botao": "Alterar"
+        }
+      ],
+      "total_oportunidades": 3,
       "cupons": [
         {
           "label": "Cupom para carrinhos abandonados",
